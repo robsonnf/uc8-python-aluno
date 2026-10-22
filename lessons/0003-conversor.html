@@ -1,0 +1,175 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A03 · A03 — Conversor de moedas com cotações fictícias</title><script src="../assets/appearance.js"></script><link rel="stylesheet" href="../assets/course.css"><link rel="stylesheet" href="../assets/atelier.css"><link rel="stylesheet" href="../assets/theme.css"><link rel="stylesheet" href="../assets/appearance.css"></head><body class="lesson" data-lesson="A03" data-course="uc8-desktop"><a class="skip" href="#conteudo">Pular para conteúdo</a><div class="curso-app"><aside id="course-sidebar" class="course-sidebar curso-lateral"><p class="eyebrow">UC8 · Python · Tkinter e ttk</p><h2>Grade das aulas</h2><p>20 encontros · 60 h</p><button id="grade-close" class="js-only">Ocultar grade · P</button><ol class="grade-list"><li class="grade-item "><span class="grade-number">A01</span><a href="0001-diagnostico-cadastro.html"><span>Diagnóstico, revisão Python e cadastro simples<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A02</span><a href="0002-evolucao-cadastro.html"><span>Evolução do cadastro<small>Disponível</small></span></a></li><li class="grade-item current"><span class="grade-number">A03</span><span>Conversor de moedas<small>Nesta aula</small></span><ol class="grade-sections"><li><a href="#partida">Retomada sem consulta</a></li><li><a href="#esteira">Exposição 1: unidades, decimais e validação</a></li><li><a href="#pratica-terminal">Prática 1: calcular antes de abrir a janela</a></li><li><a href="#janela">Intervalo e exposição 2: uma conversão coerente na tela</a></li><li><a href="#pratica-formulario">Prática 2: integrar o conversor e testar mudanças</a></li><li><a href="#auditoria">Investigue a operação e a confirmação</a></li><li><a href="#registro">Guarde os arquivos e a tabela de casos</a></li><li><a href="#fechamento">Explique o cálculo e o estado</a></li></ol></li><li class="grade-item "><span class="grade-number">A04</span><a href="0004-escolar-basico.html"><span>Sistema escolar básico<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A05</span><span>Sistema escolar ampliado<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A06</span><span>Sistema escolar modular — classes<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A07</span><span>Sorveteria inicial<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A08</span><span>Sorveteria e pagamentos<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A09</span><span>Catálogo e carrinho<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A10</span><span>Pizzaria inicial — transferência<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A11</span><span>Pizzaria — estados e pagamento<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A12</span><span>Mercado — navegação e JSON<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A13</span><span>Pizzaria — CSV e demonstração de login<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A14</span><span>SQLite — primeira persistência<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A15</span><span>CRUD — produtos e clientes<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A16</span><span>Controllers, componentes e contratos<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A17</span><span>Integração e CustomTkinter<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A18</span><span>Revisão, testes e README<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A19</span><span>Academia e demonstrações individuais<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A20</span><span>Relacionamentos, recuperação e encerramento<small>Planejada</small></span></li></ol></aside><div class="curso-conteudo"><button id="grade-toggle" class="grade-toggle js-only" aria-controls="course-sidebar">Grade · P</button><header class="top"><div class="wordmark">UC8</div><span class="badge" data-idoc="status">Aula 03</span><label class="theme-control" for="theme-select">Tema<select id="theme-select" aria-label="Selecionar tema"><option value="light">Claro</option><option value="dark">Escuro</option></select></label></header><div class="hero"><div class="eyebrow">Python · Tkinter e ttk</div><h1>A03 — Conversor de moedas com cotações fictícias</h1><p class="thesis">Converter reais para dólar e euro, validar números decimais e manter entradas e resultados da mesma conversão confirmada.</p><p data-idoc="caveat">Use cotações fictícias digitadas manualmente, em R$ por uma unidade da moeda. O programa não consulta cotações reais e guarda apenas a última conversão enquanto está aberto.</p><div class="meta"><span>Aluno</span></div></div><main id="conteudo"><div class="actions js-only"><button id="presentation" aria-pressed="false">Ampliar para apresentação</button><button data-export>Exportar registros da aula</button><a href="#registro">Identificação e registros</a></div><h2>Objetivos</h2><ul><li>Explicar por que reais são divididos pela cotação expressa em R$ por USD ou EUR.</li><li>Converter textos com vírgula ou ponto decimal e tratar entradas inválidas.</li><li>Aceitar reais maiores ou iguais a zero e cotações estritamente positivas.</li><li>Confirmar entradas e os dois resultados juntos, preservando o último válido após erro ou edição.</li><li>Exibir resultados com duas casas e testar a janela por sequências de ações.</li></ul><h2>Antes de começar</h2><ul><li>A01/A02: funções, parâmetros, return, get, dicionários e último registro válido.</li><li>Python com Tkinter e ttk já preparado; math pertence à biblioteca padrão e não exige instalação.</li><li>Crie uma pasta A03 e preserve os arquivos das aulas anteriores.</li></ul><section id="partida" data-stop="partida"><h2>Retomada sem consulta <a class="section-source" href="leitura-0003-conversor.html#partida" aria-label="Versão para leitura: Retomada sem consulta">↗</a></h2><p>Responda individualmente antes de abrir exemplos. Preserve a resposta inicial; depois compare-a com uma sequência executada.</p><ul><li>Na A02, o que Exibir consulta se você só digitar novos valores?</li><li>Por que atualizar o nome antes de validar a idade pode criar um cadastro misturado?</li><li>O que Entry.get devolve? Por que int(&quot;2.5&quot;) falha?</li><li>Que estado deve continuar existindo depois de Limpar campos?</li></ul></section><section id="esteira" data-stop="esteira"><h2>Exposição 1: unidades, decimais e validação <a class="section-source" href="leitura-0003-conversor.html#esteira" aria-label="Versão para leitura: Exposição 1: unidades, decimais e validação">↗</a></h2><p>Arquitetura: textos em edição → função calcular → registro confirmado com reais, duas cotações e dois resultados. Exibir lê somente o registro; limpar modifica apenas a edição. A interface chama essas funções por callbacks. Use funções próprias, Tkinter/ttk e biblioteca padrão; classes ficam para uma etapa posterior.</p><p>A cotação fictícia 5 R$ por 1 USD significa que cada dólar custa cinco reais neste exercício. Com 100 reais, você obtém 100 ÷ 5 = 20 USD. Se a cotação do euro for 4 R$ por 1 EUR, os mesmos reais correspondem a 25 EUR. São duas conversões alternativas do mesmo valor, não uma divisão do orçamento entre as moedas.</p><p>Entry.get fornece texto. Use strip para retirar espaços das pontas, replace(&quot;,&quot;, &quot;.&quot;) para normalizar o separador e float para representar decimais. Faça isso com os três campos e trate ValueError. Um texto vazio ou com letras precisa de orientação para correção.</p><p>Nesta atividade, vírgula ou ponto sempre significa separador decimal; não use símbolo de moeda nem separadores de milhares. Digite 1000,50 ou 1000.50. O texto 1.000 significa um, não mil; formatos mistos como 1.000,50 são recusados.</p><p>O valor em reais pode ser zero, mas não negativo. As duas cotações precisam ser maiores que zero antes de qualquer divisão. Valide todos os campos, calcule os dois resultados e só então atualize o registro.</p><ol class="pipeline"><li><strong>Identificar a unidade</strong><p>Escreva R$ por USD e R$ por EUR ao lado de cada cotação. Use as unidades para justificar a divisão.</p></li><li><strong>Converter o texto</strong><p>Normalize vírgula ou ponto, converta para float e trate falhas sem alterar o último registro.</p></li><li><strong>Validar e calcular</strong><p>Diferencie reais &gt;= 0 de cotações &gt; 0. Confira os dois quocientes com valores conhecidos.</p></li><li><strong>Confirmar o conjunto</strong><p>Guarde entradas usadas e resultados juntos; Exibir não lê os campos em edição.</p></li></ol><details class="public-example"><summary>Exemplo: texto decimal de uma medida</summary><pre><code>texto = &quot; 2,50 &quot;
+normalizado = texto.strip().replace(&quot;,&quot;, &quot;.&quot;)
+medida = float(normalizado)
+print(medida + 1)
+</code></pre><p>Preveja o valor e os tipos antes de executar. Aqui a entrada é uma medida, ainda sem validação do conversor.</p></details><details class="public-example"><summary>Exemplo: falha na conversão</summary><pre><code>def ler_medida(texto):
+    try:
+        medida = float(texto.strip().replace(&quot;,&quot;, &quot;.&quot;))
+    except ValueError:
+        return &quot;Informe uma medida numérica.&quot;
+    return f&quot;Medida lida: {medida}&quot;
+
+print(ler_medida(&quot;abc&quot;))
+print(ler_medida(&quot;3,5&quot;))
+</code></pre><p>O tratamento de erro informa o problema e permite outra tentativa. Um número convertido ainda pode precisar de regras de sinal e faixa.</p></details><details class="public-example"><summary>Exemplo: duas casas na apresentação</summary><pre><code>medida = 10 / 3
+texto = f&quot;{medida:.2f}&quot;
+print(texto)
+print(medida)
+</code></pre><p>Compare as saídas. A formatação cria texto com duas casas e ponto decimal; não muda o valor numérico da variável.</p></details></section><section id="pratica-terminal" data-stop="pratica-terminal"><h2>Prática 1: calcular antes de abrir a janela <a class="section-source" href="leitura-0003-conversor.html#pratica-terminal" aria-label="Versão para leitura: Prática 1: calcular antes de abrir a janela">↗</a></h2><p>Complete calculos_moedas.py. calcular(campos, registro) recebe os três textos e devolve uma mensagem. O registro começa vazio e, após sucesso, contém reais, cotacao_dolar, cotacao_euro, dolares e euros como números.</p><p>exibir(registro) informa ausência antes do primeiro cálculo e consulta só o último confirmado depois dele. limpar(campos) esvazia os três textos. Faça a sequência de um válido, edição sem confirmar, uma tentativa inválida e uma correção válida.</p><p>Comece com 100 / 5 / 4 e depois teste reais zero, reais negativos e cada cotação zero ou negativa. Faça uma previsão no registro antes de executar cada caso.</p><div class="workbench"><h3>Conversão e registro no terminal</h3><p>Implemente calcular, exibir e limpar. Use nomes claros para as duas cotações e os dois resultados. Acrescente à execução as sequências da matriz.</p><p>Concluído quando: Os quocientes respeitam as unidades; erro não altera parte do último válido; exibir usa as entradas e os resultados confirmados juntos.</p><details><summary>Dica para realizar a atividade</summary><p>Antes de escrever no dicionário confirmado, confira se as três conversões de texto e as duas divisões já terminaram com valores válidos.</p></details><pre><code id="work-calculos-moedas">&quot;&quot;&quot;A03 — complete as funções antes de conectá-las à janela.&quot;&quot;&quot;
+def calcular(campos, registro):
+    # TODO: ler reais e as duas cotações; aceitar vírgula ou ponto decimal.
+    # TODO: tratar conversão inválida, reais negativos e cotações &lt;= 0.
+    # TODO: dividir reais por cada cotação.
+    # TODO: confirmar entradas e os dois resultados somente após validar tudo.
+    return &quot;Complete a função calcular.&quot;
+
+
+def exibir(registro):
+    # TODO: tratar ausência de conversão; consultar somente registro.
+    # TODO: mostrar entradas usadas e resultados, estes com duas casas.
+    return &quot;Complete a função exibir.&quot;
+
+
+def limpar(campos):
+    # TODO: esvaziar os três campos; preservar registro e resultados.
+    pass
+
+
+if __name__ == &quot;__main__&quot;:
+    campos = {&quot;reais&quot;: &quot;100&quot;, &quot;cotacao_dolar&quot;: &quot;5&quot;, &quot;cotacao_euro&quot;: &quot;4&quot;}
+    registro = {}
+    print(exibir(registro))
+    print(calcular(campos, registro))
+    print(exibir(registro))
+    # Acrescente as outras sequências da matriz, prevendo antes de executar.
+</code></pre><div class="atelier" data-source="work-calculos-moedas" data-filename="calculos_moedas.py" data-execution="Baixe para uma pasta A03 e execute no terminal do VS Code: python calculos_moedas.py. O editor da página não executa Python."></div><p>Baixe para uma pasta A03 e execute no terminal do VS Code: python calculos_moedas.py. O editor da página não executa Python.</p></div></section><section id="janela" data-stop="janela"><h2>Intervalo e exposição 2: uma conversão coerente na tela <a class="section-source" href="leitura-0003-conversor.html#janela" aria-label="Versão para leitura: Intervalo e exposição 2: uma conversão coerente na tela">↗</a></h2><p>Após o intervalo, acompanhe a integração das funções com três entradas rotuladas Valor em reais (R$), R$ por 1 USD e R$ por 1 EUR. Calcular lê os três textos, tenta confirmar a conversão e atualiza a mensagem e a consulta ao último confirmado.</p><p>Exibir consulta apenas o registro. Editar o valor ou as cotações não confirma uma conversão. Em caso de erro, a mensagem muda, mas o conjunto anterior permanece; nunca mostre reais atuais junto com resultados antigos.</p><p>Limpar campos esvazia as entradas e devolve foco à primeira; o registro e a consulta continuam intactos. Calcular não limpa automaticamente. Fechar e reabrir inicia sem conversão confirmada.</p><p>Mostre os resultados USD e EUR com duas casas usando :.2f, com ponto na saída. Mostre também reais e cotações usados; preserve a precisão da cotação mostrada, pois arredondá-la para duas casas poderia ocultar o valor usado.</p><p>float representa aproximações binárias. Formatar a exibição não torna o cálculo decimal exato. Use os valores didáticos da matriz e mantenha os números no registro, sem arredondamento intermediário. Decimal será estudado no bloco de pagamentos.</p><p>Use mensagens em texto, rótulos com unidades e percurso por Tab/Shift+Tab. Corrija um erro na mesma janela antes de testar novamente. Se experimentar valores muito grandes ou especiais, peça apoio para verificar a faixa numérica com math.isfinite.</p><details class="public-example"><summary>Exemplo: apresentar uma medida sem alterar o número</summary><pre><code>import tkinter as tk
+from tkinter import ttk
+
+janela = tk.Tk()
+janela.title(&quot;Apresentar uma medida&quot;)
+medida = 10 / 3
+rotulo = ttk.Label(janela, text=&quot;Acione para apresentar.&quot;)
+rotulo.grid(row=0, column=0, padx=12, pady=12)
+
+def apresentar():
+    rotulo.configure(text=f&quot;Medida: {medida:.2f}&quot;)
+
+ttk.Button(janela, text=&quot;Apresentar&quot;, command=apresentar).grid(row=1, column=0, pady=12)
+janela.mainloop()
+</code></pre><p>O callback apresenta um valor já existente. No conversor, identifique de qual registro vêm todos os dados apresentados.</p></details></section><section id="pratica-formulario" data-stop="pratica-formulario"><h2>Prática 2: integrar o conversor e testar mudanças <a class="section-source" href="leitura-0003-conversor.html#pratica-formulario" aria-label="Versão para leitura: Prática 2: integrar o conversor e testar mudanças">↗</a></h2><p>Complete conversor.py com a lógica testada e conecte Calcular, Exibir e Limpar campos. O arquivo é independente nesta etapa. Faça um colega operar enquanto você registra previsões, observações e ajustes; a implementação e a explicação são individuais.</p><p>Execute T01 a T13. Observe especialmente o erro no último campo depois de um cálculo válido: se somente parte do registro mudar, há uma confirmação antes da hora. Depois corrija e confira que um novo cálculo válido substitui o conjunto inteiro.</p><p>Compare 100,50 e 100.50, experimente cada campo vazio e os formatos mistos com milhares. Em 10 / 3 / 6, compare o número mantido em memória e o texto exibido. Percorra campos e botões com teclado e verifique os rótulos ao redimensionar.</p><div class="workbench"><h3>Conversor com entradas e resultados confirmados</h3><p>Complete as funções e os três callbacks. O painel deve identificar a última conversão confirmada com suas entradas e seus dois resultados; mantenha a mensagem da tentativa em separado.</p><p>Concluído quando: Calcular, Exibir e Limpar campos cumprem papéis distintos; erro e edição preservam o conjunto; o primeiro cálculo e a reabertura não exibem resultados inventados.</p><details><summary>Dica para realizar a atividade</summary><p>Se o painel misturar épocas, procure leituras de Entry na função de consulta ou atualizações do registro antes de validar o último campo.</p></details><pre><code id="work-conversor-moedas">&quot;&quot;&quot;A03 — complete a lógica e os callbacks do conversor.&quot;&quot;&quot;
+import tkinter as tk
+from tkinter import ttk
+
+
+def calcular(campos, registro):
+    # TODO: ler reais e as duas cotações; aceitar vírgula ou ponto decimal.
+    # TODO: tratar conversão inválida, reais negativos e cotações &lt;= 0.
+    # TODO: dividir reais por cada cotação.
+    # TODO: confirmar entradas e os dois resultados somente após validar tudo.
+    return &quot;Complete a função calcular.&quot;
+
+
+def exibir(registro):
+    # TODO: tratar ausência de conversão; consultar somente registro.
+    # TODO: mostrar entradas usadas e resultados, estes com duas casas.
+    return &quot;Complete a função exibir.&quot;
+
+
+def limpar(campos):
+    # TODO: esvaziar os três campos; preservar registro e resultados.
+    pass
+
+
+def criar_janela():
+    janela = tk.Tk()
+    janela.title(&quot;Conversor com cotações fictícias — A03&quot;)
+    janela.columnconfigure(1, weight=1)
+    campos = {&quot;reais&quot;: &quot;&quot;, &quot;cotacao_dolar&quot;: &quot;&quot;, &quot;cotacao_euro&quot;: &quot;&quot;}
+    registro = {}
+
+    ttk.Label(janela, text=&quot;Cotações fictícias manuais; sem consulta à internet.&quot;, wraplength=420).grid(row=0, column=0, columnspan=2, padx=12, pady=8, sticky=&quot;w&quot;)
+    ttk.Label(janela, text=&quot;Valor em reais (R$):&quot;).grid(row=1, column=0, padx=12, pady=6, sticky=&quot;w&quot;)
+    entrada_reais = ttk.Entry(janela)
+    entrada_reais.grid(row=1, column=1, padx=12, pady=6, sticky=&quot;ew&quot;)
+    ttk.Label(janela, text=&quot;R$ por 1 USD:&quot;).grid(row=2, column=0, padx=12, pady=6, sticky=&quot;w&quot;)
+    entrada_dolar = ttk.Entry(janela)
+    entrada_dolar.grid(row=2, column=1, padx=12, pady=6, sticky=&quot;ew&quot;)
+    ttk.Label(janela, text=&quot;R$ por 1 EUR:&quot;).grid(row=3, column=0, padx=12, pady=6, sticky=&quot;w&quot;)
+    entrada_euro = ttk.Entry(janela)
+    entrada_euro.grid(row=3, column=1, padx=12, pady=6, sticky=&quot;ew&quot;)
+
+    def ao_calcular():
+        # TODO: ler os três Entry, calcular e atualizar aviso/último confirmado.
+        aviso.configure(text=&quot;Complete o callback Calcular.&quot;)
+
+    def ao_exibir():
+        # TODO: consultar somente registro, sem ler as entradas editáveis.
+        aviso.configure(text=&quot;Complete o callback Exibir.&quot;)
+
+    def ao_limpar():
+        # TODO: esvaziar campos/Entry e devolver foco; conservar resultado.
+        aviso.configure(text=&quot;Complete o callback Limpar campos.&quot;)
+
+    ttk.Button(janela, text=&quot;Calcular&quot;, command=ao_calcular).grid(row=4, column=0, padx=12, pady=8)
+    ttk.Button(janela, text=&quot;Exibir&quot;, command=ao_exibir).grid(row=4, column=1, padx=12, pady=8)
+    ttk.Button(janela, text=&quot;Limpar campos&quot;, command=ao_limpar).grid(row=5, column=0, columnspan=2, pady=6)
+    aviso = ttk.Label(janela, text=&quot;Use vírgula ou ponto decimal, sem milhares.&quot;, wraplength=420)
+    aviso.grid(row=6, column=0, columnspan=2, padx=12, pady=8, sticky=&quot;w&quot;)
+    resultado = ttk.Label(janela, text=&quot;Nenhuma conversão confirmada nesta sessão.&quot;, wraplength=420)
+    resultado.grid(row=7, column=0, columnspan=2, padx=12, pady=8, sticky=&quot;w&quot;)
+    entrada_reais.focus_set()
+    return janela
+
+
+if __name__ == &quot;__main__&quot;:
+    criar_janela().mainloop()
+</code></pre><div class="atelier" data-source="work-conversor-moedas" data-filename="conversor.py" data-execution="Baixe para uma pasta A03 e execute no terminal do VS Code: python conversor.py. O editor da página não executa Python."></div><p>Baixe para uma pasta A03 e execute no terminal do VS Code: python conversor.py. O editor da página não executa Python.</p></div></section><section id="auditoria" data-stop="auditoria"><h2>Investigue a operação e a confirmação <a class="section-source" href="leitura-0003-conversor.html#auditoria" aria-label="Versão para leitura: Investigue a operação e a confirmação">↗</a></h2><p>Escolha e justifique com um caso executado. A página registra sua escolha na sessão; as alternativas podem mudar de ordem.</p><fieldset data-question="q31"><legend>Com cotação fictícia de 5 R$ por 1 USD, qual cálculo converte 100 reais para dólares?</legend><div class="question-options"><label class="option"><input type="radio" name="q31" value="100 dividido por 5" autocomplete="off">100 dividido por 5</label><label class="option"><input type="radio" name="q31" value="100 multiplicado por 5" autocomplete="off">100 multiplicado por 5</label><label class="option"><input type="radio" name="q31" value="5 dividido por 100" autocomplete="off">5 dividido por 100</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Acompanhe as unidades: quantos grupos de cinco reais cabem no valor disponível?</p></details></fieldset><div id="audit-list"><article class="audit-item" id="au31"><fieldset data-question="au31"><legend>Uma função aceita cotação zero e só depois tenta dividir o valor em reais por ela.</legend><div class="question-options"><label class="option"><input type="radio" name="au31" value="Validar a cotação antes da divisão" autocomplete="off">Validar a cotação antes da divisão</label><label class="option"><input type="radio" name="au31" value="Manter essa ordem porque zero é um número" autocomplete="off">Manter essa ordem porque zero é um número</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Converter texto com sucesso é diferente de cumprir a regra de uma cotação.</p></details></fieldset><label><input class="discussion" type="checkbox" value="au31"> Marcar para discussão</label></article><article class="audit-item" id="au32"><fieldset data-question="au32"><legend>Após um cálculo válido, você edita reais sem calcular novamente. Exibir mostra os reais novos com USD/EUR antigos.</legend><div class="question-options"><label class="option"><input type="radio" name="au32" value="Consultar entradas e resultados do mesmo registro confirmado" autocomplete="off">Consultar entradas e resultados do mesmo registro confirmado</label><label class="option"><input type="radio" name="au32" value="Manter o painel porque os resultados antigos foram válidos" autocomplete="off">Manter o painel porque os resultados antigos foram válidos</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Verifique se todos os valores apresentados pertencem à mesma tentativa.</p></details></fieldset><label><input class="discussion" type="checkbox" value="au32"> Marcar para discussão</label></article></div><p id="count" aria-live="polite">0 itens marcados para discussão</p><button class="js-only" id="register">Registrar discussão</button><p id="registered" aria-live="polite"></p></section><section id="registro" data-stop="registro"><h2>Guarde os arquivos e a tabela de casos <a class="section-source" href="leitura-0003-conversor.html#registro" aria-label="Versão para leitura: Guarde os arquivos e a tabela de casos">↗</a></h2><p>Baixe calculos_moedas.py, conversor.py e registro-a03.md. Entregue os dois arquivos executados e sua matriz no canal combinado com o professor. Registre ao menos uma correção e teste novamente na mesma sessão.</p><p>Exportar registros reúne rascunhos e anotações desta página; não recolhe arquivos externos nem envia a entrega. Confira os downloads antes de fechar.</p><div class="workbench"><h3>Minha matriz do conversor</h3><p>Conserve as respostas iniciais e preencha a matriz com previsões e observações reais, incluindo as sequências após erro e após limpar.</p><p>Concluído quando: O registro explica as unidades, a regra de zero, a preservação do conjunto e um ajuste apoiado em execução.</p><details><summary>Dica para realizar a atividade</summary><p>Anote a ação anterior quando o teste depender de uma conversão já confirmada.</p></details><pre><code id="work-evidencias-a03"># A03 — testes do conversor fictício
+
+Código do estudante:
+Arquivo e interpretador executados:
+
+## Retomada sem consulta
+O que Exibir deve ler quando os campos foram editados sem confirmação?
+Minha resposta inicial:
+Por que um erro não pode alterar parte do último registro válido?
+Minha resposta inicial:
+O que get devolve? Por que int não serve para uma idade escrita como 2.5?
+Minha resposta inicial:
+
+## Antes de programar
+Unidade das cotações:
+Operação escolhida para converter reais; justificativa por unidades:
+Quais entradas e resultados precisam pertencer à mesma tentativa?
+
+## Preveja e depois execute
+As cotações desta tabela são fictícias. Mantenha a ordem quando o caso indicar.
+| Caso | Entrada/ação | Previsão | Observação | Ajuste |
+|---|---|---|---|---|
+| T01 | Abrir e Exibir antes de Calcular | | | |
+| T02 | Calcular reais 100, cotação USD 5 e EUR 4 | | | |
+| T03 | Editar para 200 / 10 / 8; somente Exibir | | | |
+| T04 | Após T02, Calcular com 200 / 10 / abc | | | |
+| T05 | Corrigir para 200 / 10 / 8 e Calcular | | | |
+| T06 | Calcular com 100,50 / 5 / 4; repetir com 100.50 | | | |
+| T07 | Calcular com 0 / 5 / 4 | | | |
+| T08 | Reais negativos; cada cotação 0 e negativa, um teste por campo | | | |
+| T09 | Cada campo vazio, só espaços ou abc, um por vez | | | |
+| T10 | Texto 1.000,50 ou 1,000.50; depois 1000,50 sem milhares | | | |
+| T11 | Após um válido, Limpar campos e depois Exibir | | | |
+| T12 | Calcular com 10 / 3 / 6; observar arredondamento de exibição | | | |
+| T13 | Fechar, reabrir e Exibir | | | |
+
+## Uso da interface
+Percorri campos e botões com Tab/Shift+Tab:
+Usei o teclado para acionar um botão:
+Mensagem que precisei melhorar:
+Colega que testou (código combinado):
+
+## Fechamento sem consulta
+Por que a cotação precisa ser maior que zero, mas o valor em reais pode ser zero?
+Como evitar mostrar uma entrada atual com um resultado anterior?
+Formatar com duas casas muda o número guardado no registro?
+Minha dificuldade, correção e próximo passo:
+
+Entregas: calculos_moedas.py, conversor.py e este registro preenchido.
+</code></pre><div class="atelier" data-source="work-evidencias-a03" data-filename="registro-a03.md" data-execution="Preencha e baixe o registro. Anexe separadamente os arquivos Python executados."></div><p>Preencha e baixe o registro. Anexe separadamente os arquivos Python executados.</p></div><div class="grid"><label>Nome do aluno<input id="student-name" autocomplete="off"></label><label>Turma<input id="student-class" autocomplete="off"></label><label>Data<input id="lesson-date" type="date"></label></div><label for="practice-notes">Registros da prática</label><textarea id="practice-notes" autocomplete="off"></textarea><label for="reflection">Reflexão e próximo passo</label><textarea id="reflection" autocomplete="off"></textarea><div class="actions js-only"><button id="export" data-export>Exportar registros da aula</button><button id="reset">Limpar sessão</button></div><p id="export-status" aria-live="polite"></p></section><section id="fechamento" data-stop="fechamento"><h2>Explique o cálculo e o estado <a class="section-source" href="leitura-0003-conversor.html#fechamento" aria-label="Versão para leitura: Explique o cálculo e o estado">↗</a></h2><p>Sem consulta, explique por que dividir, por que cotação zero é recusada e como a função evita misturar entradas e resultados de tentativas diferentes. Diferencie formatar a saída de alterar o número guardado.</p><p>Na próxima aula, essas regras de conversão e registro conjunto serão aplicadas a um sistema escolar com cinco notas fictícias.</p></section><h2>Fontes e anexos</h2><ul><li><a href="https://docs.python.org/3.14/library/functions.html#float">Python 3.14 — float · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/3.14/tutorial/floatingpoint.html">Python 3.14 — limites de ponto flutuante · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/math.html#math.isfinite">Python 3.14 — math.isfinite · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/tkinter.ttk.html">Python 3.14 — ttk · consulta 22/10/2026</a></li><li><a download href="../anexos/A03/calculos_moedas.py">Código inicial: calculos_moedas.py</a></li><li><a download href="../anexos/A03/conversor.py">Código inicial: conversor.py</a></li><li><a download href="../anexos/A03/registro-a03.md">Registro inicial de testes</a></li></ul><a data-idoc="source" href="leitura-0003-conversor.html">Versão para leitura ou impressão</a></main><footer><p>UC8: Desenvolver e organizar interface gráfica para aplicações desktop · atualizado em <time data-idoc="asof">2026-10-22</time></p><p data-idoc="nonbinding">Registre sua tentativa e confira a correção com o professor.</p><a href="../index.html">Voltar ao índice</a></footer></div></div><noscript><p>Sem JavaScript, leia o material e registre a tentativa no seu editor ou caderno. Exportação e editores interativos exigem JavaScript.</p></noscript><script defer src="../assets/aulas.js"></script><script defer src="../assets/shell.js"></script><script defer src="../assets/course.js"></script><script defer src="../assets/atelier.js"></script></body></html>

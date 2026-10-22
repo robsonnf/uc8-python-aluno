@@ -1,0 +1,8 @@
+{
+  "name": "uc8-desktop-aluno",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/servir.mjs"
+  }
+}

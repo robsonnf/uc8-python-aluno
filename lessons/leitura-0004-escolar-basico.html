@@ -1,0 +1,198 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A04 · A04 — Sistema escolar: cinco notas e um registro coerente</title><script src="../assets/appearance.js"></script><link rel="stylesheet" href="../assets/course.css"><link rel="stylesheet" href="../assets/atelier.css"><link rel="stylesheet" href="../assets/theme.css"><link rel="stylesheet" href="../assets/appearance.css"></head><body class="lesson" data-lesson="A04" data-course="uc8-desktop"><a class="skip" href="#conteudo">Pular para conteúdo</a><div class="curso-app"><aside id="course-sidebar" class="course-sidebar curso-lateral"><p class="eyebrow">UC8 · Python · Tkinter e ttk</p><h2>Grade das aulas</h2><p>20 encontros · 60 h</p><button id="grade-close" class="js-only">Ocultar grade · P</button><ol class="grade-list"><li class="grade-item "><span class="grade-number">A01</span><a href="0001-diagnostico-cadastro.html"><span>Diagnóstico, revisão Python e cadastro simples<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A02</span><a href="0002-evolucao-cadastro.html"><span>Evolução do cadastro<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A03</span><a href="0003-conversor.html"><span>Conversor de moedas<small>Disponível</small></span></a></li><li class="grade-item current"><span class="grade-number">A04</span><span>Sistema escolar básico<small>Nesta aula</small></span><ol class="grade-sections"><li><a href="#partida">Retomada sem consulta</a></li><li><a href="#esteira">Exposição 1: listas e média simples</a></li><li><a href="#pratica-terminal">Prática 1: validar as cinco notas no terminal</a></li><li><a href="#janela">Intervalo e exposição 2: sete campos, um registro</a></li><li><a href="#pratica-formulario">Prática 2: integrar e testar o sistema escolar</a></li><li><a href="#auditoria">Investigue listas, limites e confirmação</a></li><li><a href="#registro">Guarde os arquivos e a matriz de testes</a></li><li><a href="#fechamento">Explique a lista e o registro</a></li></ol></li><li class="grade-item "><span class="grade-number">A05</span><span>Sistema escolar ampliado<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A06</span><span>Sistema escolar modular — classes<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A07</span><span>Sorveteria inicial<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A08</span><span>Sorveteria e pagamentos<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A09</span><span>Catálogo e carrinho<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A10</span><span>Pizzaria inicial — transferência<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A11</span><span>Pizzaria — estados e pagamento<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A12</span><span>Mercado — navegação e JSON<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A13</span><span>Pizzaria — CSV e demonstração de login<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A14</span><span>SQLite — primeira persistência<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A15</span><span>CRUD — produtos e clientes<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A16</span><span>Controllers, componentes e contratos<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A17</span><span>Integração e CustomTkinter<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A18</span><span>Revisão, testes e README<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A19</span><span>Academia e demonstrações individuais<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A20</span><span>Relacionamentos, recuperação e encerramento<small>Planejada</small></span></li></ol></aside><div class="curso-conteudo"><button id="grade-toggle" class="grade-toggle js-only" aria-controls="course-sidebar">Grade · P</button><header class="top"><div class="wordmark">UC8</div><span class="badge" data-idoc="status">Aula 04</span><label class="theme-control" for="theme-select">Tema<select id="theme-select" aria-label="Selecionar tema"><option value="light">Claro</option><option value="dark">Escuro</option></select></label></header><div class="hero"><div class="eyebrow">Python · Tkinter e ttk</div><h1>A04 — Sistema escolar: cinco notas e um registro coerente</h1><p class="thesis">Organizar cinco notas em uma lista, calcular a média simples e confirmar identificação, notas e resultado como um único conjunto.</p><p data-idoc="caveat">Use nome, turma e notas fictícios. Este exercício mostra uma média numérica, sem classificar aprovação ou reprovação. O registro existe apenas enquanto o programa está aberto.</p><div class="meta"><span>Aluno</span></div></div><main id="conteudo"><div class="actions js-only"><button id="presentation" aria-pressed="false">Ampliar para apresentação</button><button data-export>Exportar registros da aula</button><a href="#registro">Identificação e registros</a></div><h2>Objetivos</h2><ul><li>Representar cinco notas em uma lista e percorrê-las com for.</li><li>Converter cada nota e validar o intervalo de 0 a 10, incluindo os limites.</li><li>Calcular a média simples com sum(notas) / len(notas), após conferir cinco notas.</li><li>Confirmar nome, turma, lista de notas e média juntos, preservando o último válido após erro.</li><li>Exibir a média com uma casa e executar sequências por mouse e teclado.</li></ul><h2>Antes de começar</h2><ul><li>A01–A03: funções, get, dicionários, conversão decimal, condições e último registro válido.</li><li>Python com Tkinter/ttk preparado. A referência utiliza math da biblioteca padrão, sem instalação adicional.</li><li>Crie uma pasta A04 e conserve as atividades anteriores. As listas serão introduzidas nesta aula.</li></ul><section id="partida" data-stop="partida"><h2>Retomada sem consulta <a class="section-source" href="leitura-0004-escolar-basico.html#partida" aria-label="Versão para leitura: Retomada sem consulta">↗</a></h2><p>Responda individualmente de memória, antes de abrir o conversor. Conserve a resposta inicial e compare-a com o que executar.</p><ul><li>Na A03, o que permanece confirmado quando o último campo é inválido?</li><li>Como strip, replace e float transformam o texto &quot; 7,5 &quot;?</li><li>O que Entry.get devolve? Uma entrada com letras deve virar zero?</li><li>Por que Exibir não deve consultar os campos recém-editados?</li></ul></section><section id="esteira" data-stop="esteira"><h2>Exposição 1: listas e média simples <a class="section-source" href="leitura-0004-escolar-basico.html#esteira" aria-label="Versão para leitura: Exposição 1: listas e média simples">↗</a></h2><p>Arquitetura: campos em edição (nome, turma e uma lista de cinco textos) → função calcular → registro confirmado (nome, turma, uma nova lista numérica e média). Exibir consulta somente esse registro; limpar esvazia a edição. Use funções próprias e biblioteca padrão, com Tkinter/ttk na interface.</p><p>Uma lista reúne valores em ordem, entre colchetes. Em notas = [6, 7, 8, 9, 10], len(notas) conta cinco elementos e sum(notas) soma 40. A média simples divide a soma pela quantidade; todas as notas têm o mesmo peso nesta atividade.</p><p>for percorre os elementos; append acrescenta um valor à lista. enumerate(lista, start=1) fornece o número apresentado ao usuário junto com cada elemento. O primeiro índice da lista é 0, mas o primeiro rótulo da interface será Nota 1.</p><p>Nome e turma precisam conter texto após strip; aceitam espaços internos e acentos. Converta cada nota como na A03, aceitando vírgula ou ponto decimal, sem milhares nem símbolos. Cada nota precisa estar entre 0 e 10, inclusive; zero é uma nota válida, não sinal de campo vazio.</p><p>Exija exatamente cinco notas: não descarte uma entrada vazia para fazer a média de quatro. Valide a quantidade e cada nota antes de dividir e confirmar. Em caso de erro, indique qual campo corrigir e preserve todo o registro anterior.</p><p>Crie uma lista nova de números em cada tentativa. A lista de textos em edição e a lista numérica confirmada devem ser independentes; editar uma não pode mudar silenciosamente a outra. Somente depois de validar tudo, registre identificação, notas e média juntos.</p><ol class="pipeline"><li><strong>Representar e percorrer</strong><p>Escreva cinco textos em uma lista e identifique a ordem. Percorra-os com for, observando o valor em cada passagem.</p></li><li><strong>Converter e validar</strong><p>Confira a quantidade, normalize cada texto e aplique os limites inclusivos antes de acrescentar o número à lista local.</p></li><li><strong>Calcular</strong><p>Use sum e len na lista de números validada. Confira a média com um caso calculado no papel.</p></li><li><strong>Confirmar o conjunto</strong><p>Atualize o registro somente após concluir todas as notas. A consulta deve usar os dados desse mesmo conjunto.</p></li></ol><details class="public-example" open><summary>Exemplo: somar e contar medidas</summary><pre><code>medidas = [2, 4, 6]
+print(len(medidas))
+print(sum(medidas))
+print(sum(medidas) / len(medidas))
+</code></pre><p>Preveja as três saídas. O exemplo tem três medidas; o sistema escolar exigirá exatamente cinco notas.</p></details><details class="public-example" open><summary>Exemplo: percorrer e converter textos</summary><pre><code>textos = [&quot; 2,5 &quot;, &quot;3.5&quot;]
+medidas = []
+for posicao, texto in enumerate(textos, start=1):
+    numero = float(texto.strip().replace(&quot;,&quot;, &quot;.&quot;))
+    medidas.append(numero)
+    print(posicao, numero)
+print(medidas)
+</code></pre><p>Siga uma passagem por vez. append modifica a lista existente; não escreva medidas = medidas.append(numero). Este exemplo ainda não trata entradas inválidas.</p></details><details class="public-example" open><summary>Exemplo: duas listas independentes</summary><pre><code>edicao = [&quot;2&quot;, &quot;4&quot;]
+confirmada = [2.0, 4.0]
+edicao[0] = &quot;9&quot;
+print(edicao[0])
+print(confirmada[0])
+</code></pre><p>As listas foram criadas separadamente. A atribuição confirmada = edicao apontaria para a mesma lista e permitiria mudanças compartilhadas.</p></details><details class="public-example" open><summary>Exemplo: média guardada e texto exibido</summary><pre><code>medidas = [2, 2, 2, 2, 2.4]
+media = sum(medidas) / len(medidas)
+print(f&quot;{media:.1f}&quot;)
+print(media)
+</code></pre><p>Compare a média numérica com a apresentação de uma casa. A formatação não altera o número guardado.</p></details></section><section id="pratica-terminal" data-stop="pratica-terminal"><h2>Prática 1: validar as cinco notas no terminal <a class="section-source" href="leitura-0004-escolar-basico.html#pratica-terminal" aria-label="Versão para leitura: Prática 1: validar as cinco notas no terminal">↗</a></h2><p>Complete medias.py antes de ligar a lógica à janela. campos tem nome, turma e notas como lista de cinco textos; registro começa vazio. calcular devolve uma mensagem e confirma somente um conjunto inteiramente válido.</p><p>Use as chaves nome, turma, notas e media no registro. exibir deve informar ausência antes do primeiro cálculo; depois, mostrar a identificação e todas as notas que deram origem à média. limpar altera apenas os textos de edição.</p><p>Comece com Lia / T1 / [6, 7, 8, 9, 10]. Depois simule erro na quinta nota e confira se a identificação, as cinco notas e a média anteriores permaneceram intactas. No terminal, teste também uma lista com quatro notas e outra com seis.</p><div class="workbench"><h3>Lista de notas e média no terminal</h3><p>Implemente calcular, exibir e limpar usando uma lista numérica nova em cada tentativa. Execute os casos conhecidos e uma falha na última nota depois de um válido.</p><p>Concluído quando: Exige cinco notas válidas de 0 a 10; calcula por sum/len; erro não troca parte do registro; consulta usa o último conjunto confirmado.</p><details><summary>Dica para realizar a atividade</summary><p>Não acumule notas no registro durante o laço. Separe a lista local da tentativa e a confirmação que o usuário já pode consultar.</p></details><pre><code id="work-medias-lista">&quot;&quot;&quot;A04 — complete as funções e teste as cinco notas no terminal.&quot;&quot;&quot;
+def calcular(campos, registro):
+    # TODO: normalizar nome/turma e recusar texto vazio.
+    # TODO: conferir a presença de exatamente cinco notas.
+    # TODO: converter cada texto, validar de 0 a 10 e criar uma nova lista.
+    # TODO: calcular a média com sum e len.
+    # TODO: confirmar nome, turma, notas e média somente após validar tudo.
+    return &quot;Complete a função calcular.&quot;
+
+
+def exibir(registro):
+    # TODO: tratar ausência; consultar apenas o último registro confirmado.
+    # TODO: mostrar identificação e cinco notas usadas, com média em uma casa.
+    return &quot;Complete a função exibir.&quot;
+
+
+def limpar(campos):
+    # TODO: esvaziar nome, turma e os cinco textos de notas.
+    # O registro confirmado não é recebido por esta função.
+    pass
+
+
+if __name__ == &quot;__main__&quot;:
+    campos = {&quot;nome&quot;: &quot;Lia&quot;, &quot;turma&quot;: &quot;T1&quot;, &quot;notas&quot;: [&quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;9&quot;, &quot;10&quot;]}
+    registro = {}
+    print(exibir(registro))
+    print(calcular(campos, registro))
+    print(exibir(registro))
+    # Acrescente as sequências da matriz, prevendo antes de executar.
+</code></pre><div class="atelier" data-source="work-medias-lista" data-filename="medias.py" data-execution="Baixe para uma pasta A04 e execute no terminal do VS Code: python medias.py. O editor da página não executa Python."></div><p>Baixe para uma pasta A04 e execute no terminal do VS Code: python medias.py. O editor da página não executa Python.</p></div></section><section id="janela" data-stop="janela"><h2>Intervalo e exposição 2: sete campos, um registro <a class="section-source" href="leitura-0004-escolar-basico.html#janela" aria-label="Versão para leitura: Intervalo e exposição 2: sete campos, um registro">↗</a></h2><p>Após o intervalo, acompanhe a interface com nome, turma e cinco entradas numeradas. O inicial já contém a estrutura de grid e uma lista de widgets chamada entradas_notas. Cada elemento dessa lista é uma Entry, e seu get devolve um texto.</p><p>O laço range(1, 6) do inicial gera os números 1, 2, 3, 4 e 5; o limite 6 não entra. Ele cria os cinco rótulos e as cinco Entry sem repetir o mesmo bloco. entradas_notas.append(entrada) conserva a referência de cada widget para leitura e limpeza posteriores.</p><p>Calcular média lê nome e turma e reúne os cinco get em uma lista nova de textos; então chama a lógica testada. A mensagem orienta sobre a tentativa atual, enquanto o painel identifica o último registro confirmado.</p><p>Exibir não lê as Entry. Se o nome ou a nota mudar sem novo cálculo, a consulta continua mostrando o conjunto anterior. Uma tentativa inválida conserva esse painel; depois da correção, um novo válido substitui identificação, notas e média.</p><p>Limpar campos esvazia as sete entradas e devolve foco ao nome, preservando registro e painel. Calcular não limpa automaticamente. Fechar e reabrir perde a memória da sessão.</p><p>Mostre a média com :.1f e ponto decimal na saída, preservando o número no registro. Mostre também as cinco notas usadas, sem arredondá-las antes do cálculo. Use nomes, turma e notas fictícios; a média deste programa não define a avaliação da UC8.</p><details class="public-example" open><summary>Exemplo: guardar widgets em uma lista e percorrê-los</summary><pre><code>import tkinter as tk
+from tkinter import ttk
+
+janela = tk.Tk()
+janela.title(&quot;Duas medidas em edição&quot;)
+entradas = []
+for linha, rotulo in enumerate([&quot;Largura:&quot;, &quot;Altura:&quot;]):
+    ttk.Label(janela, text=rotulo).grid(row=linha, column=0, padx=12, pady=6)
+    entrada = ttk.Entry(janela)
+    entrada.grid(row=linha, column=1, padx=12, pady=6)
+    entradas.append(entrada)
+
+def esvaziar():
+    for entrada in entradas:
+        entrada.delete(0, tk.END)
+    entradas[0].focus_set()
+
+ttk.Button(janela, text=&quot;Esvaziar&quot;, command=esvaziar).grid(row=2, column=0, columnspan=2, pady=10)
+janela.mainloop()
+</code></pre><p>A lista entradas contém widgets, não os números digitados. Percorrer a lista permite agir sobre cada Entry; get é necessário para obter os textos.</p></details></section><section id="pratica-formulario" data-stop="pratica-formulario"><h2>Prática 2: integrar e testar o sistema escolar <a class="section-source" href="leitura-0004-escolar-basico.html#pratica-formulario" aria-label="Versão para leitura: Prática 2: integrar e testar o sistema escolar">↗</a></h2><p>Complete sistema_escolar.py com a lógica testada e os callbacks Calcular média, Exibir e Limpar campos. O arquivo é independente para esta etapa. Faça um colega operar os casos enquanto você registra previsões e observações; depois troquem os papéis.</p><p>Execute a matriz T01 a T16. Faça testes separados para cada nota inválida; uma quinta nota errada é útil para descobrir confirmações antecipadas. Corrija e tente novamente na mesma janela, sem reiniciar para esconder o problema.</p><p>Percorra nome, turma, as cinco notas e os botões com Tab/Shift+Tab; acione um botão pelo teclado e confira mensagens, rótulos e redimensionamento. Ao limpar, confirme tanto as sete entradas vazias quanto a consulta anterior preservada.</p><div class="workbench"><h3>Sistema escolar com consulta ao último válido</h3><p>Conecte as funções aos três callbacks. Mostre identificação, cinco notas e média da mesma confirmação; mantenha a mensagem da tentativa atual separada do painel.</p><p>Concluído quando: Sete campos rotulados, cinco notas validadas, média com uma casa; edição, erro e limpar preservam o último conjunto; reabrir começa sem registro.</p><details><summary>Dica para realizar a atividade</summary><p>Rastreie a origem de cada valor do painel. Verifique se a lista confirmada foi construída a partir de números novos, sem reutilizar a lista de edição.</p></details><pre><code id="work-escolar-basico">&quot;&quot;&quot;A04 — complete a lógica e os callbacks do sistema escolar.&quot;&quot;&quot;
+import tkinter as tk
+from tkinter import ttk
+
+
+def calcular(campos, registro):
+    # TODO: normalizar nome/turma e recusar texto vazio.
+    # TODO: conferir a presença de exatamente cinco notas.
+    # TODO: converter cada texto, validar de 0 a 10 e criar uma nova lista.
+    # TODO: calcular a média com sum e len.
+    # TODO: confirmar nome, turma, notas e média somente após validar tudo.
+    return &quot;Complete a função calcular.&quot;
+
+
+def exibir(registro):
+    # TODO: tratar ausência; consultar apenas o último registro confirmado.
+    # TODO: mostrar identificação e cinco notas usadas, com média em uma casa.
+    return &quot;Complete a função exibir.&quot;
+
+
+def limpar(campos):
+    # TODO: esvaziar nome, turma e os cinco textos de notas.
+    # O registro confirmado não é recebido por esta função.
+    pass
+
+
+def criar_janela():
+    janela = tk.Tk()
+    janela.title(&quot;Sistema escolar fictício — A04&quot;)
+    janela.columnconfigure(1, weight=1)
+    campos = {&quot;nome&quot;: &quot;&quot;, &quot;turma&quot;: &quot;&quot;, &quot;notas&quot;: [&quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;]}
+    registro = {}
+
+    ttk.Label(janela, text=&quot;Dados fictícios. Cinco notas de 0 a 10; média simples.&quot;, wraplength=440).grid(row=0, column=0, columnspan=2, padx=12, pady=8, sticky=&quot;w&quot;)
+    ttk.Label(janela, text=&quot;Nome fictício:&quot;).grid(row=1, column=0, padx=12, pady=4, sticky=&quot;w&quot;)
+    entrada_nome = ttk.Entry(janela)
+    entrada_nome.grid(row=1, column=1, padx=12, pady=4, sticky=&quot;ew&quot;)
+    ttk.Label(janela, text=&quot;Turma fictícia:&quot;).grid(row=2, column=0, padx=12, pady=4, sticky=&quot;w&quot;)
+    entrada_turma = ttk.Entry(janela)
+    entrada_turma.grid(row=2, column=1, padx=12, pady=4, sticky=&quot;ew&quot;)
+    entradas_notas = []
+    for numero in range(1, 6):
+        ttk.Label(janela, text=f&quot;Nota {numero} (0 a 10):&quot;).grid(row=numero+2, column=0, padx=12, pady=4, sticky=&quot;w&quot;)
+        entrada = ttk.Entry(janela)
+        entrada.grid(row=numero+2, column=1, padx=12, pady=4, sticky=&quot;ew&quot;)
+        entradas_notas.append(entrada)
+
+    def ao_calcular():
+        # TODO: ler identificação e reunir os cinco textos de Entry numa lista.
+        # TODO: chamar calcular e atualizar mensagem/consulta ao último válido.
+        aviso.configure(text=&quot;Complete o callback Calcular média.&quot;)
+
+    def ao_exibir():
+        # TODO: consultar somente registro; não ler os Entry em edição.
+        aviso.configure(text=&quot;Complete o callback Exibir.&quot;)
+
+    def ao_limpar():
+        # TODO: limpar campos e os sete Entry; devolver foco ao nome.
+        # TODO: preservar registro e painel do último válido.
+        aviso.configure(text=&quot;Complete o callback Limpar campos.&quot;)
+
+    ttk.Button(janela, text=&quot;Calcular média&quot;, command=ao_calcular).grid(row=8, column=0, padx=12, pady=6)
+    ttk.Button(janela, text=&quot;Exibir&quot;, command=ao_exibir).grid(row=8, column=1, padx=12, pady=6)
+    ttk.Button(janela, text=&quot;Limpar campos&quot;, command=ao_limpar).grid(row=9, column=0, columnspan=2, pady=4)
+    aviso = ttk.Label(janela, text=&quot;Preencha nome, turma e as cinco notas fictícias.&quot;, wraplength=440)
+    aviso.grid(row=10, column=0, columnspan=2, padx=12, pady=6, sticky=&quot;w&quot;)
+    resultado = ttk.Label(janela, text=&quot;Nenhum registro escolar confirmado nesta sessão.&quot;, wraplength=440)
+    resultado.grid(row=11, column=0, columnspan=2, padx=12, pady=6, sticky=&quot;w&quot;)
+    entrada_nome.focus_set()
+    return janela
+
+
+if __name__ == &quot;__main__&quot;:
+    criar_janela().mainloop()
+</code></pre><div class="atelier" data-source="work-escolar-basico" data-filename="sistema_escolar.py" data-execution="Baixe para uma pasta A04 e execute no terminal do VS Code: python sistema_escolar.py. O editor da página não executa Python."></div><p>Baixe para uma pasta A04 e execute no terminal do VS Code: python sistema_escolar.py. O editor da página não executa Python.</p></div></section><section id="auditoria" data-stop="auditoria"><h2>Investigue listas, limites e confirmação <a class="section-source" href="leitura-0004-escolar-basico.html#auditoria" aria-label="Versão para leitura: Investigue listas, limites e confirmação">↗</a></h2><p>Escolha e justifique com um caso executado. A página registra escolhas nesta sessão, sem executar Python; as alternativas podem mudar de ordem.</p><fieldset data-question="q41"><legend>Na lista [6, 7, 8, 9, 10], o que sum(notas) / len(notas) calcula?</legend><div class="question-options"><label class="option"><input type="radio" name="q41" value="A média simples das cinco notas" autocomplete="off">A média simples das cinco notas</label><label class="option"><input type="radio" name="q41" value="A quantidade de notas" autocomplete="off">A quantidade de notas</label><label class="option"><input type="radio" name="q41" value="Somente a maior nota" autocomplete="off">Somente a maior nota</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Identifique separadamente o total e a quantidade antes de dividir.</p></details></fieldset><div id="audit-list"><article class="audit-item" id="au41"><fieldset data-question="au41"><legend>Uma das cinco entradas está vazia. O programa a ignora e calcula a média das quatro restantes.</legend><div class="question-options"><label class="option"><input type="radio" name="au41" value="Recusar a tentativa até as cinco notas serem válidas" autocomplete="off">Recusar a tentativa até as cinco notas serem válidas</label><label class="option"><input type="radio" name="au41" value="Aceitar porque len encontrou quatro números" autocomplete="off">Aceitar porque len encontrou quatro números</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Compare a quantidade encontrada com o requisito do sistema.</p></details></fieldset><label><input class="discussion" type="checkbox" value="au41"> Marcar para discussão</label></article><article class="audit-item" id="au42"><fieldset data-question="au42"><legend>Após um válido, a quinta nota de outra tentativa falha. Mesmo assim, o painel passa a mostrar o nome novo e a média anterior.</legend><div class="question-options"><label class="option"><input type="radio" name="au42" value="Confirmar identificação, lista e média somente após validar tudo" autocomplete="off">Confirmar identificação, lista e média somente após validar tudo</label><label class="option"><input type="radio" name="au42" value="Aceitar a nova identificação e conservar a média antiga" autocomplete="off">Aceitar a nova identificação e conservar a média antiga</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Verifique se nome, turma, notas e média pertencem à mesma tentativa confirmada.</p></details></fieldset><label><input class="discussion" type="checkbox" value="au42"> Marcar para discussão</label></article></div><p id="count" aria-live="polite">0 itens marcados para discussão</p><button class="js-only" id="register">Registrar discussão</button><p id="registered" aria-live="polite"></p></section><section id="registro" data-stop="registro"><h2>Guarde os arquivos e a matriz de testes <a class="section-source" href="leitura-0004-escolar-basico.html#registro" aria-label="Versão para leitura: Guarde os arquivos e a matriz de testes">↗</a></h2><p>Baixe medias.py, sistema_escolar.py e registro-a04.md. Entregue os dois arquivos executados e sua matriz no canal combinado com o professor. A implementação e a explicação são individuais, com colaboração permitida nos testes.</p><p>Exportar registros inclui rascunhos e anotações desta página; não recolhe arquivos externos nem envia a entrega. Confira os downloads antes de fechar.</p><div class="workbench"><h3>Minha matriz do sistema escolar</h3><p>Conserve as respostas iniciais e registre previsão, observação e ajuste dos testes, incluindo os que dependem de um válido anterior.</p><p>Concluído quando: A matriz mostra limites inclusivos, cinco notas obrigatórias, integridade do conjunto, uma correção e nova tentativa.</p><details><summary>Dica para realizar a atividade</summary><p>Anote o conjunto confirmado antes de provocar a falha; comparar só a média pode esconder uma troca indevida de nome ou notas.</p></details><pre><code id="work-evidencias-a04"># A04 — testes do sistema escolar fictício
+
+Código do estudante:
+Arquivo e interpretador executados:
+
+## Retomada sem consulta
+O que deve acontecer ao último registro quando a última entrada é inválida?
+Minha resposta inicial:
+O que get devolve? Como vírgula decimal é normalizada na A03?
+Minha resposta inicial:
+Digitar um novo nome confirma uma nova consulta? Por quê?
+Minha resposta inicial:
+
+## Antes de programar
+Quais valores pertencem ao mesmo registro confirmado?
+Quantidade de notas exigida e intervalo permitido:
+Minha previsão para a média de 6, 7, 8, 9 e 10:
+Por que validar a quantidade antes de dividir?
+
+## Preveja e depois execute
+Use identificação e notas fictícias. Nos casos com sequência, refaça o válido indicado.
+| Caso | Entrada/ação | Previsão | Observação | Ajuste |
+|---|---|---|---|---|
+| T01 | Abrir e Exibir antes de Calcular média | | | |
+| T02 | Lia / T1 / notas 6, 7, 8, 9, 10 | | | |
+| T03 | Cinco notas zero, com identificação preenchida | | | |
+| T04 | Cinco notas 10, com identificação preenchida | | | |
+| T05 | Notas 7,5 / 8 / 6,5 / 9 / 7; repetir usando ponto decimal | | | |
+| T06 | Após registrar T02, editar para Rui / T2 / cinco notas 5; somente Exibir | | | |
+| T07 | Após T02, tentar Rui / T2 / 5, 5, 5, 5, abc | | | |
+| T08 | Corrigir a última nota de T07 para 5 e Calcular média | | | |
+| T09 | Nome vazio ou só espaços; repetir com turma vazia ou só espaços | | | |
+| T10 | Cada nota vazia, só espaços ou letras; uma alteração por vez | | | |
+| T11 | Cada nota -0,1 ou 10,1; uma alteração por vez | | | |
+| T12 | Nome/turma/notas com espaços nas pontas; nome composto e acentos | | | |
+| T13 | Após um válido, Limpar campos e depois Exibir | | | |
+| T14 | Notas 6 / 6 / 6 / 6 / 6,4; comparar média guardada e exibida | | | |
+| T15 | No terminal, lista com quatro notas e depois seis; uma tentativa por vez | | | |
+| T16 | Fechar, reabrir e Exibir | | | |
+
+## Uso da interface
+Percorri nome, turma, cinco notas e botões com Tab/Shift+Tab:
+Acionei um botão usando o teclado:
+Conferi rótulos e redimensionamento:
+Mensagem que precisei melhorar:
+Colega que testou (código combinado):
+
+## Fechamento sem consulta
+Qual a diferença entre sum(notas) e len(notas)?
+Por que uma lista nova de números ajuda a preservar a confirmação?
+Qual dado o painel deve mostrar se eu editar a quinta nota sem calcular?
+Formatar com uma casa muda a média guardada?
+Minha dificuldade, ajuste e próxima tentativa:
+
+Entregas: medias.py, sistema_escolar.py e este registro preenchido.
+</code></pre><div class="atelier" data-source="work-evidencias-a04" data-filename="registro-a04.md" data-execution="Preencha e baixe o registro; anexe separadamente os dois arquivos Python executados."></div><p>Preencha e baixe o registro; anexe separadamente os dois arquivos Python executados.</p></div><div class="grid"><label>Nome do aluno<input id="student-name" autocomplete="off"></label><label>Turma<input id="student-class" autocomplete="off"></label><label>Data<input id="lesson-date" type="date"></label></div><label for="practice-notes">Registros da prática</label><textarea id="practice-notes" autocomplete="off"></textarea><label for="reflection">Reflexão e próximo passo</label><textarea id="reflection" autocomplete="off"></textarea><div class="actions js-only"><button id="export" data-export>Exportar registros da aula</button><button id="reset">Limpar sessão</button></div><p id="export-status" aria-live="polite"></p></section><section id="fechamento" data-stop="fechamento"><h2>Explique a lista e o registro <a class="section-source" href="leitura-0004-escolar-basico.html#fechamento" aria-label="Versão para leitura: Explique a lista e o registro">↗</a></h2><p>Sem consulta, explique o papel de sum e len, por que não ignorar um campo vazio e como preservar a confirmação quando a última nota falha. Diferencie o número guardado da média apresentada com uma casa.</p><p>Na próxima aula, o sistema escolar será reorganizado em grupos de campos e ganhará uma janela de consulta.</p></section><h2>Fontes e anexos</h2><ul><li><a href="https://docs.python.org/3.14/tutorial/datastructures.html">Python 3.14 — listas e técnicas de repetição · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/functions.html#sum">Python 3.14 — sum · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/functions.html#len">Python 3.14 — len · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/math.html#math.isfinite">Python 3.14 — math.isfinite · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/tkinter.ttk.html">Python 3.14 — ttk · consulta 22/10/2026</a></li><li><a download href="../anexos/A04/medias.py">Código inicial: medias.py</a></li><li><a download href="../anexos/A04/sistema_escolar.py">Código inicial: sistema_escolar.py</a></li><li><a download href="../anexos/A04/registro-a04.md">Registro inicial de testes</a></li></ul><a data-idoc="source" href="leitura-0004-escolar-basico.html">Versão para leitura ou impressão</a></main><footer><p>UC8: Desenvolver e organizar interface gráfica para aplicações desktop · atualizado em <time data-idoc="asof">2026-10-22</time></p><p data-idoc="nonbinding">Registre sua tentativa e confira a correção com o professor.</p><a href="../index.html">Voltar ao índice</a></footer></div></div><noscript><p>Sem JavaScript, leia o material e registre a tentativa no seu editor ou caderno. Exportação e editores interativos exigem JavaScript.</p></noscript></body></html>

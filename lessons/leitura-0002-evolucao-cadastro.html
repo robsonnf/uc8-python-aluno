@@ -1,0 +1,163 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A02 · A02 — Campos em edição e cadastro confirmado</title><script src="../assets/appearance.js"></script><link rel="stylesheet" href="../assets/course.css"><link rel="stylesheet" href="../assets/atelier.css"><link rel="stylesheet" href="../assets/theme.css"><link rel="stylesheet" href="../assets/appearance.css"></head><body class="lesson" data-lesson="A02" data-course="uc8-desktop"><a class="skip" href="#conteudo">Pular para conteúdo</a><div class="curso-app"><aside id="course-sidebar" class="course-sidebar curso-lateral"><p class="eyebrow">UC8 · Python · Tkinter e ttk</p><h2>Grade das aulas</h2><p>20 encontros · 60 h</p><button id="grade-close" class="js-only">Ocultar grade · P</button><ol class="grade-list"><li class="grade-item "><span class="grade-number">A01</span><a href="0001-diagnostico-cadastro.html"><span>Diagnóstico, revisão Python e cadastro simples<small>Disponível</small></span></a></li><li class="grade-item current"><span class="grade-number">A02</span><span>Evolução do cadastro<small>Nesta aula</small></span><ol class="grade-sections"><li><a href="#partida">retomada sem consulta</a></li><li><a href="#esteira">exposição 1: funções e dicionários</a></li><li><a href="#pratica-terminal">prática 1: simular o estado no terminal</a></li><li><a href="#janela">intervalo e exposição 2: três comandos na janela</a></li><li><a href="#pratica-formulario">prática 2: integrar e testar as transições</a></li><li><a href="#auditoria">Investigue as mudanças de estado</a></li><li><a href="#registro">Guarde os arquivos e a matriz de transições</a></li><li><a href="#fechamento">explique o que pode mudar</a></li></ol></li><li class="grade-item "><span class="grade-number">A03</span><a href="0003-conversor.html"><span>Conversor de moedas<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A04</span><a href="0004-escolar-basico.html"><span>Sistema escolar básico<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A05</span><span>Sistema escolar ampliado<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A06</span><span>Sistema escolar modular — classes<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A07</span><span>Sorveteria inicial<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A08</span><span>Sorveteria e pagamentos<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A09</span><span>Catálogo e carrinho<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A10</span><span>Pizzaria inicial — transferência<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A11</span><span>Pizzaria — estados e pagamento<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A12</span><span>Mercado — navegação e JSON<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A13</span><span>Pizzaria — CSV e demonstração de login<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A14</span><span>SQLite — primeira persistência<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A15</span><span>CRUD — produtos e clientes<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A16</span><span>Controllers, componentes e contratos<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A17</span><span>Integração e CustomTkinter<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A18</span><span>Revisão, testes e README<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A19</span><span>Academia e demonstrações individuais<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A20</span><span>Relacionamentos, recuperação e encerramento<small>Planejada</small></span></li></ol></aside><div class="curso-conteudo"><button id="grade-toggle" class="grade-toggle js-only" aria-controls="course-sidebar">Grade · P</button><header class="top"><div class="wordmark">UC8</div><span class="badge" data-idoc="status">Aula 02</span><label class="theme-control" for="theme-select">Tema<select id="theme-select" aria-label="Selecionar tema"><option value="light">Claro</option><option value="dark">Escuro</option></select></label></header><div class="hero"><div class="eyebrow">Python · Tkinter e ttk</div><h1>A02 — Campos em edição e cadastro confirmado</h1><p class="thesis">Evoluir o cadastro com nome, sobrenome e idade, organizando as funções registrar, exibir e limpar sem perder o último registro válido.</p><p data-idoc="caveat">O cadastro confirmado permanece apenas enquanto o programa está aberto. Limpar campos não apaga esse registro; fechar o programa encerra a memória da sessão.</p><div class="meta"><span>Aluno</span></div></div><main id="conteudo"><div class="actions js-only"><button id="presentation" aria-pressed="false">Ampliar para apresentação</button><button data-export>Exportar registros da aula</button><a href="#registro">Identificação e registros</a></div><h2>Objetivos</h2><ul><li>Representar um cadastro fictício em um dicionário com nome, sobrenome e idade.</li><li>Distinguir os textos editáveis do último registro confirmado.</li><li>Implementar registrar, exibir e limpar com responsabilidades diferentes.</li><li>Preservar o registro anterior diante de entrada inválida e substituí-lo com um novo válido.</li><li>Executar e explicar transições de estado, incluindo fechar e reabrir o programa.</li></ul><h2>Antes de começar</h2><ul><li>A01: funções, get, int, strip, if e ValueError.</li><li>Python com Tkinter e VS Code já preparados; nenhuma dependência adicional.</li><li>Conservar a A01 em sua pasta e criar uma pasta A02 para esta evolução.</li></ul><section id="partida" data-stop="partida"><h2>retomada sem consulta <a class="section-source" href="leitura-0002-evolucao-cadastro.html#partida" aria-label="Versão para leitura: retomada sem consulta">↗</a></h2><p>Responda individualmente, de memória, antes de abrir exemplos. Conserve a resposta inicial e compare-a com o que executar durante a aula.</p><ul><li>Qual é o tipo de valor obtido com Entry.get? O que int tenta fazer com ele?</li><li>Por que command recebe o nome da função sem a chamada com parênteses?</li><li>Qual entrada de nome ajuda a conferir o uso de strip?</li><li>Registre uma dúvida da A01 que ainda precisa de teste.</li></ul></section><section id="esteira" data-stop="esteira"><h2>exposição 1: funções e dicionários <a class="section-source" href="leitura-0002-evolucao-cadastro.html#esteira" aria-label="Versão para leitura: exposição 1: funções e dicionários">↗</a></h2><p>Arquitetura: campos em edição → função registrar → registro confirmado. A função exibir consulta o registro; a função limpar altera somente os campos. Os callbacks conectam esses comandos aos widgets. Dependências: biblioteca padrão, Tkinter e ttk; funções próprias, sem classes ou banco.</p><p>Um dicionário associa chaves a valores. As chaves nome e sobrenome guardam textos; idade no registro confirmado guarda um inteiro. Já a idade digitada continua sendo texto até a conversão.</p><p>Passar um dicionário para uma função permite que ela consulte ou altere seu conteúdo. Atribuir o mesmo dicionário a outro nome não cria uma cópia independente. Nesta atividade, campos e registro começam como dois dicionários distintos.</p><p>Conserve a regra da A01 e acrescente sobrenome com texto após strip. Nome e sobrenome compostos e acentuados são permitidos. Não use dados pessoais reais.</p><ol class="pipeline"><li><strong>Representar</strong><p>Identifique quais valores estão sendo digitados e quais foram confirmados. Comece com registro vazio e três campos editáveis vazios.</p></li><li><strong>Separar</strong><p>Defina o que cada função recebe, consulta ou modifica. Escreva a responsabilidade de registrar, exibir e limpar antes da implementação.</p></li><li><strong>Validar</strong><p>Verifique os textos, converta a idade e confira se é maior que zero. Uma entrada recusada não pode substituir parte do registro anterior.</p></li><li><strong>Testar a sequência</strong><p>Execute ações em ordem: abrir, registrar, editar sem registrar, exibir, limpar, tentar inválido, registrar outro válido e reabrir.</p></li></ol><details class="public-example" open><summary>Exemplo: valor digitado e preferência confirmada</summary><pre><code>preferencia = {&quot;tema&quot;: &quot;claro&quot;}
+tema_digitado = &quot;escuro&quot;
+print(preferencia[&quot;tema&quot;])
+print(tema_digitado)
+</code></pre><p>Alterar um texto separado não modifica o dicionário. Preveja o que cada print consulta antes de executar.</p></details><details class="public-example" open><summary>Exemplo: uma função altera um dicionário recebido</summary><pre><code>def escolher_tema(preferencia, tema):
+    preferencia[&quot;tema&quot;] = tema
+
+opcoes = {&quot;tema&quot;: &quot;claro&quot;}
+escolher_tema(opcoes, &quot;escuro&quot;)
+print(opcoes[&quot;tema&quot;])
+</code></pre><p>Identifique o argumento e a chave modificada. Esse exemplo não valida nem implementa o cadastro.</p></details><details class="public-example" open><summary>Exemplo: update em dados fictícios</summary><pre><code>placar = {}
+placar.update({&quot;equipe&quot;: &quot;Azul&quot;, &quot;pontos&quot;: 3})
+placar.update({&quot;equipe&quot;: &quot;Verde&quot;, &quot;pontos&quot;: 5})
+print(placar)
+</code></pre><p>As mesmas chaves recebem valores novos. No cadastro, decida quando essa atualização pode acontecer de acordo com as validações.</p></details></section><section id="pratica-terminal" data-stop="pratica-terminal"><h2>prática 1: simular o estado no terminal <a class="section-source" href="leitura-0002-evolucao-cadastro.html#pratica-terminal" aria-label="Versão para leitura: prática 1: simular o estado no terminal">↗</a></h2><p>Trabalhe individualmente com feedback. Complete as funções no arquivo inicial antes de conectá-las à interface. O dicionário campos possui nome, sobrenome e idade em texto; registro começa vazio e representa somente o último válido.</p><p>Registrar aceita nome e sobrenome com texto e idade inteira maior que zero. Normalize as pontas com strip; não remova espaços internos. Em caso inválido, mostre orientação e conserve todos os valores confirmados.</p><div class="workbench"><h3>Três funções, dois estados</h3><p>Implemente registrar(campos, registro), exibir(registro) e limpar(campos). Acrescente cenários ao bloco principal e compare a saída antes e depois de cada comando.</p><p>Concluído quando: Exibir sem registro informa ausência; um válido é consultado; limpar esvazia campos; inválido preserva o anterior; novo válido o substitui.</p><details><summary>Dica para realizar a atividade</summary><p>Antes de alterar um dicionário, diga se ele representa a edição ou a confirmação. Teste uma falha depois de já existir um cadastro válido.</p></details><pre><code id="work-estado-cadastro">&quot;&quot;&quot;A02 — prática 1: campos em edição e registro confirmado.&quot;&quot;&quot;
+
+def registrar(campos, registro):
+    # TODO: ler e normalizar nome e sobrenome; recusar texto vazio.
+    # TODO: converter idade e validar inteiro maior que zero.
+    # TODO: atualizar registro somente depois de todas as validações.
+    return &quot;Complete a função registrar.&quot;
+
+
+def exibir(registro):
+    # TODO: tratar a ausência de registro e consultar o último válido.
+    return &quot;Complete a função exibir.&quot;
+
+
+def limpar(campos):
+    # TODO: esvaziar os três textos editáveis.
+    # O registro confirmado é separado e não é recebido por esta função.
+    pass
+
+
+if __name__ == &quot;__main__&quot;:
+    campos = {&quot;nome&quot;: &quot;Lia&quot;, &quot;sobrenome&quot;: &quot;Costa&quot;, &quot;idade&quot;: &quot;18&quot;}
+    registro = {}
+    print(registrar(campos, registro))
+    print(exibir(registro))
+    limpar(campos)
+    print(&quot;Campos após limpar:&quot;, campos)
+    print(exibir(registro))
+    # Acrescente os outros cenários da matriz, um de cada vez.
+</code></pre><div class="atelier" data-source="work-estado-cadastro" data-filename="estado_cadastro.py" data-execution="Baixe para uma pasta A02 e execute no terminal do VS Code: python estado_cadastro.py. O editor da página não executa Python."></div><p>Baixe para uma pasta A02 e execute no terminal do VS Code: python estado_cadastro.py. O editor da página não executa Python.</p></div></section><section id="janela" data-stop="janela"><h2>intervalo e exposição 2: três comandos na janela <a class="section-source" href="leitura-0002-evolucao-cadastro.html#janela" aria-label="Versão para leitura: intervalo e exposição 2: três comandos na janela">↗</a></h2><p>Após o intervalo, acompanhe a ligação dos comandos à janela. Retome get para ler campos e delete(0, tk.END) para esvaziar uma Entry.</p><p>Registrar lê os três textos e solicita a validação. O painel mostra o último registro confirmado; a mensagem informa o resultado da tentativa. Uma tentativa inválida não pode mudar o registro nem a consulta ao último válido.</p><p>Exibir consulta apenas o registro confirmado: digitar novos valores não os confirma. Limpar campos esvazia as três entradas e devolve foco ao nome, preservando o registro e a consulta. Registrar não limpa os campos automaticamente nesta atividade.</p><p>Mantenha os botões Registrar, Exibir e Limpar campos com rótulos claros. Use mensagens em texto e teste Tab/Shift+Tab; indique também por que a memória acaba ao fechar.</p><details class="public-example" open><summary>Exemplo: esvaziar somente uma entrada</summary><pre><code>import tkinter as tk
+from tkinter import ttk
+
+janela = tk.Tk()
+janela.title(&quot;Limpar uma entrada&quot;)
+entrada = ttk.Entry(janela)
+entrada.grid(row=0, column=0, padx=12, pady=12)
+
+def esvaziar():
+    entrada.delete(0, tk.END)
+    entrada.focus_set()
+
+ttk.Button(janela, text=&quot;Esvaziar&quot;, command=esvaziar).grid(row=1, column=0, pady=12)
+janela.mainloop()
+</code></pre><p>Digite e esvazie. Esse exemplo altera um widget; não possui registro confirmado. No cadastro completo, identifique o estado que deve continuar intacto.</p></details></section><section id="pratica-formulario" data-stop="pratica-formulario"><h2>prática 2: integrar e testar as transições <a class="section-source" href="leitura-0002-evolucao-cadastro.html#pratica-formulario" aria-label="Versão para leitura: prática 2: integrar e testar as transições">↗</a></h2><p>Complete a lógica do arquivo cadastro_completo.py com o que desenvolveu no terminal e conecte os três callbacks. Execute a matriz de transições, com previsão antes de cada ação. O arquivo é independente para facilitar a execução nesta aula.</p><p>Cenário inicial: registre Lia / Costa / 18. Edite para Rui / Lima / 22 e use somente Exibir. Depois limpe os campos e use Exibir outra vez. Em seguida teste uma tentativa com idade abc e, por fim, confirme Rui / Lima / 22. Compare a confirmação em cada etapa.</p><p>Teste nome e sobrenome vazios ou só com espaços; idade vazia, letras, 0, negativa e decimal textual. Corrija um erro e tente novamente na mesma janela. Feche e reabra para conferir o estado inicial.</p><div class="workbench"><h3>Cadastro com registrar, exibir e limpar</h3><p>Complete as funções e os callbacks, mantendo campos e registro separados. Faça um colega executar os testes enquanto você observa e registra o comportamento.</p><p>Concluído quando: Os três botões têm papéis distintos; limpar e tentativa inválida preservam o último válido; digitar não confirma; novo válido substitui; reabrir perde o registro.</p><details><summary>Dica para realizar a atividade</summary><p>Se Exibir mostrar valores que só foram digitados, investigue de onde essa função está lendo. Se uma falha alterar o anterior, confira a ordem entre validar e atualizar.</p></details><pre><code id="work-cadastro-completo">&quot;&quot;&quot;A02 — prática 2: complete a lógica e os callbacks.&quot;&quot;&quot;
+import tkinter as tk
+from tkinter import ttk
+
+
+def registrar(campos, registro):
+    # TODO: ler e normalizar nome e sobrenome; recusar texto vazio.
+    # TODO: converter idade e validar inteiro maior que zero.
+    # TODO: atualizar registro somente depois de todas as validações.
+    return &quot;Complete a função registrar.&quot;
+
+
+def exibir(registro):
+    # TODO: tratar a ausência de registro e consultar o último válido.
+    return &quot;Complete a função exibir.&quot;
+
+
+def limpar(campos):
+    # TODO: esvaziar os três textos editáveis.
+    # O registro confirmado é separado e não é recebido por esta função.
+    pass
+
+
+def criar_janela():
+    janela = tk.Tk()
+    janela.title(&quot;Cadastro em memória — A02&quot;)
+    janela.columnconfigure(1, weight=1)
+    campos = {&quot;nome&quot;: &quot;&quot;, &quot;sobrenome&quot;: &quot;&quot;, &quot;idade&quot;: &quot;&quot;}
+    registro = {}
+
+    ttk.Label(janela, text=&quot;Nome fictício:&quot;).grid(row=0, column=0, padx=12, pady=6, sticky=&quot;w&quot;)
+    entrada_nome = ttk.Entry(janela)
+    entrada_nome.grid(row=0, column=1, padx=12, pady=6, sticky=&quot;ew&quot;)
+    ttk.Label(janela, text=&quot;Sobrenome fictício:&quot;).grid(row=1, column=0, padx=12, pady=6, sticky=&quot;w&quot;)
+    entrada_sobrenome = ttk.Entry(janela)
+    entrada_sobrenome.grid(row=1, column=1, padx=12, pady=6, sticky=&quot;ew&quot;)
+    ttk.Label(janela, text=&quot;Idade fictícia:&quot;).grid(row=2, column=0, padx=12, pady=6, sticky=&quot;w&quot;)
+    entrada_idade = ttk.Entry(janela)
+    entrada_idade.grid(row=2, column=1, padx=12, pady=6, sticky=&quot;ew&quot;)
+
+    def ao_registrar():
+        # TODO: copiar os textos atuais para campos e chamar registrar.
+        # TODO: atualizar a mensagem e a consulta ao registro confirmado.
+        aviso.configure(text=&quot;Complete o callback Registrar.&quot;)
+
+    def ao_exibir():
+        # TODO: consultar apenas registro; não ler os campos em edição.
+        aviso.configure(text=&quot;Complete o callback Exibir.&quot;)
+
+    def ao_limpar():
+        # TODO: limpar campos e Entry; manter registro e consulta intactos.
+        aviso.configure(text=&quot;Complete o callback Limpar campos.&quot;)
+
+    ttk.Button(janela, text=&quot;Registrar&quot;, command=ao_registrar).grid(row=3, column=0, padx=12, pady=8)
+    ttk.Button(janela, text=&quot;Exibir&quot;, command=ao_exibir).grid(row=3, column=1, padx=12, pady=8)
+    ttk.Button(janela, text=&quot;Limpar campos&quot;, command=ao_limpar).grid(row=4, column=0, columnspan=2, pady=6)
+    aviso = ttk.Label(janela, text=&quot;Preencha os dados fictícios e registre.&quot;, wraplength=390)
+    aviso.grid(row=5, column=0, columnspan=2, padx=12, pady=8, sticky=&quot;w&quot;)
+    resultado = ttk.Label(janela, text=&quot;Nenhum cadastro registrado nesta sessão.&quot;, wraplength=390)
+    resultado.grid(row=6, column=0, columnspan=2, padx=12, pady=8, sticky=&quot;w&quot;)
+    entrada_nome.focus_set()
+    return janela
+
+
+if __name__ == &quot;__main__&quot;:
+    criar_janela().mainloop()
+</code></pre><div class="atelier" data-source="work-cadastro-completo" data-filename="cadastro_completo.py" data-execution="Baixe para uma pasta A02 e execute no terminal do VS Code: python cadastro_completo.py. O editor da página não executa Python."></div><p>Baixe para uma pasta A02 e execute no terminal do VS Code: python cadastro_completo.py. O editor da página não executa Python.</p></div></section><section id="auditoria" data-stop="auditoria"><h2>Investigue as mudanças de estado <a class="section-source" href="leitura-0002-evolucao-cadastro.html#auditoria" aria-label="Versão para leitura: Investigue as mudanças de estado">↗</a></h2><p>Escolha e justifique com um teste. Resposta registrada indica somente a escolha nesta sessão; as alternativas podem mudar de ordem.</p><fieldset data-question="q21"><legend>Após registrar Lia Costa, você digita Rui Lima, mas não usa Registrar. O que Exibir deve consultar?</legend><div class="question-options"><label class="option"><input type="radio" name="q21" value="O último registro confirmado" autocomplete="off">O último registro confirmado</label><label class="option"><input type="radio" name="q21" value="Os textos atuais das entradas" autocomplete="off">Os textos atuais das entradas</label><label class="option"><input type="radio" name="q21" value="Uma combinação de valores antigos e atuais" autocomplete="off">Uma combinação de valores antigos e atuais</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Distinga editar um campo de confirmar um registro.</p></details></fieldset><div id="audit-list"><article class="audit-item" id="au21"><fieldset data-question="au21"><legend>Após um cadastro válido, uma tentativa com idade abc muda o nome confirmado, mas conserva a idade anterior.</legend><div class="question-options"><label class="option"><input type="radio" name="au21" value="Investigar atualização antes da validação completa" autocomplete="off">Investigar atualização antes da validação completa</label><label class="option"><input type="radio" name="au21" value="Considerar a transição correta" autocomplete="off">Considerar a transição correta</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Confira se o registro continua representando uma única tentativa válida.</p></details></fieldset><label><input class="discussion" type="checkbox" value="au21"> Marcar para discussão</label></article><article class="audit-item" id="au22"><fieldset data-question="au22"><legend>Limpar campos esvazia as entradas. Em seguida, Exibir ainda consulta o cadastro válido anterior.</legend><div class="question-options"><label class="option"><input type="radio" name="au22" value="Comportamento previsto para esta atividade" autocomplete="off">Comportamento previsto para esta atividade</label><label class="option"><input type="radio" name="au22" value="É necessário apagar também o registro" autocomplete="off">É necessário apagar também o registro</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Compare as responsabilidades dos dois comandos ao contrato da aula.</p></details></fieldset><label><input class="discussion" type="checkbox" value="au22"> Marcar para discussão</label></article></div><p id="count" aria-live="polite">0 itens marcados para discussão</p><button class="js-only" id="register">Registrar discussão</button><p id="registered" aria-live="polite"></p></section><section id="registro" data-stop="registro"><h2>Guarde os arquivos e a matriz de transições <a class="section-source" href="leitura-0002-evolucao-cadastro.html#registro" aria-label="Versão para leitura: Guarde os arquivos e a matriz de transições">↗</a></h2><p>Baixe estado_cadastro.py, cadastro_completo.py e o registro. Anexe os dois arquivos executados e sua matriz no canal combinado com o professor. A entrega é individual; a colaboração nos testes não substitui a própria explicação.</p><p>A exportação inclui rascunhos editados e anotações desta página; não recolhe arquivos externos nem envia a entrega. Confira seus arquivos antes de fechar.</p><div class="workbench"><h3>Minha matriz de estados</h3><p>Conserve as respostas iniciais e preencha previsão/observação para as transições, inclusive depois de uma falha e de limpar os campos.</p><p>Concluído quando: A sequência identifica o registro consultado, um ajuste e a diferença entre edição, confirmação e memória da sessão.</p><details><summary>Dica para realizar a atividade</summary><p>Não teste apenas dados isolados: o resultado depende também do que aconteceu antes da ação.</p></details><pre><code id="work-evidencias-a02"># A02 — estados e transições do cadastro
+
+Código do estudante:
+Arquivo e interpretador executados:
+
+## Retomada sem consulta
+1. O que get devolve? Por que int pode falhar?
+Minha resposta inicial:
+2. O que muda entre passar uma função e chamá-la ao ligar um botão?
+Minha resposta inicial:
+3. Que caso detecta um nome preenchido somente com espaços?
+Minha resposta inicial:
+
+## Preveja e depois execute (nomes sempre fictícios)
+| Caso | Estado/ação | Previsão | Observação | Ajuste |
+|---|---|---|---|---|
+| T01 | Abrir e Exibir antes de Registrar | | | |
+| T02 | Registrar Lia / Costa / 18 e Exibir | | | |
+| T03 | Editar para Rui / Lima / 22; somente Exibir | | | |
+| T04 | Limpar campos e depois Exibir | | | |
+| T05 | Após um válido, tentar registrar outro nome com idade abc | | | |
+| T06 | Registrar Rui / Lima / 22; depois Exibir | | | |
+| T07 | Nome vazio ou somente espaços | | | |
+| T08 | Sobrenome vazio ou somente espaços | | | |
+| T09 | Idade vazia, 0, -2 e 2.5 (um teste por entrada) | | | |
+| T10 | Espaços nas pontas e nome composto | | | |
+| T11 | Fechar, reabrir e Exibir | | | |
+
+## Uso da interface
+Percorri campos e botões com Tab/Shift+Tab:
+Mensagem que precisei melhorar:
+Colega que testou (código fictício ou combinado):
+
+## Fechamento sem consulta
+Por que Limpar campos não deve apagar o registro confirmado?
+Como uma tentativa inválida pode estragar um cadastro anterior se a ordem do código estiver errada?
+Minha dificuldade, ajuste e próximo passo:
+
+Entregas externas: estado_cadastro.py e cadastro_completo.py, além deste registro.
+</code></pre><div class="atelier" data-source="work-evidencias-a02" data-filename="registro-a02.md" data-execution="Preencha e baixe sua matriz. Anexe separadamente os dois arquivos Python executados; a exportação não recolhe arquivos externos."></div><p>Preencha e baixe sua matriz. Anexe separadamente os dois arquivos Python executados; a exportação não recolhe arquivos externos.</p></div><div class="grid"><label>Nome do aluno<input id="student-name" autocomplete="off"></label><label>Turma<input id="student-class" autocomplete="off"></label><label>Data<input id="lesson-date" type="date"></label></div><label for="practice-notes">Registros da prática</label><textarea id="practice-notes" autocomplete="off"></textarea><label for="reflection">Reflexão e próximo passo</label><textarea id="reflection" autocomplete="off"></textarea><div class="actions js-only"><button id="export" data-export>Exportar registros da aula</button><button id="reset">Limpar sessão</button></div><p id="export-status" aria-live="polite"></p></section><section id="fechamento" data-stop="fechamento"><h2>explique o que pode mudar <a class="section-source" href="leitura-0002-evolucao-cadastro.html#fechamento" aria-label="Versão para leitura: explique o que pode mudar">↗</a></h2><p>Sem consulta, explique qual estado cada função pode modificar e por que uma tentativa inválida não deve alterar o cadastro confirmado. Registre um caso que ajudou a corrigir seu programa.</p><p>Na próxima aula, você aplicará validação e registro conjunto de entradas/resultados a um conversor de moedas com cotações fictícias.</p></section><h2>Fontes e anexos</h2><ul><li><a href="https://docs.python.org/pt-br/3.14/tutorial/datastructures.html#dictionaries">Python 3.14 — dicionários · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/pt-br/3.14/tutorial/controlflow.html#defining-functions">Python 3.14 — funções · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/pt-br/3.14/tutorial/errors.html">Python 3.14 — erros e exceções · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/pt-br/3.14/library/tkinter.html">Python 3.14 — Tkinter · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/pt-br/3.14/library/tkinter.ttk.html#entry">Python 3.14 — ttk Entry · consulta 22/10/2026</a></li><li><a download href="../anexos/A02/estado_cadastro.py">Código inicial: estado_cadastro.py</a></li><li><a download href="../anexos/A02/cadastro_completo.py">Código inicial: cadastro_completo.py</a></li><li><a download href="../anexos/A02/registro-a02.md">Registro inicial de transições</a></li></ul><a data-idoc="source" href="leitura-0002-evolucao-cadastro.html">Versão para leitura ou impressão</a></main><footer><p>UC8: Desenvolver e organizar interface gráfica para aplicações desktop · atualizado em <time data-idoc="asof">2026-10-22</time></p><p data-idoc="nonbinding">Registre sua tentativa e confira a correção com o professor.</p><a href="../index.html">Voltar ao índice</a></footer></div></div><noscript><p>Sem JavaScript, leia o material e registre a tentativa no seu editor ou caderno. Exportação e editores interativos exigem JavaScript.</p></noscript></body></html>

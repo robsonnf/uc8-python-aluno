@@ -1,0 +1,46 @@
+/* Paleta explícita aplicada depois das folhas de curso, índice e professor. */
+:root {
+  color-scheme: light;
+  --ink: #172d42; --ink-soft: #4d5966; --ink-faint: #667281;
+  --paper: #fff; --paper-sunk: #f2f5f8; --code-bg: #f2f5f8;
+  --rule: #cbd5df; --line: #cbd5df; --muted: #4d5966;
+  --blue: var(--brand-primary, #004a8d); --accent: var(--brand-primary, #004a8d);
+  --accent-2: var(--brand-primary, #004a8d); --selection: #1769aa; --pale: #eaf2fa;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #f4f4f4; --ink-soft: #ccc; --ink-faint: #aaa;
+  --paper: #111; --paper-sunk: #1e1e1e; --code-bg: #1e1e1e;
+  --rule: #484848; --line: #484848; --muted: #ccc;
+  --blue: #ffbd75; --accent: #ffbd75; --accent-2: #ffbd75; --selection: #ffbd75; --pale: #30271e;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --ink: #f4f4f4; --ink-soft: #ccc; --ink-faint: #aaa;
+    --paper: #111; --paper-sunk: #1e1e1e; --code-bg: #1e1e1e;
+    --rule: #484848; --line: #484848; --muted: #ccc;
+    --blue: #ffbd75; --accent: #ffbd75; --accent-2: #ffbd75; --selection: #ffbd75; --pale: #30271e;
+  }
+}
+.theme-control { display: none; align-items: center; gap: .5rem; font: 600 .8rem var(--sans, 'Segoe UI', sans-serif); color: var(--ink); }
+.appearance-ready .theme-control { display: flex; }
+.theme-control select { font: inherit; padding: .45rem .6rem; border: 1px solid var(--rule); border-radius: 6px; max-width: 100%; }
+.theme-toolbar { display: flex; justify-content: flex-end; margin: 0 0 1.2rem; }
+.top { flex-wrap: wrap; }
+.course-list { background: var(--paper); }
+.course-item.planned { background: var(--paper-sunk); color: var(--ink-soft); }
+.notice, code { background: var(--code-bg); color: var(--ink); }
+input:not([type="radio"]):not([type="checkbox"]), textarea, select { background: var(--paper-sunk); color: var(--ink); }
+:root[data-theme="light"] .teacher, :root[data-theme="light"] .teacher-guidance { --teacher-label: #944326; }
+:root[data-theme="dark"] .teacher, :root[data-theme="dark"] .teacher-guidance { --teacher-label: #ffb295; }
+@media print {
+  :root, :root[data-theme] {
+    color-scheme: light;
+    --paper: #fff; --paper-sunk: #f4f4f4; --ink: #000; --ink-soft: #333; --ink-faint: #555;
+    --code-bg: #f4f4f4; --rule: #bbb; --line: #bbb; --muted: #333;
+    --blue: #004a8d; --accent: #004a8d; --accent-2: #004a8d; --pale: #f4f4f4;
+  }
+  .theme-control, .theme-toolbar { display: none !important; }
+  :root[data-theme] .teacher, :root[data-theme] .teacher-guidance { --teacher-label: #944326; }
+}
