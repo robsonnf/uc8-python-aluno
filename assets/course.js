@@ -116,6 +116,6 @@ $$('[data-export]').forEach(button=>button.addEventListener('click',()=>{
   if(drafts.length)lines.push('','## Rascunhos editados no Atelier',...drafts.map(x=>'\n### '+x.filename+'\n\n'+x.code+(x.observed?'\n\nSaída observada informada pelo usuário:\n'+x.observed:'')));
   const url=URL.createObjectURL(new Blob([lines.join('\n')],{type:'text/markdown;charset=utf-8'}));
   const a=document.createElement('a');a.href=url;a.download=`registro-${lesson.toLowerCase()}-${date||'sem-data'}.md`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
-  $('#export-status').textContent='Registro exportado. Anexe o arquivo baixado e os arquivos solicitados nesta aula no canal indicado pelo professor. O envio não é automático.';
+  $('#export-status').textContent=$('.submission-link')?'Registro exportado. Abra a pasta de entrega abaixo e envie o arquivo baixado junto com os demais arquivos solicitados.':'Registro exportado. Anexe o arquivo baixado e os arquivos solicitados nesta aula no canal indicado pelo professor. O envio não é automático.';
 }));
 })();
