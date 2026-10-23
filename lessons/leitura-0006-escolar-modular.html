@@ -1,0 +1,246 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A06 · A06 — Sistema escolar modular: primeiros objetos</title><script src="../assets/appearance.js"></script><link rel="stylesheet" href="../assets/course.css"><link rel="stylesheet" href="../assets/atelier.css"><link rel="stylesheet" href="../assets/theme.css"><link rel="stylesheet" href="../assets/appearance.css"></head><body class="lesson" data-lesson="A06" data-course="uc8-desktop"><a class="skip" href="#conteudo">Pular para conteúdo</a><div class="curso-app"><aside id="course-sidebar" class="course-sidebar curso-lateral"><p class="eyebrow">UC8 · Python · Tkinter e ttk</p><h2>Grade das aulas</h2><p>20 encontros · 60 h</p><button id="grade-close" class="js-only">Ocultar grade · P</button><ol class="grade-list"><li class="grade-item "><span class="grade-number">A01</span><a href="0001-diagnostico-cadastro.html"><span>Diagnóstico, revisão Python e cadastro simples<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A02</span><a href="0002-evolucao-cadastro.html"><span>Evolução do cadastro<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A03</span><a href="0003-conversor.html"><span>Conversor de moedas<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A04</span><a href="0004-escolar-basico.html"><span>Sistema escolar básico<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A05</span><a href="0005-escolar-ampliado.html"><span>Sistema escolar ampliado<small>Disponível</small></span></a></li><li class="grade-item current"><span class="grade-number">A06</span><span>Sistema escolar modular — classes<small>Nesta aula</small></span><ol class="grade-sections"><li><a href="#partida">Retomada sem consulta</a></li><li><a href="#esteira">Exposição 1: classe, instância e responsabilidade</a></li><li><a href="#pratica-terminal">Prática 1: dois alunos sem interface</a></li><li><a href="#janela">Intervalo e exposição 2: ligar módulos à interface</a></li><li><a href="#pratica-formulario">Prática 2: integrar e repetir os contratos</a></li><li><a href="#auditoria">Investigue identidade, imports e confirmação</a></li><li><a href="#registro">Guarde os módulos e a evidência dos testes</a></li><li><a href="#fechamento">Explique o objeto e o caminho dos dados</a></li></ol></li><li class="grade-item "><span class="grade-number">A07</span><span>Sorveteria inicial<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A08</span><span>Sorveteria e pagamentos<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A09</span><span>Catálogo e carrinho<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A10</span><span>Pizzaria inicial — transferência<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A11</span><span>Pizzaria — estados e pagamento<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A12</span><span>Mercado — navegação e JSON<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A13</span><span>Pizzaria — CSV e demonstração de login<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A14</span><span>SQLite — primeira persistência<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A15</span><span>CRUD — produtos e clientes<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A16</span><span>Controllers, componentes e contratos<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A17</span><span>Integração e CustomTkinter<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A18</span><span>Revisão, testes e README<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A19</span><span>Academia e demonstrações individuais<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A20</span><span>Relacionamentos, recuperação e encerramento<small>Planejada</small></span></li></ol></aside><div class="curso-conteudo"><button id="grade-toggle" class="grade-toggle js-only" aria-controls="course-sidebar">Grade · P</button><header class="top"><div class="wordmark">UC8</div><span class="badge" data-idoc="status">Aula 06</span><label class="theme-control" for="theme-select">Tema<select id="theme-select" aria-label="Selecionar tema"><option value="light">Claro</option><option value="dark">Escuro</option></select></label></header><div class="hero"><div class="eyebrow">Python · Tkinter e ttk</div><h1>A06 — Sistema escolar modular: primeiros objetos</h1><p class="thesis">Criar dois alunos independentes e separar regras testáveis da interface Tkinter.</p><p data-idoc="caveat">Continuação da A05 com dados fictícios, cinco notas de 0 a 10 e consultas como retratos. Os dados existem só na sessão. A média não define aprovação ou reprovação.</p><div class="meta"><span>Aluno</span></div></div><main id="conteudo"><div class="actions js-only"><button id="presentation" aria-pressed="false">Ampliar para apresentação</button><button data-export>Exportar registros da aula</button><a href="#registro">Identificação e registros</a></div><h2>Objetivos</h2><ul><li>Explicar classe, objeto, __init__, self, atributo de instância e método com um caso executado.</li><li>Criar dois objetos Aluno com listas independentes e confirmar somente conjuntos inteiramente válidos.</li><li>Testar o modelo sem importar Tkinter nem abrir janelas.</li><li>Separar aluno.py, verificar_modelo.py e main.py com imports em uma direção.</li><li>Integrar o modelo ao formulário, conservando grupos, mensagens, limpeza e retratos da A05.</li><li>Demonstrar os casos executados, corrigir uma dificuldade e explicar a própria implementação.</li></ul><h2>Antes de começar</h2><ul><li>Seu sistema da A05: grupos, cinco notas, validação, consultas e fechamento já experimentados.</li><li>Python com Tkinter/ttk e biblioteca padrão; nenhuma dependência nova ou instalação com pip.</li><li>Preserve sua pasta A05 e crie A06 com aluno.py, verificar_modelo.py, main.py e registro-a06.md.</li><li>Baixe os três arquivos Python e salve-os juntos, sem nomes como aluno (1).py; imagem continua opcional.</li></ul><section id="partida" data-stop="partida"><h2>Retomada sem consulta <a class="section-source" href="leitura-0006-escolar-modular.html#partida" aria-label="Versão para leitura: Retomada sem consulta">↗</a></h2><p>Registre hipóteses individuais antes de abrir o programa. Retome a A05 e a separação entre campos e confirmação da A02.</p><ul><li>Após um válido, o que uma quinta nota inválida pode alterar?</li><li>Por que Limpar campos preserva o confirmado?</li><li>C1 abriu com Lia; um novo válido confirma Rui. O que C1 e uma nova C2 mostram?</li><li>Se dois nomes apontarem para o mesmo conjunto mutável, alterar um afetará o outro?</li></ul></section><section id="esteira" data-stop="esteira"><h2>Exposição 1: classe, instância e responsabilidade <a class="section-source" href="leitura-0006-escolar-modular.html#esteira" aria-label="Versão para leitura: Exposição 1: classe, instância e responsabilidade">↗</a></h2><p>Arquitetura antes do código: aluno.py terá a classe Aluno e suas regras; verificar_modelo.py importará Aluno e fará verificações em texto; main.py importará Aluno e criará os widgets. aluno.py não importa main nem Tkinter. Desenhe duas setas apontando para aluno.py.</p><p>Uma classe descreve os dados e comportamentos de seus objetos. Aluno() cria uma nova instância e chama __init__ para inicializá-la. Cada aluno começa com nome e turma vazios e uma lista de notas vazia; ainda não há registro confirmado.</p><p>Um atributo de instância guarda dado daquele objeto, como self.nome. Um método é uma função definida na classe; em lia.atualizar(...), self recebe automaticamente o objeto lia. self é o nome convencional desse primeiro parâmetro; a chamada não repete lia como argumento.</p><p>Crie a lista em self.notas dentro de __init__. Uma lista definida diretamente no corpo da classe pode ser compartilhada por instâncias. Duas chamadas Aluno() criam dois objetos; rui = lia apenas dá outro nome ao mesmo objeto.</p><p>Contrato do modelo: atualizar(nome, turma, notas_texto) recebe dois textos e uma lista com cinco textos, devolve uma mensagem e confirma nome/turma/notas só depois de validar tudo. Adapte suas regras da A05, montando uma lista numérica nova antes de escrever nos atributos.</p><p>calcular_media() retorna None antes do primeiro válido e um número depois. Cinco notas zero dão 0.0: isso é um registro válido. Use is None para distinguir os casos. resumo() usa apenas os atributos confirmados e formata a média com uma casa; não guarde uma segunda média que possa ficar desatualizada.</p><p>Os atributos são acessíveis em Python; nesta arquitetura a interface consulta o objeto por métodos e confirma pelo método atualizar. Escrever aluno.notas diretamente na interface quebraria o caminho de validação combinado.</p><ol class="pipeline"><li><strong>Desenhar dependências</strong><p>Separe modelo, verificador e interface; marque quem pode importar quem.</p></li><li><strong>Criar duas instâncias</strong><p>Preveja quais atributos pertencem a cada objeto antes de atualizar um deles.</p></li><li><strong>Adaptar a confirmação</strong><p>Receba textos, valide em variáveis locais e só depois confirme todos os atributos.</p></li><li><strong>Observar sem janela</strong><p>Leia média e resumo de cada instância e repita o erro após um válido.</p></li></ol><details class="public-example" open><summary>Exemplo: dois marcadores independentes</summary><pre><code>class Marcador:
+    def __init__(self):
+        self.valor = 0
+
+    def avancar(self):
+        self.valor += 1
+
+esquerda = Marcador()
+direita = Marcador()
+esquerda.avancar()
+print(esquerda.valor, direita.valor)
+outro_nome = esquerda
+outro_nome.avancar()
+print(esquerda.valor, direita.valor)
+</code></pre><p>Preveja as duas linhas antes de executar. Localize self e a diferença entre criar uma instância e atribuir outro nome.</p></details></section><section id="pratica-terminal" data-stop="pratica-terminal"><h2>Prática 1: dois alunos sem interface <a class="section-source" href="leitura-0006-escolar-modular.html#pratica-terminal" aria-label="Versão para leitura: Prática 1: dois alunos sem interface">↗</a></h2><p>Complete aluno.py reutilizando a validação que você escreveu na A05. Nome/turma precisam de texto; as cinco notas são finitas e ficam entre 0 e 10 inclusive. Aceite vírgula ou ponto decimal sem separadores de milhares. Uma tentativa inválida preserva todos os atributos anteriores.</p><p>Em verificar_modelo.py, crie Lia/T1 com [6,7,8,9,10] e Rui/T2 com cinco notas 5. Confira médias 8.0 e 5.0, altere só Lia e comprove que Rui não mudou. Teste também antes de confirmar, zero, dez, vírgula e erro na última nota após um válido.</p><p>Use assert condição para tornar uma previsão verificável: se a condição for falsa, Python interrompe com AssertionError e mostra a linha. Execute sem -O, que desativa asserts. Assert serve aqui à verificação; a validação dos dados do usuário continua com if e mensagens, como na A05.</p><p>Os iniciais ainda têm TODOs. As funções de verificação retornam False até serem completadas; troque para True somente depois de implementar os asserts. Uma mensagem de conclusão não substitui conferir o que foi efetivamente testado.</p><details class="public-example" open><summary>Exemplo: uma previsão que pode falhar</summary><pre><code>valores = [2, 4, 6]
+assert len(valores) == 3
+assert sum(valores) == 12
+print(&quot;As duas previsões conferem.&quot;)
+</code></pre><p>Altere a previsão da soma, execute novamente e leia a linha da falha. Use esse recurso para comparar o comportamento dos seus objetos.</p></details><div class="workbench"><h3>Modelo: a classe Aluno</h3><p>Implemente __init__, atualizar, calcular_media e resumo. Preserve as regras da A05 sem ler widgets nem pedir input no modelo.</p><p>Concluído quando: Dois objetos com notas independentes; validação antes da confirmação; None antes do válido e zero válido distinto.</p><details><summary>Dica para realizar a atividade</summary><p>Separe a lista temporária validada da lista que já pertence ao objeto. Confirme os três atributos só no fim.</p></details><pre><code id="work-modelo-aluno">from math import isfinite
+
+
+class Aluno:
+    def __init__(self):
+        # TODO: criar nome/turma vazios e uma lista de notas nova por objeto.
+        pass
+
+    def atualizar(self, nome, turma, notas_texto):
+        # TODO: adaptar sua validação da A05; receber textos, nunca Entry.
+        # TODO: confirmar os três atributos apenas depois de validar tudo.
+        return &quot;Atualização ainda não implementada.&quot;
+
+    def calcular_media(self):
+        # TODO: None antes de confirmar; depois calcular sem arredondar.
+        return None
+
+    def resumo(self):
+        # TODO: somente atributos confirmados; uma casa apenas na apresentação.
+        return &quot;Resumo ainda não implementado.&quot;
+</code></pre><div class="atelier" data-source="work-modelo-aluno" data-filename="aluno.py" data-execution="Baixe os três .py para a mesma pasta A06. Primeiro complete aluno.py; execute python verificar_modelo.py sem -O e depois python main.py. O editor da página não executa Python."></div><p>Baixe os três .py para a mesma pasta A06. Primeiro complete aluno.py; execute python verificar_modelo.py sem -O e depois python main.py. O editor da página não executa Python.</p></div><div class="workbench"><h3>Verificações em texto</h3><p>Complete as duas funções com asserts para independência, preservação após erro e limites. Execute antes da GUI.</p><p>Concluído quando: Os casos executam sem janela e uma previsão deliberadamente errada produz AssertionError; depois restaure e repita.</p><details><summary>Dica para realizar a atividade</summary><p>Compare os resumos antes/depois do erro e observe qual objeto recebeu a chamada.</p></details><pre><code id="work-verificar-objetos">from aluno import Aluno
+
+
+def verificar_independencia():
+    lia = Aluno()
+    rui = Aluno()
+    # TODO: comparar os objetos, suas listas, médias e alterações independentes.
+    # TODO: usar assert nos resultados esperados; só então retornar True.
+    return False
+
+
+def verificar_validacao():
+    # TODO: válido seguido de erro; conferir preservação de todos os atributos.
+    # TODO: testar limites 0/10, vírgula e lista de textos independente.
+    # TODO: retornar True somente depois das verificações implementadas.
+    return False
+
+
+if __name__ == &quot;__main__&quot;:
+    independencia = verificar_independencia()
+    validacao = verificar_validacao()
+    if independencia and validacao:
+        print(&quot;Verificações do modelo concluídas.&quot;)
+    else:
+        print(&quot;Verificações incompletas; implemente e execute os casos.&quot;)
+</code></pre><div class="atelier" data-source="work-verificar-objetos" data-filename="verificar_modelo.py" data-execution="Baixe os três .py para a mesma pasta A06. Primeiro complete aluno.py; execute python verificar_modelo.py sem -O e depois python main.py. O editor da página não executa Python."></div><p>Baixe os três .py para a mesma pasta A06. Primeiro complete aluno.py; execute python verificar_modelo.py sem -O e depois python main.py. O editor da página não executa Python.</p></div></section><section id="janela" data-stop="janela"><h2>Intervalo e exposição 2: ligar módulos à interface <a class="section-source" href="leitura-0006-escolar-modular.html#janela" aria-label="Versão para leitura: Intervalo e exposição 2: ligar módulos à interface">↗</a></h2><p>Depois do intervalo, confira a pasta: A06/aluno.py, A06/verificar_modelo.py e A06/main.py. from aluno import Aluno procura o módulo e disponibiliza a classe. Não chame um arquivo de tkinter.py ou math.py: isso pode esconder a biblioteca padrão.</p><p>Execute python verificar_modelo.py antes de python main.py. Executar aluno.py apenas define a classe; não deve abrir uma janela. Se aparecer ModuleNotFoundError, confira o nome aluno.py, a pasta dos três arquivos e o interpretador selecionado.</p><p>O bloco if __name__ == &quot;__main__&quot;: inicia a interface somente quando main.py é o programa executado. Importar esse módulo não deve criar Tk nem iniciar mainloop. aluno.py não importa main.py; essa direção evita dependências circulares.</p><p>Crie aluno = Aluno() uma vez dentro de criar_janela, antes dos callbacks. Calcular lê os Entry, chama aluno.atualizar com textos e apresenta a mensagem/resumo. Se criar um Aluno novo a cada clique, perderá o confirmado anterior no caminho do erro.</p><p>Reaproveite sua organização e consultas da A05 no inicial main.py. A consulta recebe o objeto e produz aluno.resumo() uma vez na abertura. C1 continua sendo retrato; C2 pode mostrar uma confirmação posterior. Limpar altera só os sete campos, sem recriar ou esvaziar o objeto.</p><p>Mantenha uma Tk/mainloop, fechamentos por botão/X/Escape, grupos, rótulos, expansão, foco e cabeçalho textual. A imagem própria opcional passa a se chamar marca-a06.png ao lado do script; nenhum PNG é necessário. O formulário continua em funções para concentrar a nova classe no modelo.</p><details class="public-example" open><summary>Exemplo: importar sua classe sem iniciar a interface</summary><pre><code># Salve como explorar.py ao lado do aluno.py já implementado.
+from aluno import Aluno
+
+primeiro = Aluno()
+segundo = Aluno()
+print(primeiro is segundo)
+print(primeiro.calcular_media())
+</code></pre><p>Esse pequeno arquivo é executado no terminal. Localize a dependência e explique por que nenhum widget precisa existir.</p></details></section><section id="pratica-formulario" data-stop="pratica-formulario"><h2>Prática 2: integrar e repetir os contratos <a class="section-source" href="leitura-0006-escolar-modular.html#pratica-formulario" aria-label="Versão para leitura: Prática 2: integrar e repetir os contratos">↗</a></h2><p>Traga seu layout agrupado e suas consultas da A05 para main.py. O inicial é uma base para integração; os grupos e callbacks precisam receber o seu trabalho anterior. Remova a cópia das regras do arquivo da interface e use o modelo já verificado.</p><p>Antes do válido, Consultar orienta sem abrir janela. Confirme Lia, abra C1, edite Rui sem confirmar e provoque erro na quinta nota. Depois corrija, confirme Rui e abra C2. Compare as duas consultas e use Limpar campos.</p><p>Execute os casos do registro, incluindo os três fechamentos, Tab, expansão e funcionamento sem imagem. Mostre individualmente dois objetos no terminal e um erro após válido na GUI; explique onde cada responsabilidade ficou. Conserve o erro, sua correção e o reteste no registro.</p><div class="workbench"><h3>Interface: integração com Aluno</h3><p>Integre sua A05 ao modelo: instância única por principal, callbacks pequenos, consulta ao confirmado e limpeza só dos widgets.</p><p>Concluído quando: Modelo sem Tk, interface sem duplicar regras, último válido e retratos preservados, principal utilizável após fechar consultas.</p><details><summary>Dica para realizar a atividade</summary><p>Procure a chamada Aluno(): ela deve ficar fora dos callbacks. Procure também qualquer regra de nota repetida em main.py.</p></details><pre><code id="work-escolar-modular">import tkinter as tk
+from tkinter import ttk
+from pathlib import Path
+from aluno import Aluno
+
+
+def inserir_marca(container, caminho=None):
+    # TODO: procurar marca-a06.png ao lado do script com pathlib.
+    # TODO: usar PhotoImage e conservar uma referência enquanto o rótulo existir.
+    # TODO: manter texto se o PNG não existir ou não puder ser lido.
+    return ttk.Label(container, text=&quot;Sistema escolar fictício — A06&quot;)
+
+
+def abrir_consulta(principal, aluno):
+    # TODO: tratar ausência de registro sem criar uma janela vazia.
+    # TODO: obter o texto do confirmado no instante da abertura.
+    # TODO: criar Toplevel e organizar sua consulta somente de leitura.
+    # TODO: botão, X e Escape devem fechar somente a consulta.
+    return None
+
+
+def criar_janela():
+    janela = tk.Tk()
+    janela.title(&quot;Escolar com consulta — A06&quot;)
+    janela.columnconfigure(0, weight=1)
+    janela.rowconfigure(0, weight=1)
+    base = ttk.Frame(janela, padding=12)
+    base.grid(row=0, column=0, sticky=&quot;nsew&quot;)
+    base.columnconfigure(0, weight=1)
+    aluno = Aluno()  # Uma instância por janela principal, fora dos callbacks.
+    inserir_marca(base).grid(row=0, column=0, columnspan=2, pady=6, sticky=&quot;w&quot;)
+    # TODO: criar LabelFrame para identificação e notas e Frame para ações.
+    # TODO: posicionar os grupos na base e configurar expansão das colunas.
+    # A disposição inicial é plana; substitua os pais e ajuste as linhas internas.
+    identificacao = base
+    grupo_notas = base
+    acoes = base
+    base.columnconfigure(1, weight=1)
+
+    ttk.Label(identificacao, text=&quot;Nome fictício:&quot;).grid(row=1, column=0, padx=6, pady=4, sticky=&quot;w&quot;)
+    entrada_nome = ttk.Entry(identificacao)
+    entrada_nome.grid(row=1, column=1, padx=6, pady=4, sticky=&quot;ew&quot;)
+    ttk.Label(identificacao, text=&quot;Turma fictícia:&quot;).grid(row=2, column=0, padx=6, pady=4, sticky=&quot;w&quot;)
+    entrada_turma = ttk.Entry(identificacao)
+    entrada_turma.grid(row=2, column=1, padx=6, pady=4, sticky=&quot;ew&quot;)
+    entradas_notas = []
+    for numero in range(1, 6):
+        ttk.Label(grupo_notas, text=f&quot;Nota {numero} (0 a 10):&quot;).grid(row=numero+2, column=0, padx=6, pady=4, sticky=&quot;w&quot;)
+        entrada = ttk.Entry(grupo_notas)
+        entrada.grid(row=numero+2, column=1, padx=6, pady=4, sticky=&quot;ew&quot;)
+        entradas_notas.append(entrada)
+
+    def ao_calcular():
+        # TODO: ler os sete campos e chamar aluno.atualizar com os textos.
+        # TODO: mostrar a mensagem e aluno.resumo; nunca escrever atributos aqui.
+        aviso.configure(text=&quot;Integração com o modelo ainda não implementada.&quot;)
+
+    def ao_exibir():
+        # TODO: adaptar sua consulta da A05 para receber aluno.
+        aviso.configure(text=&quot;Consulta ainda não integrada ao modelo.&quot;)
+
+    def ao_limpar():
+        # TODO: limpar só os campos e devolver foco, preservando aluno e consultas.
+        aviso.configure(text=&quot;Limpeza ainda não implementada.&quot;)
+
+    ttk.Button(acoes, text=&quot;Calcular média&quot;, command=ao_calcular).grid(row=8, column=0, padx=4, pady=6)
+    ttk.Button(acoes, text=&quot;Consultar&quot;, command=ao_exibir).grid(row=8, column=1, padx=4, pady=6)
+    ttk.Button(acoes, text=&quot;Limpar campos&quot;, command=ao_limpar).grid(row=9, column=0, columnspan=2, padx=4, pady=6)
+    aviso = ttk.Label(base, text=&quot;Use dados fictícios e confira as cinco notas.&quot;, wraplength=430)
+    aviso.grid(row=10, column=0, columnspan=2, pady=6, sticky=&quot;w&quot;)
+    resultado = ttk.Label(base, text=&quot;Nenhum registro escolar confirmado nesta sessão.&quot;, wraplength=430)
+    resultado.grid(row=11, column=0, columnspan=2, pady=6, sticky=&quot;w&quot;)
+    entrada_nome.focus_set()
+    return janela
+
+
+if __name__ == &quot;__main__&quot;:
+    criar_janela().mainloop()
+</code></pre><div class="atelier" data-source="work-escolar-modular" data-filename="main.py" data-execution="Baixe os três .py para a mesma pasta A06. Primeiro complete aluno.py; execute python verificar_modelo.py sem -O e depois python main.py. O editor da página não executa Python."></div><p>Baixe os três .py para a mesma pasta A06. Primeiro complete aluno.py; execute python verificar_modelo.py sem -O e depois python main.py. O editor da página não executa Python.</p></div></section><section id="auditoria" data-stop="auditoria"><h2>Investigue identidade, imports e confirmação <a class="section-source" href="leitura-0006-escolar-modular.html#auditoria" aria-label="Versão para leitura: Investigue identidade, imports e confirmação">↗</a></h2><p>Escolha depois de executar e sustente sua resposta com uma observação. As alternativas podem mudar de ordem.</p><fieldset data-question="q61"><legend>Após lia = Aluno() e rui = lia, atualizar rui altera qual objeto?</legend><div class="question-options"><label class="option"><input type="radio" name="q61" value="O mesmo objeto também identificado por lia" autocomplete="off">O mesmo objeto também identificado por lia</label><label class="option"><input type="radio" name="q61" value="Uma cópia independente de lia" autocomplete="off">Uma cópia independente de lia</label><label class="option"><input type="radio" name="q61" value="Nenhum, porque self é sempre uma cópia" autocomplete="off">Nenhum, porque self é sempre uma cópia</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Conte quantas chamadas ao construtor foram feitas e desenhe os nomes apontando para objetos.</p></details></fieldset><div id="audit-list"><article class="audit-item" id="au61"><fieldset data-question="au61"><legend>Importar aluno abre uma janela porque o módulo importa main e cria Tk no corpo do arquivo.</legend><div class="question-options"><label class="option"><input type="radio" name="au61" value="Rever a direção das dependências e o ponto de início da GUI" autocomplete="off">Rever a direção das dependências e o ponto de início da GUI</label><label class="option"><input type="radio" name="au61" value="Manter porque todo modelo precisa de janela" autocomplete="off">Manter porque todo modelo precisa de janela</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Tente executar somente verificar_modelo.py e localize quem pode criar widgets.</p></details></fieldset><label><input class="discussion" type="checkbox" value="au61"> Marcar para discussão</label></article><article class="audit-item" id="au62"><fieldset data-question="au62"><legend>Cinco notas zero foram confirmadas. O callback usa if not aluno.calcular_media() para decidir que não há registro.</legend><div class="question-options"><label class="option"><input type="radio" name="au62" value="Rever a distinção entre None e média zero válida" autocomplete="off">Rever a distinção entre None e média zero válida</label><label class="option"><input type="radio" name="au62" value="Manter porque zero significa ausência de notas" autocomplete="off">Manter porque zero significa ausência de notas</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Compare None com o número obtido de uma lista válida contendo cinco zeros.</p></details></fieldset><label><input class="discussion" type="checkbox" value="au62"> Marcar para discussão</label></article></div><p id="count" aria-live="polite">0 itens marcados para discussão</p><button class="js-only" id="register">Registrar discussão</button><p id="registered" aria-live="polite"></p></section><section id="registro" data-stop="registro"><h2>Guarde os módulos e a evidência dos testes <a class="section-source" href="leitura-0006-escolar-modular.html#registro" aria-label="Versão para leitura: Guarde os módulos e a evidência dos testes">↗</a></h2><p>Baixe aluno.py, verificar_modelo.py, main.py e registro-a06.md. Salve os três .py juntos, execute-os no computador e anexe a versão que realmente testou pelo fluxo de entrega abaixo.</p><p>Exportar registros reúne os rascunhos da página; não recolhe os arquivos executados no seu computador. Confira os anexos e indique quais casos ainda estão pendentes.</p><div class="workbench"><h3>Meu registro de objetos e módulos</h3><p>Conserve hipóteses, desenho das dependências, resultados reais e uma correção com reteste.</p><p>Concluído quando: Relato permite reproduzir dois objetos independentes, regras, import sem GUI e sequência C1/C2.</p><details><summary>Dica para realizar a atividade</summary><p>Registre o comando, os dados e o observado; apenas escrever que funcionou não identifica o caso.</p></details><pre><code id="work-evidencias-a06"># Meu registro A06 — objetos e módulos
+
+Nome/código individual:
+Turma e data:
+
+## Hipóteses sem consulta
+O que fica confirmado após erro na quinta nota?
+Qual a diferença entre editar, confirmar e limpar?
+O que aconteceria se dois nomes apontassem para o mesmo objeto?
+
+## Arquitetura antes do código
+Pasta com aluno.py, verificar_modelo.py e main.py:
+Qual arquivo contém regras? Qual cria widgets? Quem importa quem?
+O que __init__ cria em cada nova instância?
+Por que duas chamadas Aluno() diferem de rui = lia?
+O que self identifica em uma chamada de método?
+
+## Testes executados
+Preencha para cada caso: previsão | resultado observado | correção e nova tentativa.
+Não marque como executado um teste ainda pendente.
+- T01: Importar aluno sem Tk, sem janela e sem leitura de teclado.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T02: Criar dois objetos; listas distintas; ambos sem média antes de confirmar.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T03: Lia/T1/[6,7,8,9,10] e Rui/T2/[5,5,5,5,5]; médias 8.0 e 5.0.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T04: Atualizar só Lia; Rui mantém identificação, notas e média.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T05: Após válido, tentar nome/turma vazios; preservar todo o registro.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T06: Após válido, erro na quinta nota; preservar os três atributos e resumo.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T07: Testar 0 e 10, vírgula/ponto, negativos, &gt;10, nan, inf, vazio e texto.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T08: Recusar quantidade diferente de cinco notas, sem alterar o válido.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T09: Alterar a lista de textos original após atualizar; notas confirmadas não mudam.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T10: Executar verificar_modelo.py sem abrir GUI; cada assert corresponde a um caso.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T11: Consultar antes do primeiro válido: orientação e nenhuma janela vazia.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T12: Confirmar Lia e abrir C1; editar Rui e errar a última nota: C1 e confirmado permanecem.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T13: Corrigir e confirmar Rui; C2 mostra Rui e C1 conserva Lia.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T14: Limpar os sete campos; último registro e consultas continuam disponíveis.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T15: Fechar consultas por botão, X e Escape; principal e outra consulta continuam funcionando.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T16: Conferir grupos, rótulos, expansão e percurso Tab; funcionar sem PNG.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+- T17: Encerrar a principal e reabrir: começar sem registro; nenhum arquivo de dados gravado.
+  Previsão: 
+  Observado: 
+  Correção/reteste: 
+
+## Explicação individual
+Mostre dois objetos independentes e uma tentativa inválida após um válido.
+Indique a linha que confirma o conjunto e por que a interface não repete a regra.
+O que um assert verifica? Qual caso ainda falta?
+Minha dificuldade e próximo teste:
+
+Entrega: aluno.py, verificar_modelo.py, main.py e este registro.
+Somente dados fictícios. A página não executa Python nem envia arquivos automaticamente.
+</code></pre><div class="atelier" data-source="work-evidencias-a06" data-filename="registro-a06.md" data-execution="Preencha, baixe e anexe os três arquivos Python executados ao seu registro."></div><p>Preencha, baixe e anexe os três arquivos Python executados ao seu registro.</p></div><div class="grid"><label>Nome do aluno<input id="student-name" autocomplete="off"></label><label>Turma<input id="student-class" autocomplete="off"></label><label>Data<input id="lesson-date" type="date"></label></div><label for="practice-notes">Registros da prática</label><textarea id="practice-notes" autocomplete="off"></textarea><label for="reflection">Reflexão e próximo passo</label><textarea id="reflection" autocomplete="off"></textarea><div class="actions js-only"><button id="export" data-export>Exportar registros da aula</button><button id="reset">Limpar sessão</button></div><p id="export-status" aria-live="polite"></p><aside class="submission" aria-label="Entrega dos arquivos"><h3>Salve sua entrega no OneDrive</h3><p>Baixe ou exporte seus registros e os arquivos da atividade. Abra a pasta no OneDrive, entre com a conta autorizada e envie os arquivos baixados. Confira se eles aparecem na pasta antes de encerrar.</p><a class="submission-link" href="https://senacrsedu-my.sharepoint.com/:f:/g/personal/01606371045_senacrs_edu_br/IgAw6ZzfVcGZS56vSyOV1YSaATvbA9sC2I-Iv76Rs_34IdU?e=gKMkOG" target="_blank" rel="noopener noreferrer">Abrir pasta de entrega no OneDrive<span class="sr-only"> (abre em nova aba)</span></a></aside></section><section id="fechamento" data-stop="fechamento"><h2>Explique o objeto e o caminho dos dados <a class="section-source" href="leitura-0006-escolar-modular.html#fechamento" aria-label="Versão para leitura: Explique o objeto e o caminho dos dados">↗</a></h2><p>Sem consultar o código, explique o que self identifica, por que duas instâncias não compartilham notas e por que aluno.py não precisa de Tkinter. Localize mentalmente o caminho Entry → atualizar → resumo → consulta.</p><p>Escolha uma dificuldade e o próximo teste para verificá-la. A A07 começa a sorveteria, aproveitando eventos, organização e separação de responsabilidades.</p></section><h2>Fontes e anexos</h2><ul><li><a href="https://docs.python.org/3.14/tutorial/classes.html">Python 3.14 — classes e variáveis de instância · consulta 23/10/2026</a></li><li><a href="https://docs.python.org/3.14/tutorial/modules.html">Python 3.14 — módulos e execução como script · consulta 23/10/2026</a></li><li><a href="https://docs.python.org/3.14/reference/simple_stmts.html#the-assert-statement">Python 3.14 — assert · consulta 23/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/tkinter.html">Python 3.14 — Tkinter · consulta 23/10/2026</a></li><li><a download href="../anexos/A06/aluno.py">Inicial: aluno.py</a></li><li><a download href="../anexos/A06/verificar_modelo.py">Inicial: verificar_modelo.py</a></li><li><a download href="../anexos/A06/main.py">Inicial: main.py</a></li><li><a download href="../anexos/A06/registro-a06.md">Inicial: registro-a06.md</a></li></ul><a data-idoc="source" href="leitura-0006-escolar-modular.html">Versão para leitura ou impressão</a></main><footer><p>UC8: Desenvolver e organizar interface gráfica para aplicações desktop · atualizado em <time data-idoc="asof">2026-10-23</time></p><p data-idoc="nonbinding">Registre sua tentativa e confira a correção com o professor.</p><a href="../index.html">Voltar ao índice</a></footer></div></div><noscript><p>Sem JavaScript, leia o material e registre a tentativa no seu editor ou caderno. Exportação e editores interativos exigem JavaScript.</p></noscript></body></html>
