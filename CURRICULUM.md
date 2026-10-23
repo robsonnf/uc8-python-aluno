@@ -12,7 +12,7 @@ Retomada usa perguntas sem consulta. A01 diagnostica conhecimentos anteriores.
 | A02 | Evolução do cadastro | Disponível |
 | A03 | Conversor de moedas | Disponível |
 | A04 | Sistema escolar básico | Disponível |
-| A05 | Sistema escolar ampliado | Planejada |
+| A05 | Sistema escolar ampliado | Disponível |
 | A06 | Sistema escolar modular — classes | Planejada |
 | A07 | Sorveteria inicial | Planejada |
 | A08 | Sorveteria e pagamentos | Planejada |

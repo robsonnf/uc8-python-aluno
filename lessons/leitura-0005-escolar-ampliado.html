@@ -1,0 +1,291 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A05 · A05 — Sistema escolar: grupos e janelas de consulta</title><script src="../assets/appearance.js"></script><link rel="stylesheet" href="../assets/course.css"><link rel="stylesheet" href="../assets/atelier.css"><link rel="stylesheet" href="../assets/theme.css"><link rel="stylesheet" href="../assets/appearance.css"></head><body class="lesson" data-lesson="A05" data-course="uc8-desktop"><a class="skip" href="#conteudo">Pular para conteúdo</a><div class="curso-app"><aside id="course-sidebar" class="course-sidebar curso-lateral"><p class="eyebrow">UC8 · Python · Tkinter e ttk</p><h2>Grade das aulas</h2><p>20 encontros · 60 h</p><button id="grade-close" class="js-only">Ocultar grade · P</button><ol class="grade-list"><li class="grade-item "><span class="grade-number">A01</span><a href="0001-diagnostico-cadastro.html"><span>Diagnóstico, revisão Python e cadastro simples<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A02</span><a href="0002-evolucao-cadastro.html"><span>Evolução do cadastro<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A03</span><a href="0003-conversor.html"><span>Conversor de moedas<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A04</span><a href="0004-escolar-basico.html"><span>Sistema escolar básico<small>Disponível</small></span></a></li><li class="grade-item current"><span class="grade-number">A05</span><span>Sistema escolar ampliado<small>Nesta aula</small></span><ol class="grade-sections"><li><a href="#partida">Retomada sem consulta</a></li><li><a href="#esteira">Exposição 1: contêineres e hierarquia</a></li><li><a href="#pratica-terminal">Prática 1: reorganizar sem mudar as regras</a></li><li><a href="#janela">Intervalo e exposição 2: consultas como retratos</a></li><li><a href="#pratica-formulario">Prática 2: consultar, comparar e fechar</a></li><li><a href="#auditoria">Investigue pais, retratos e fechamento</a></li><li><a href="#registro">Guarde os arquivos e o checklist de janelas</a></li><li><a href="#fechamento">Explique quem contém, quem consulta e quem fecha</a></li></ol></li><li class="grade-item "><span class="grade-number">A06</span><span>Sistema escolar modular — classes<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A07</span><span>Sorveteria inicial<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A08</span><span>Sorveteria e pagamentos<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A09</span><span>Catálogo e carrinho<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A10</span><span>Pizzaria inicial — transferência<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A11</span><span>Pizzaria — estados e pagamento<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A12</span><span>Mercado — navegação e JSON<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A13</span><span>Pizzaria — CSV e demonstração de login<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A14</span><span>SQLite — primeira persistência<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A15</span><span>CRUD — produtos e clientes<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A16</span><span>Controllers, componentes e contratos<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A17</span><span>Integração e CustomTkinter<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A18</span><span>Revisão, testes e README<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A19</span><span>Academia e demonstrações individuais<small>Planejada</small></span></li><li class="grade-item "><span class="grade-number">A20</span><span>Relacionamentos, recuperação e encerramento<small>Planejada</small></span></li></ol></aside><div class="curso-conteudo"><button id="grade-toggle" class="grade-toggle js-only" aria-controls="course-sidebar">Grade · P</button><header class="top"><div class="wordmark">UC8</div><span class="badge" data-idoc="status">Aula 05</span><label class="theme-control" for="theme-select">Tema<select id="theme-select" aria-label="Selecionar tema"><option value="light">Claro</option><option value="dark">Escuro</option></select></label></header><div class="hero"><div class="eyebrow">Python · Tkinter e ttk</div><h1>A05 — Sistema escolar: grupos e janelas de consulta</h1><p class="thesis">Organizar o formulário em grupos e abrir consultas que preservam o retrato do último registro confirmado.</p><p data-idoc="caveat">Use os mesmos dados fictícios e regras da A04. As consultas são retratos da abertura; o registro não é gravado permanentemente. A imagem é opcional e o cabeçalho funciona em texto.</p><div class="meta"><span>Aluno</span></div></div><main id="conteudo"><div class="actions js-only"><button id="presentation" aria-pressed="false">Ampliar para apresentação</button><button data-export>Exportar registros da aula</button><a href="#registro">Identificação e registros</a></div><h2>Objetivos</h2><ul><li>Agrupar identificação, notas e ações com Frame/LabelFrame e pais explícitos.</li><li>Configurar grid e expansão em cada contêiner, mantendo percurso por teclado.</li><li>Abrir consultas Toplevel a partir de uma única Tk e um único mainloop.</li><li>Distinguir edição, registro confirmado e retrato de uma consulta já aberta.</li><li>Fechar a consulta por botão, X ou Escape sem encerrar a principal.</li><li>Explicar caminho local, referência da PhotoImage e alternativa textual quando não houver PNG utilizável.</li></ul><h2>Antes de começar</h2><ul><li>A04: seu cálculo de cinco notas, lista, validação e último registro válido já testados.</li><li>Python com Tkinter/ttk; pathlib e math fazem parte da biblioteca padrão, sem instalação adicional.</li><li>Crie a pasta A05 e preserve sua A04. As próprias classes serão introduzidas na A06.</li><li>Nenhum logotipo ou PNG é necessário: a demonstração começa com cabeçalho textual.</li></ul><section id="partida" data-stop="partida"><h2>Retomada sem consulta <a class="section-source" href="leitura-0005-escolar-ampliado.html#partida" aria-label="Versão para leitura: Retomada sem consulta">↗</a></h2><p>Responda individualmente antes de abrir seu código. Conserve as hipóteses para comparar com as execuções.</p><ul><li>Na A04, quais dados precisam ser confirmados juntos?</li><li>O que muda quando a quinta nota de outra tentativa é inválida?</li><li>Na A01, por que command recebe uma função e não o resultado de chamá-la?</li><li>Editar um campo deve modificar uma consulta ao último válido?</li></ul></section><section id="esteira" data-stop="esteira"><h2>Exposição 1: contêineres e hierarquia <a class="section-source" href="leitura-0005-escolar-ampliado.html#esteira" aria-label="Versão para leitura: Exposição 1: contêineres e hierarquia">↗</a></h2><p>Arquitetura: uma Tk contém um Frame base; ele contém os grupos Identificação, Notas e Ações. Cada grupo é pai dos seus próprios widgets. Os callbacks continuam chamando as funções de validação da A04; a mudança visual não muda a regra das notas.</p><p>Frame é um contêiner para organizar widgets; LabelFrame acrescenta uma borda com título do grupo. O primeiro argumento de cada widget define seu pai. Criar um grupo na tela não muda automaticamente o pai das Entry já existentes: elas precisam ser criadas no contêiner correto.</p><p>grid organiza os filhos de um pai. row=0 dentro de Identificação e row=0 dentro de Notas são posições em grades diferentes. Defina onde o grupo fica na base e, separadamente, onde cada campo fica dentro do grupo.</p><p>sticky=&quot;ew&quot; permite ocupar a largura disponível, mas a coluna também precisa receber weight para crescer. Configure a coluna do pai que você quer expandir; ampliar só a janela principal não faz todas as colunas internas crescerem.</p><p>Use grid para os filhos de cada contêiner nesta atividade. Preserve a ordem nome → turma → cinco notas → ações, rótulos claros e mensagens em texto. Não acrescente dados pessoais reais nem novas regras de média.</p><ol class="pipeline"><li><strong>Desenhar os pais</strong><p>Desenhe Tk → base → grupos → campos. Identifique o primeiro argumento de cada criação de widget.</p></li><li><strong>Posicionar os grupos</strong><p>Defina as linhas dos grupos na base antes de configurar suas grades internas.</p></li><li><strong>Distribuir os campos</strong><p>Crie cada Label/Entry no grupo correspondente e configure a expansão da coluna de entrada.</p></li><li><strong>Repetir os testes</strong><p>Retome válido, erro na última nota e limpeza para provar que o novo layout conservou as regras da A04.</p></li></ol><details class="public-example" open><summary>Exemplo: dois grupos, duas grades locais</summary><pre><code>import tkinter as tk
+from tkinter import ttk
+
+janela = tk.Tk()
+janela.columnconfigure(0, weight=1)
+base = ttk.Frame(janela, padding=12)
+base.grid(row=0, column=0, sticky=&quot;ew&quot;)
+base.columnconfigure(0, weight=1)
+for linha, titulo in enumerate([&quot;Medida A&quot;, &quot;Medida B&quot;]):
+    grupo = ttk.LabelFrame(base, text=titulo, padding=8)
+    grupo.grid(row=linha, column=0, pady=6, sticky=&quot;ew&quot;)
+    grupo.columnconfigure(1, weight=1)
+    ttk.Label(grupo, text=&quot;Valor:&quot;).grid(row=0, column=0)
+    ttk.Entry(grupo).grid(row=0, column=1, sticky=&quot;ew&quot;)
+janela.mainloop()
+</code></pre><p>Os dois campos estão na linha zero de pais diferentes. Amplie a largura e acompanhe quais colunas crescem.</p></details><details class="public-example" open><summary>Exemplo: confirmação e retrato em texto</summary><pre><code>registro = {&quot;medida&quot;: 2.5}
+retrato = f&quot;Medida confirmada: {registro[&#x27;medida&#x27;]}&quot;
+registro[&quot;medida&quot;] = 9.0
+print(retrato)
+print(registro[&quot;medida&quot;])
+</code></pre><p>O texto já criado não se atualiza quando o dicionário muda. Essa ideia será aplicada às janelas de consulta.</p></details></section><section id="pratica-terminal" data-stop="pratica-terminal"><h2>Prática 1: reorganizar sem mudar as regras <a class="section-source" href="leitura-0005-escolar-ampliado.html#pratica-terminal" aria-label="Versão para leitura: Prática 1: reorganizar sem mudar as regras">↗</a></h2><p>Use escolar_grupos.py como ponto de partida e traga suas funções/callbacks da A04. O inicial ainda usa a base como pai de todos os campos. Crie os grupos, substitua os pais e ajuste as linhas locais para obter a hierarquia desenhada.</p><p>Mantenha nome/turma com texto e cinco notas finitas de 0 a 10, incluindo os limites; média simples com uma casa apenas na apresentação. Uma tentativa inválida e Limpar campos continuam preservando o último conjunto válido.</p><p>Antes de avançar, compare o comportamento com a A04. O formulário organizado precisa continuar permitindo corrigir um erro e calcular de novo na mesma janela.</p><div class="workbench"><h3>Formulário organizado em grupos</h3><p>Reutilize sua lógica da A04 e agrupe identificação, notas e ações. Desenhe os pais e teste expansão das entradas e percurso por teclado.</p><p>Concluído quando: Os widgets pertencem aos grupos planejados; o layout cresce com a janela; as validações e o último válido continuam corretos.</p><details><summary>Dica para realizar a atividade</summary><p>Se um campo não acompanha o grupo, confira seu pai. Se não cresce, confira sticky e o weight da coluna desse pai.</p></details><pre><code id="work-escolar-grupos">&quot;&quot;&quot;A05 — complete: Escolar em grupos — A05.&quot;&quot;&quot;
+import tkinter as tk
+from tkinter import ttk
+from math import isfinite
+
+
+def calcular(campos, registro):
+    # TODO: normalizar nome/turma e recusar texto vazio.
+    # TODO: conferir a presença de exatamente cinco notas.
+    # TODO: converter cada texto, validar de 0 a 10 e criar uma nova lista.
+    # TODO: calcular a média com sum e len.
+    # TODO: confirmar nome, turma, notas e média somente após validar tudo.
+    return &quot;Complete a função calcular.&quot;
+
+
+def exibir(registro):
+    # TODO: tratar ausência; consultar apenas o último registro confirmado.
+    # TODO: mostrar identificação e cinco notas usadas, com média em uma casa.
+    return &quot;Complete a função exibir.&quot;
+
+
+def limpar(campos):
+    # TODO: esvaziar nome, turma e os cinco textos de notas.
+    # O registro confirmado não é recebido por esta função.
+    pass
+
+
+def criar_janela():
+    janela = tk.Tk()
+    janela.title(&quot;Escolar em grupos — A05&quot;)
+    janela.columnconfigure(0, weight=1)
+    janela.rowconfigure(0, weight=1)
+    base = ttk.Frame(janela, padding=12)
+    base.grid(row=0, column=0, sticky=&quot;nsew&quot;)
+    base.columnconfigure(0, weight=1)
+    campos = {&quot;nome&quot;: &quot;&quot;, &quot;turma&quot;: &quot;&quot;, &quot;notas&quot;: [&quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;]}
+    registro = {}
+    ttk.Label(base, text=&quot;Sistema escolar fictício — organize os campos&quot;).grid(row=0, column=0, columnspan=2, pady=6, sticky=&quot;w&quot;)
+    # TODO: criar LabelFrame para identificação e notas e Frame para ações.
+    # TODO: posicionar os grupos na base e configurar expansão das colunas.
+    # A disposição inicial é plana; substitua os pais e ajuste as linhas internas.
+    identificacao = base
+    grupo_notas = base
+    acoes = base
+    base.columnconfigure(1, weight=1)
+
+    ttk.Label(identificacao, text=&quot;Nome fictício:&quot;).grid(row=1, column=0, padx=6, pady=4, sticky=&quot;w&quot;)
+    entrada_nome = ttk.Entry(identificacao)
+    entrada_nome.grid(row=1, column=1, padx=6, pady=4, sticky=&quot;ew&quot;)
+    ttk.Label(identificacao, text=&quot;Turma fictícia:&quot;).grid(row=2, column=0, padx=6, pady=4, sticky=&quot;w&quot;)
+    entrada_turma = ttk.Entry(identificacao)
+    entrada_turma.grid(row=2, column=1, padx=6, pady=4, sticky=&quot;ew&quot;)
+    entradas_notas = []
+    for numero in range(1, 6):
+        ttk.Label(grupo_notas, text=f&quot;Nota {numero} (0 a 10):&quot;).grid(row=numero+2, column=0, padx=6, pady=4, sticky=&quot;w&quot;)
+        entrada = ttk.Entry(grupo_notas)
+        entrada.grid(row=numero+2, column=1, padx=6, pady=4, sticky=&quot;ew&quot;)
+        entradas_notas.append(entrada)
+
+    def ao_calcular():
+        # TODO: reutilizar a leitura, validação e confirmação da sua A04.
+        aviso.configure(text=&quot;Complete o callback Calcular média.&quot;)
+
+    def ao_exibir():
+        # TODO: consultar o último confirmado; na prática 2, abrir a Toplevel.
+        aviso.configure(text=&quot;Complete o callback de consulta.&quot;)
+
+    def ao_limpar():
+        # TODO: limpar as sete entradas sem apagar o último confirmado.
+        aviso.configure(text=&quot;Complete o callback Limpar campos.&quot;)
+
+    ttk.Button(acoes, text=&quot;Calcular média&quot;, command=ao_calcular).grid(row=8, column=0, padx=4, pady=6)
+    ttk.Button(acoes, text=&quot;Exibir&quot;, command=ao_exibir).grid(row=8, column=1, padx=4, pady=6)
+    ttk.Button(acoes, text=&quot;Limpar campos&quot;, command=ao_limpar).grid(row=9, column=0, columnspan=2, padx=4, pady=6)
+    aviso = ttk.Label(base, text=&quot;Use dados fictícios e confira as cinco notas.&quot;, wraplength=430)
+    aviso.grid(row=10, column=0, columnspan=2, pady=6, sticky=&quot;w&quot;)
+    resultado = ttk.Label(base, text=&quot;Nenhum registro escolar confirmado nesta sessão.&quot;, wraplength=430)
+    resultado.grid(row=11, column=0, columnspan=2, pady=6, sticky=&quot;w&quot;)
+    entrada_nome.focus_set()
+    return janela
+
+
+if __name__ == &quot;__main__&quot;:
+    criar_janela().mainloop()
+</code></pre><div class="atelier" data-source="work-escolar-grupos" data-filename="escolar_grupos.py" data-execution="Baixe para sua pasta A05 e execute: python escolar_grupos.py. Reutilize suas funções e callbacks da A04; o editor da página não executa Python."></div><p>Baixe para sua pasta A05 e execute: python escolar_grupos.py. Reutilize suas funções e callbacks da A04; o editor da página não executa Python.</p></div></section><section id="janela" data-stop="janela"><h2>Intervalo e exposição 2: consultas como retratos <a class="section-source" href="leitura-0005-escolar-ampliado.html#janela" aria-label="Versão para leitura: Intervalo e exposição 2: consultas como retratos">↗</a></h2><p>Após o intervalo, mantenha a principal aberta e acrescente Consultar. Use tk.Toplevel(principal) para criar uma janela de consulta ligada à aplicação existente. Há uma única Tk e um único mainloop; não coloque outro mainloop na consulta.</p><p>Antes do primeiro registro válido, Consultar deve orientar a calcular, sem abrir janela vazia. Depois, obtenha o texto do registro confirmado no instante da abertura e mostre-o em rótulos de leitura. Não busque os textos editáveis para montar a consulta.</p><p>Cada acionamento de Consultar pode abrir um novo retrato independente. C1 conserva os dados da sua abertura; editar ou confirmar outro registro na principal não muda C1. Uma nova C2 mostra o conjunto confirmado mais recente. Identifique essa regra na própria consulta.</p><p>A consulta fica sem bloqueio da principal, para permitir testar essa sequência. Botão Fechar consulta, X e Escape devem destruir somente a Toplevel. O callback ligado a bind recebe um evento; uma função com event=None pode atender também ao botão e ao fechamento da janela.</p><p>Para uma imagem opcional, monte o caminho com Path(__file__).resolve().parent / &quot;marca-a05.png&quot;. Isso procura ao lado do script, mesmo quando o terminal estiver em outra pasta. Crie PhotoImage com esse arquivo e conserve a referência, por exemplo em um atributo do rótulo.</p><p>A aula não distribui PNG nem logotipo. Se optar por usar uma imagem, crie um PNG próprio autorizado e coloque-o ao lado do script. Ausência ou erro de leitura mantém o texto Sistema escolar fictício; o programa deve funcionar sem imagem. Canvas e rolagem ficam como aprofundamento.</p><details class="public-example" open><summary>Exemplo: uma janela auxiliar e o seu fechamento</summary><pre><code>import tkinter as tk
+from tkinter import ttk
+
+principal = tk.Tk()
+principal.title(&quot;Janela principal&quot;)
+
+def abrir_ajuda():
+    ajuda = tk.Toplevel(principal)
+    ajuda.title(&quot;Ajuda local&quot;)
+    ttk.Label(ajuda, text=&quot;A principal continua aberta.&quot;).grid(padx=12, pady=12)
+    def fechar(event=None):
+        ajuda.destroy()
+        principal.focus_set()
+    ttk.Button(ajuda, text=&quot;Fechar ajuda&quot;, command=fechar).grid(pady=12)
+    ajuda.protocol(&quot;WM_DELETE_WINDOW&quot;, fechar)
+    ajuda.bind(&quot;&lt;Escape&gt;&quot;, fechar)
+
+ttk.Button(principal, text=&quot;Abrir ajuda&quot;, command=abrir_ajuda).grid(padx=12, pady=12)
+principal.mainloop()
+</code></pre><p>Localize quem é destruído em cada fechamento. A consulta escolar também precisa decidir de qual registro vem o conteúdo.</p></details><details class="public-example" open><summary>Exemplo: imagem opcional e texto alternativo</summary><pre><code>from pathlib import Path
+import tkinter as tk
+from tkinter import ttk
+
+janela = tk.Tk()
+rotulo = ttk.Label(janela, text=&quot;Demonstração com cabeçalho textual&quot;)
+rotulo.grid(padx=12, pady=12)
+caminho = Path(__file__).resolve().parent / &quot;imagem-propria.png&quot;
+try:
+    if caminho.is_file():
+        imagem = tk.PhotoImage(master=janela, file=str(caminho))
+        rotulo.configure(image=imagem, text=&quot;&quot;)
+        rotulo.image = imagem
+except (OSError, tk.TclError):
+    pass
+janela.mainloop()
+</code></pre><p>Execute o arquivo salvo: sem PNG, o texto permanece. O atributo image conserva o objeto PhotoImage; nenhum arquivo de imagem é fornecido ou obrigatório.</p></details></section><section id="pratica-formulario" data-stop="pratica-formulario"><h2>Prática 2: consultar, comparar e fechar <a class="section-source" href="leitura-0005-escolar-ampliado.html#pratica-formulario" aria-label="Versão para leitura: Prática 2: consultar, comparar e fechar">↗</a></h2><p>Leve seu formulário agrupado para escolar_janelas.py. Troque Exibir por Consultar e complete abrir_consulta. Cada consulta apresenta a identificação, as cinco notas usadas e a média do mesmo registro confirmado.</p><p>Registre Lia/T1 com média 8.0 e abra C1. Edite Rui/T2 sem calcular, provoque uma quinta nota inválida e compare C1 com outra consulta ao confirmado. Depois corrija, confirme Rui/T2 com média 5.0 e abra C2: C1 mantém Lia e C2 mostra Rui.</p><p>Teste botão, Escape e X em consultas distintas, continuando a usar a principal. Limpe os campos, amplie a janela e repita o percurso por teclado. Fechar a principal encerra a aplicação e suas consultas; reabrir começa sem registro.</p><p>Use o cabeçalho textual como caso básico. Se fizer o teste opcional de PNG próprio, registre a origem, confira a referência da imagem e teste também arquivo ausente ou inválido. Não copie logotipos do acervo para a entrega.</p><div class="workbench"><h3>Sistema escolar com consultas independentes</h3><p>Integre sua prática 1, crie as Toplevel de consulta e trate os três modos de fechar. Implemente o cabeçalho com texto e carregamento opcional do PNG próprio.</p><p>Concluído quando: Uma Tk/mainloop; consulta sem dados não abre; retratos coerentes e independentes; fechar uma consulta preserva a principal; ausência/erro de PNG mantém texto.</p><details><summary>Dica para realizar a atividade</summary><p>Se uma consulta mudar sozinha, procure leituras atuais de Entry ou vínculos atualizados. Se fechar tudo, confira qual objeto recebe destroy.</p></details><pre><code id="work-escolar-janelas">&quot;&quot;&quot;A05 — complete: Escolar com consulta — A05.&quot;&quot;&quot;
+import tkinter as tk
+from tkinter import ttk
+from math import isfinite
+from pathlib import Path
+
+
+def calcular(campos, registro):
+    # TODO: normalizar nome/turma e recusar texto vazio.
+    # TODO: conferir a presença de exatamente cinco notas.
+    # TODO: converter cada texto, validar de 0 a 10 e criar uma nova lista.
+    # TODO: calcular a média com sum e len.
+    # TODO: confirmar nome, turma, notas e média somente após validar tudo.
+    return &quot;Complete a função calcular.&quot;
+
+
+def exibir(registro):
+    # TODO: tratar ausência; consultar apenas o último registro confirmado.
+    # TODO: mostrar identificação e cinco notas usadas, com média em uma casa.
+    return &quot;Complete a função exibir.&quot;
+
+
+def limpar(campos):
+    # TODO: esvaziar nome, turma e os cinco textos de notas.
+    # O registro confirmado não é recebido por esta função.
+    pass
+
+
+def inserir_marca(container, caminho=None):
+    # TODO: procurar marca-a05.png ao lado do script com pathlib.
+    # TODO: usar PhotoImage e conservar uma referência enquanto o rótulo existir.
+    # TODO: manter texto se o PNG não existir ou não puder ser lido.
+    return ttk.Label(container, text=&quot;Sistema escolar fictício — A05&quot;)
+
+
+def abrir_consulta(principal, registro):
+    # TODO: tratar ausência de registro sem criar uma janela vazia.
+    # TODO: obter o texto do confirmado no instante da abertura.
+    # TODO: criar Toplevel e organizar sua consulta somente de leitura.
+    # TODO: botão, X e Escape devem fechar somente a consulta.
+    return None
+
+
+def criar_janela():
+    janela = tk.Tk()
+    janela.title(&quot;Escolar com consulta — A05&quot;)
+    janela.columnconfigure(0, weight=1)
+    janela.rowconfigure(0, weight=1)
+    base = ttk.Frame(janela, padding=12)
+    base.grid(row=0, column=0, sticky=&quot;nsew&quot;)
+    base.columnconfigure(0, weight=1)
+    campos = {&quot;nome&quot;: &quot;&quot;, &quot;turma&quot;: &quot;&quot;, &quot;notas&quot;: [&quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;]}
+    registro = {}
+    inserir_marca(base).grid(row=0, column=0, columnspan=2, pady=6, sticky=&quot;w&quot;)
+    # TODO: criar LabelFrame para identificação e notas e Frame para ações.
+    # TODO: posicionar os grupos na base e configurar expansão das colunas.
+    # A disposição inicial é plana; substitua os pais e ajuste as linhas internas.
+    identificacao = base
+    grupo_notas = base
+    acoes = base
+    base.columnconfigure(1, weight=1)
+
+    ttk.Label(identificacao, text=&quot;Nome fictício:&quot;).grid(row=1, column=0, padx=6, pady=4, sticky=&quot;w&quot;)
+    entrada_nome = ttk.Entry(identificacao)
+    entrada_nome.grid(row=1, column=1, padx=6, pady=4, sticky=&quot;ew&quot;)
+    ttk.Label(identificacao, text=&quot;Turma fictícia:&quot;).grid(row=2, column=0, padx=6, pady=4, sticky=&quot;w&quot;)
+    entrada_turma = ttk.Entry(identificacao)
+    entrada_turma.grid(row=2, column=1, padx=6, pady=4, sticky=&quot;ew&quot;)
+    entradas_notas = []
+    for numero in range(1, 6):
+        ttk.Label(grupo_notas, text=f&quot;Nota {numero} (0 a 10):&quot;).grid(row=numero+2, column=0, padx=6, pady=4, sticky=&quot;w&quot;)
+        entrada = ttk.Entry(grupo_notas)
+        entrada.grid(row=numero+2, column=1, padx=6, pady=4, sticky=&quot;ew&quot;)
+        entradas_notas.append(entrada)
+
+    def ao_calcular():
+        # TODO: reutilizar a leitura, validação e confirmação da sua A04.
+        aviso.configure(text=&quot;Complete o callback Calcular média.&quot;)
+
+    def ao_exibir():
+        # TODO: consultar o último confirmado; na prática 2, abrir a Toplevel.
+        aviso.configure(text=&quot;Complete o callback de consulta.&quot;)
+
+    def ao_limpar():
+        # TODO: limpar as sete entradas sem apagar o último confirmado.
+        aviso.configure(text=&quot;Complete o callback Limpar campos.&quot;)
+
+    ttk.Button(acoes, text=&quot;Calcular média&quot;, command=ao_calcular).grid(row=8, column=0, padx=4, pady=6)
+    ttk.Button(acoes, text=&quot;Consultar&quot;, command=ao_exibir).grid(row=8, column=1, padx=4, pady=6)
+    ttk.Button(acoes, text=&quot;Limpar campos&quot;, command=ao_limpar).grid(row=9, column=0, columnspan=2, padx=4, pady=6)
+    aviso = ttk.Label(base, text=&quot;Use dados fictícios e confira as cinco notas.&quot;, wraplength=430)
+    aviso.grid(row=10, column=0, columnspan=2, pady=6, sticky=&quot;w&quot;)
+    resultado = ttk.Label(base, text=&quot;Nenhum registro escolar confirmado nesta sessão.&quot;, wraplength=430)
+    resultado.grid(row=11, column=0, columnspan=2, pady=6, sticky=&quot;w&quot;)
+    entrada_nome.focus_set()
+    return janela
+
+
+if __name__ == &quot;__main__&quot;:
+    criar_janela().mainloop()
+</code></pre><div class="atelier" data-source="work-escolar-janelas" data-filename="escolar_janelas.py" data-execution="Baixe para sua pasta A05 e execute: python escolar_janelas.py. Reutilize suas funções e callbacks da A04; o editor da página não executa Python."></div><p>Baixe para sua pasta A05 e execute: python escolar_janelas.py. Reutilize suas funções e callbacks da A04; o editor da página não executa Python.</p></div></section><section id="auditoria" data-stop="auditoria"><h2>Investigue pais, retratos e fechamento <a class="section-source" href="leitura-0005-escolar-ampliado.html#auditoria" aria-label="Versão para leitura: Investigue pais, retratos e fechamento">↗</a></h2><p>Escolha e justifique com uma sequência executada. As alternativas podem mudar de ordem; a página registra sua tentativa nesta sessão.</p><fieldset data-question="q51"><legend>Dois Entry usam row=0 e column=1, mas pertencem a LabelFrame diferentes. Isso exige que ocupem o mesmo lugar na tela?</legend><div class="question-options"><label class="option"><input type="radio" name="q51" value="Não; cada pai possui sua própria grade" autocomplete="off">Não; cada pai possui sua própria grade</label><label class="option"><input type="radio" name="q51" value="Sim; row e column são globais da aplicação" autocomplete="off">Sim; row e column são globais da aplicação</label><label class="option"><input type="radio" name="q51" value="Sim; um dos Entry precisa ser apagado" autocomplete="off">Sim; um dos Entry precisa ser apagado</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Observe o primeiro argumento de cada widget e onde cada grupo foi posicionado.</p></details></fieldset><div id="audit-list"><article class="audit-item" id="au51"><fieldset data-question="au51"><legend>C1 foi aberta com Lia. Depois você confirma Rui na principal; C1 mantém Lia e uma nova C2 mostra Rui.</legend><div class="question-options"><label class="option"><input type="radio" name="au51" value="Conferir como comportamento de retrato previsto" autocomplete="off">Conferir como comportamento de retrato previsto</label><label class="option"><input type="radio" name="au51" value="Obrigar C1 a ler os campos atuais" autocomplete="off">Obrigar C1 a ler os campos atuais</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Compare o instante da abertura de cada consulta com o momento do novo cálculo.</p></details></fieldset><label><input class="discussion" type="checkbox" value="au51"> Marcar para discussão</label></article><article class="audit-item" id="au52"><fieldset data-question="au52"><legend>O botão Fechar consulta executa destroy na janela principal e encerra todo o programa.</legend><div class="question-options"><label class="option"><input type="radio" name="au52" value="Revisar o objeto que o callback está destruindo" autocomplete="off">Revisar o objeto que o callback está destruindo</label><label class="option"><input type="radio" name="au52" value="Manter porque principal e consulta são a mesma janela" autocomplete="off">Manter porque principal e consulta são a mesma janela</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Localize as variáveis que receberam Tk e Toplevel.</p></details></fieldset><label><input class="discussion" type="checkbox" value="au52"> Marcar para discussão</label></article></div><p id="count" aria-live="polite">0 itens marcados para discussão</p><button class="js-only" id="register">Registrar discussão</button><p id="registered" aria-live="polite"></p></section><section id="registro" data-stop="registro"><h2>Guarde os arquivos e o checklist de janelas <a class="section-source" href="leitura-0005-escolar-ampliado.html#registro" aria-label="Versão para leitura: Guarde os arquivos e o checklist de janelas">↗</a></h2><p>Baixe escolar_grupos.py, escolar_janelas.py e registro-a05.md. Entregue os dois arquivos executados e seu checklist pelo fluxo combinado, usando o link de entrega abaixo. Colaboração nos testes não substitui sua implementação e explicação individual.</p><p>Exportar registros reúne anotações e rascunhos desta página; não recolhe automaticamente os arquivos do computador. Confira os downloads e anexe os arquivos executados.</p><div class="workbench"><h3>Meu checklist de grupos e consultas</h3><p>Conserve as hipóteses e registre a ordem das confirmações e das aberturas de C1/C2. Inclua uma correção e nova execução.</p><p>Concluído quando: O checklist distingue os três estados, os pais dos campos e o alcance de cada fechamento; registra o caso sem imagem.</p><details><summary>Dica para realizar a atividade</summary><p>Dê nomes às consultas nos registros para conseguir reproduzir qual conjunto cada uma deveria conservar.</p></details><pre><code id="work-evidencias-a05"># A05 — organização e consultas do sistema escolar
+
+Código do estudante:
+Arquivos e interpretador executados:
+
+## Retomada sem consulta
+Quais dados devem ficar juntos no último registro válido?
+Por que uma quinta nota inválida não pode alterar o nome confirmado?
+O que o botão recebe em command e quando essa função é executada?
+Minhas respostas iniciais:
+
+## Antes de programar
+Desenho dos pais: Tk → Frame base → grupos → campos e botões:
+Onde cada grid organiza seus filhos?
+Diferença entre edição, registro confirmado e retrato da consulta:
+
+## Preveja e depois execute
+Dados sempre fictícios. C1/C2 identificam janelas de consulta diferentes.
+| Caso | Sequência/verificação | Previsão | Observação | Ajuste |
+|---|---|---|---|---|
+| T01 | Confirmar que nome/turma, cinco notas e ações possuem os grupos/pais planejados | | | |
+| T02 | Lia / T1 / 6,7,8,9,10; calcular e conferir média 8.0 | | | |
+| T03 | Antes do primeiro válido, usar Consultar | | | |
+| T04 | Confirmar T02 e abrir consulta C1 | | | |
+| T05 | Editar Rui / T2 / cinco notas 5, sem calcular; observar C1 | | | |
+| T06 | Após T02, tentar outra identificação com quinta nota abc; consultar novamente | | | |
+| T07 | Corrigir e confirmar Rui / T2 / cinco notas 5; observar C1 e abrir C2 | | | |
+| T08 | Limpar as sete entradas; observar o registro principal e as consultas | | | |
+| T09 | Fechar C1 pelo botão; continuar usando a principal e C2 | | | |
+| T10 | Abrir outra consulta e fechá-la por Escape | | | |
+| T11 | Abrir outra consulta e fechá-la pelo X da própria janela | | | |
+| T12 | Repetir 0/10, fora de faixa, vazios, vírgula/ponto e identificação da A04 | | | |
+| T13 | Percorrer grupos e botões por Tab/Shift+Tab; ampliar a janela e observar campos | | | |
+| T14 | Executar sem marca-a05.png; observar o cabeçalho textual | | | |
+| T15 | Se usar PNG próprio, conferir imagem e testar arquivo inválido/ausente com fallback | | | |
+| T16 | Executar o script a partir de outra pasta; conferir busca ao lado do script | | | |
+| T17 | Fechar a principal com consultas abertas; reabrir e tentar Consultar | | | |
+
+## Imagem local (opcional)
+O programa funcionou sem imagem:
+Se criei PNG próprio, nome/origem do arquivo e teste realizado:
+Qual objeto conserva a referência da imagem:
+
+## Fechamento sem consulta
+Por que criar outra Tk/mainloop não é o contrato desta aula?
+Por que C1 pode manter o registro antigo depois de um novo válido?
+Qual janela cada fechamento destrói?
+Minha dificuldade, correção e próxima tentativa:
+
+Entregas: escolar_grupos.py, escolar_janelas.py e este registro.
+Não há imagem obrigatória no pacote; use apenas arquivo próprio autorizado se optar por esse teste.
+</code></pre><div class="atelier" data-source="work-evidencias-a05" data-filename="registro-a05.md" data-execution="Preencha e baixe o registro; anexe os dois arquivos Python executados."></div><p>Preencha e baixe o registro; anexe os dois arquivos Python executados.</p></div><div class="grid"><label>Nome do aluno<input id="student-name" autocomplete="off"></label><label>Turma<input id="student-class" autocomplete="off"></label><label>Data<input id="lesson-date" type="date"></label></div><label for="practice-notes">Registros da prática</label><textarea id="practice-notes" autocomplete="off"></textarea><label for="reflection">Reflexão e próximo passo</label><textarea id="reflection" autocomplete="off"></textarea><div class="actions js-only"><button id="export" data-export>Exportar registros da aula</button><button id="reset">Limpar sessão</button></div><p id="export-status" aria-live="polite"></p><aside class="submission" aria-label="Entrega dos arquivos"><h3>Salve sua entrega no OneDrive</h3><p>Baixe ou exporte seus registros e os arquivos da atividade. Abra a pasta no OneDrive, entre com a conta autorizada e envie os arquivos baixados. Confira se eles aparecem na pasta antes de encerrar.</p><a class="submission-link" href="https://senacrsedu-my.sharepoint.com/:f:/g/personal/01606371045_senacrs_edu_br/IgAw6ZzfVcGZS56vSyOV1YSaATvbA9sC2I-Iv76Rs_34IdU?e=gKMkOG" target="_blank" rel="noopener noreferrer">Abrir pasta de entrega no OneDrive<span class="sr-only"> (abre em nova aba)</span></a></aside></section><section id="fechamento" data-stop="fechamento"><h2>Explique quem contém, quem consulta e quem fecha <a class="section-source" href="leitura-0005-escolar-ampliado.html#fechamento" aria-label="Versão para leitura: Explique quem contém, quem consulta e quem fecha">↗</a></h2><p>Sem consulta, explique por que cada grupo tem sua grade, por que C1 não muda após um novo cálculo e qual janela deve ser destruída ao fechar a consulta. Diga também por que o programa continua funcionando sem PNG.</p><p>Na A06, você começará classes e módulos para separar melhor os dados e a interface, mantendo os contratos já testados.</p></section><h2>Fontes e anexos</h2><ul><li><a href="https://tkdocs.com/tutorial/complex.html">TkDocs — organização e LabelFrame · consulta 22/10/2026</a></li><li><a href="https://tkdocs.com/tutorial/windows.html">TkDocs — janelas e fechamento · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/tkinter.ttk.html#labelframe">Python 3.14 — ttk LabelFrame · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/tkinter.html#images">Python 3.14 — imagens Tkinter · consulta 22/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/pathlib.html">Python 3.14 — pathlib · consulta 22/10/2026</a></li><li><a download href="../anexos/A05/escolar_grupos.py">Código inicial: escolar_grupos.py</a></li><li><a download href="../anexos/A05/escolar_janelas.py">Código inicial: escolar_janelas.py</a></li><li><a download href="../anexos/A05/registro-a05.md">Checklist inicial de grupos e consultas</a></li></ul><a data-idoc="source" href="leitura-0005-escolar-ampliado.html">Versão para leitura ou impressão</a></main><footer><p>UC8: Desenvolver e organizar interface gráfica para aplicações desktop · atualizado em <time data-idoc="asof">2026-10-22</time></p><p data-idoc="nonbinding">Registre sua tentativa e confira a correção com o professor.</p><a href="../index.html">Voltar ao índice</a></footer></div></div><noscript><p>Sem JavaScript, leia o material e registre a tentativa no seu editor ou caderno. Exportação e editores interativos exigem JavaScript.</p></noscript></body></html>

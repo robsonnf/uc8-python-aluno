@@ -1,0 +1,84 @@
+"""A05 — complete: Escolar em grupos — A05."""
+import tkinter as tk
+from tkinter import ttk
+from math import isfinite
+
+
+def calcular(campos, registro):
+    # TODO: normalizar nome/turma e recusar texto vazio.
+    # TODO: conferir a presença de exatamente cinco notas.
+    # TODO: converter cada texto, validar de 0 a 10 e criar uma nova lista.
+    # TODO: calcular a média com sum e len.
+    # TODO: confirmar nome, turma, notas e média somente após validar tudo.
+    return "Complete a função calcular."
+
+
+def exibir(registro):
+    # TODO: tratar ausência; consultar apenas o último registro confirmado.
+    # TODO: mostrar identificação e cinco notas usadas, com média em uma casa.
+    return "Complete a função exibir."
+
+
+def limpar(campos):
+    # TODO: esvaziar nome, turma e os cinco textos de notas.
+    # O registro confirmado não é recebido por esta função.
+    pass
+
+
+def criar_janela():
+    janela = tk.Tk()
+    janela.title("Escolar em grupos — A05")
+    janela.columnconfigure(0, weight=1)
+    janela.rowconfigure(0, weight=1)
+    base = ttk.Frame(janela, padding=12)
+    base.grid(row=0, column=0, sticky="nsew")
+    base.columnconfigure(0, weight=1)
+    campos = {"nome": "", "turma": "", "notas": ["", "", "", "", ""]}
+    registro = {}
+    ttk.Label(base, text="Sistema escolar fictício — organize os campos").grid(row=0, column=0, columnspan=2, pady=6, sticky="w")
+    # TODO: criar LabelFrame para identificação e notas e Frame para ações.
+    # TODO: posicionar os grupos na base e configurar expansão das colunas.
+    # A disposição inicial é plana; substitua os pais e ajuste as linhas internas.
+    identificacao = base
+    grupo_notas = base
+    acoes = base
+    base.columnconfigure(1, weight=1)
+
+    ttk.Label(identificacao, text="Nome fictício:").grid(row=1, column=0, padx=6, pady=4, sticky="w")
+    entrada_nome = ttk.Entry(identificacao)
+    entrada_nome.grid(row=1, column=1, padx=6, pady=4, sticky="ew")
+    ttk.Label(identificacao, text="Turma fictícia:").grid(row=2, column=0, padx=6, pady=4, sticky="w")
+    entrada_turma = ttk.Entry(identificacao)
+    entrada_turma.grid(row=2, column=1, padx=6, pady=4, sticky="ew")
+    entradas_notas = []
+    for numero in range(1, 6):
+        ttk.Label(grupo_notas, text=f"Nota {numero} (0 a 10):").grid(row=numero+2, column=0, padx=6, pady=4, sticky="w")
+        entrada = ttk.Entry(grupo_notas)
+        entrada.grid(row=numero+2, column=1, padx=6, pady=4, sticky="ew")
+        entradas_notas.append(entrada)
+
+    def ao_calcular():
+        # TODO: reutilizar a leitura, validação e confirmação da sua A04.
+        aviso.configure(text="Complete o callback Calcular média.")
+
+    def ao_exibir():
+        # TODO: consultar o último confirmado; na prática 2, abrir a Toplevel.
+        aviso.configure(text="Complete o callback de consulta.")
+
+    def ao_limpar():
+        # TODO: limpar as sete entradas sem apagar o último confirmado.
+        aviso.configure(text="Complete o callback Limpar campos.")
+
+    ttk.Button(acoes, text="Calcular média", command=ao_calcular).grid(row=8, column=0, padx=4, pady=6)
+    ttk.Button(acoes, text="Exibir", command=ao_exibir).grid(row=8, column=1, padx=4, pady=6)
+    ttk.Button(acoes, text="Limpar campos", command=ao_limpar).grid(row=9, column=0, columnspan=2, padx=4, pady=6)
+    aviso = ttk.Label(base, text="Use dados fictícios e confira as cinco notas.", wraplength=430)
+    aviso.grid(row=10, column=0, columnspan=2, pady=6, sticky="w")
+    resultado = ttk.Label(base, text="Nenhum registro escolar confirmado nesta sessão.", wraplength=430)
+    resultado.grid(row=11, column=0, columnspan=2, pady=6, sticky="w")
+    entrada_nome.focus_set()
+    return janela
+
+
+if __name__ == "__main__":
+    criar_janela().mainloop()
