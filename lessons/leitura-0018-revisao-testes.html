@@ -1,0 +1,387 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A18 · A18 — Regressão, correções e README reproduzível</title><script src="../assets/appearance.js"></script><link rel="stylesheet" href="../assets/course.css"><link rel="stylesheet" href="../assets/atelier.css"><link rel="stylesheet" href="../assets/theme.css"><link rel="stylesheet" href="../assets/appearance.css"></head><body class="lesson" data-lesson="A18" data-course="uc8-desktop"><a class="skip" href="#conteudo">Pular para conteúdo</a><div class="curso-app"><aside id="course-sidebar" class="course-sidebar curso-lateral"><p class="eyebrow">UC8 · Python · Tkinter e ttk</p><h2>Grade das aulas</h2><p>20 encontros · 60 h</p><button id="grade-close" class="js-only">Ocultar grade · P</button><ol class="grade-list"><li class="grade-item "><span class="grade-number">A01</span><a href="0001-diagnostico-cadastro.html"><span>Diagnóstico, revisão Python e cadastro simples<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A02</span><a href="0002-evolucao-cadastro.html"><span>Evolução do cadastro<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A03</span><a href="0003-conversor.html"><span>Conversor de moedas<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A04</span><a href="0004-escolar-basico.html"><span>Sistema escolar básico<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A05</span><a href="0005-escolar-ampliado.html"><span>Sistema escolar ampliado<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A06</span><a href="0006-escolar-modular.html"><span>Sistema escolar modular — classes<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A07</span><a href="0007-sorveteria-inicial.html"><span>Sorveteria inicial<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A08</span><a href="0008-sorveteria-pagamentos.html"><span>Sorveteria e pagamentos<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A09</span><a href="0009-catalogo-carrinho.html"><span>Catálogo e carrinho<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A10</span><a href="0010-pizzaria-inicial.html"><span>Pizzaria inicial — transferência<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A11</span><a href="0011-pizzaria-evolucao.html"><span>Pizzaria — estados e pagamento<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A12</span><a href="0012-mercado-json.html"><span>Mercado — navegação e JSON<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A13</span><a href="0013-pizzaria-relatorios.html"><span>Pizzaria — CSV e demonstração de login<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A14</span><a href="0014-sqlite.html"><span>SQLite — primeira persistência<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A15</span><a href="0015-crud.html"><span>CRUD — produtos e clientes<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A16</span><a href="0016-controllers.html"><span>Controllers, componentes e contratos<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A17</span><a href="0017-integracao.html"><span>Integração e CustomTkinter<small>Disponível</small></span></a></li><li class="grade-item current"><span class="grade-number">A18</span><span>Revisão, testes e README<small>Nesta aula</small></span><ol class="grade-sections"><li><a href="#partida">Retomada sem consulta</a></li><li><a href="#esteira">Arquitetura e primeiro passo</a></li><li><a href="#pratica-terminal">Prática 1: construir e conferir</a></li><li><a href="#janela">Intervalo e integração</a></li><li><a href="#pratica-formulario">Prática 2: aplicar ao projeto</a></li><li><a href="#auditoria">Investigue com uma execução</a></li><li><a href="#registro">Guarde a versão executada e suas evidências</a></li><li><a href="#fechamento">Explique a decisão e o próximo teste</a></li></ol></li><li class="grade-item "><span class="grade-number">A19</span><a href="0019-academia-demonstracoes.html"><span>Academia e demonstrações individuais<small>Disponível</small></span></a></li><li class="grade-item "><span class="grade-number">A20</span><a href="0020-relacionamentos-recuperacao.html"><span>Relacionamentos, recuperação e encerramento<small>Disponível</small></span></a></li></ol></aside><div class="curso-conteudo"><button id="grade-toggle" class="grade-toggle js-only" aria-controls="course-sidebar">Grade · P</button><header class="top"><div class="wordmark">UC8</div><span class="badge" data-idoc="status">Aula 18</span><button type="button" id="theme-toggle" class="theme-control" aria-label="Ativar tema escuro" title="Ativar tema escuro"><svg class="theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20.5 13.3A8.5 8.5 0 0 1 10.7 3.5 8.5 8.5 0 1 0 20.5 13.3Z"/></svg></button></header><div class="hero"><div class="eyebrow">Python · Tkinter e ttk</div><h1>A18 — Regressão, correções e README reproduzível</h1><p class="thesis">Você vai corrigir o projeto com evidências e permitir que um colega o execute seguindo seu README.</p><p data-idoc="caveat">Use dados fictícios e preserve uma cópia da versão anterior. Confira os arquivos executados, os resultados e as pendências antes de entregar.</p><div class="meta"><span>Aluno</span></div></div><main id="conteudo"><nav class="lesson-navigation" aria-label="Navegação entre aulas"><a href="leitura-0017-integracao.html" rel="prev"><strong>← Aula anterior</strong><span>A17 · Integração e CustomTkinter</span></a><a href="leitura-0019-academia-demonstracoes.html" rel="next"><strong>Próxima aula →</strong><span>A19 · Academia e demonstrações individuais</span></a></nav><div class="actions js-only"><button id="presentation" aria-pressed="false">Ampliar para apresentação</button><button data-export>Exportar registros da aula</button><a href="#registro">Identificação e registros</a></div><h2>Objetivos</h2><ul><li>Executar matriz de regressão</li><li>Corrigir e reproduzir pelo README com colega</li><li>Executar os casos do encontro e explicar uma decisão da própria implementação.</li><li>Identificar erro ou pendência e registrar correção com nova tentativa individual.</li></ul><h2>Antes de começar</h2><ul><li>A17: núcleo integrado. Traga a versão anterior já experimentada.</li><li>Python com Tkinter/ttk e módulos padrão. Nenhuma instalação automática; comparações opcionais são identificadas no próprio material.</li><li>Crie uma pasta A18, preserve a anterior e mantenha os arquivos Python juntos. Leia arquitetura e contratos antes de implementar.</li><li>Mudança central desta aula: verificar.py, README-A18.md. Os demais módulos reutilizam o seu trabalho; não é necessário reescrevê-los integralmente.</li></ul><section id="partida" data-stop="partida"><h2>Retomada sem consulta <a class="section-source" href="leitura-0018-revisao-testes.html#partida" aria-label="Versão para leitura: Retomada sem consulta">↗</a></h2><p>Registre suas hipóteses individuais antes de abrir o código. Compare-as depois com os casos executados, conservando a primeira tentativa.</p><ul><li>Na A17, quando a interface pode anunciar que uma venda foi gravada?</li><li>Por que a A17 confere preço e existência do produto ao finalizar?</li><li>Na A14, por que o preço foi gravado em centavos inteiros?</li><li>O contexto with con da A14 fecha automaticamente a conexão?</li></ul></section><section id="esteira" data-stop="esteira"><h2>Arquitetura e primeiro passo <a class="section-source" href="leitura-0018-revisao-testes.html#esteira" aria-label="Versão para leitura: Arquitetura e primeiro passo">↗</a></h2><p>Congele uma candidata em sua pasta A18. A matriz liga requisito, entrada/ação, previsão, observado e reteste. verificar.py testa regras/persistência em diretório temporário; README descreve arquivos, comando, banco e limites reais.</p><p>Teste de regressão verifica se uma mudança conservou comportamentos já exigidos. Escolha casos que distinguem falhas relevantes: erro após válido, cancelamento, ID após ordenação, preço alterado durante montagem e reabertura do banco.</p><p>Não escreva um teste que calcula a resposta chamando a mesma função que está sendo avaliada. Use valores esperados conhecidos e efeitos observáveis. Uma falha proposital na previsão confirma que a verificação é executada; depois restaure a expectativa correta.</p><p>Isole os testes de armazenamento em TemporaryDirectory. O teste não deve apagar o banco do projeto nem depender de uma venda real existente. Uma falha de persistência simulada precisa verificar ausência de registro parcial, além da mensagem.</p><p>Separe teste de regra, integração e inspeção de interface. Um total correto não prova ordem de foco; um botão visível não prova SQL correto. Relacione cada evidência ao requisito que ela realmente observa.</p><ol class="pipeline"><li><strong>Desenhar o contrato</strong><p>Identifique entrada, responsabilidade, resultado e o que deve ser preservado no erro.</p></li><li><strong>Prever um caso conhecido</strong><p>Valores conhecidos, erro após válido e cancelamento repetidos.</p></li><li><strong>Executar antes da integração</strong><p>Use dados fictícios e registre a diferença entre previsão e observado, sem depender da aparência da tela.</p></li><li><strong>Investigar o contraste</strong><p>Execute um caso inválido ou cancelado depois do válido e confira todos os dados afetados.</p></li></ol><details class="public-example" open><summary>Exemplo curto para prever</summary><pre><code>def dobrar(valor):
+    return valor * 2
+
+assert dobrar(3) == 6
+# Mude a previsão para 7, observe a falha e depois restaure 6.
+print(&quot;Previsão conferida.&quot;)
+</code></pre><p>Preveja antes de executar. Este exemplo ensina a ideia; a atividade exige aplicar o contrato ao seu projeto.</p></details></section><section id="pratica-terminal" data-stop="pratica-terminal"><h2>Prática 1: construir e conferir <a class="section-source" href="leitura-0018-revisao-testes.html#pratica-terminal" aria-label="Versão para leitura: Prática 1: construir e conferir">↗</a></h2><p>Selecione ao menos um caso por camada e execute sua matriz. Corrija uma falha, repita o caso que falhou e um caso vizinho para verificar regressão. Guarde a saída observada e evite marcar como feito o que ainda não executou.</p><p>Os iniciais indicam assinaturas e pontos de integração. Traga a sua implementação das aulas anteriores; não refaça todos os módulos apenas porque recebeu um novo inicial. Implemente o que mudou e repita os contratos preservados.</p><div class="workbench"><h3>Modelo e regras</h3><p>Conserve sua implementação anterior de modelos.py; este módulo não é uma reconstrução obrigatória nesta aula. Ajuste somente o contrato afetado e repita os casos já conhecidos. O inicial é apoio para localizar assinaturas caso precise.</p><p>Concluído quando: Você executa os casos pertinentes e explica entradas, resultado e tratamento de erro da sua implementação.</p><details><summary>Dica para realizar a atividade</summary><p>Comece pelo caso conhecido; compare o estado antes/depois de um erro e só depois integre a interface.</p></details><pre><code id="work-a18-modelos"># A18: assinaturas de apoio; traga sua implementação anterior.
+def quantidade(texto):
+    &quot;&quot;&quot;TODO A18: implemente quantidade conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+    raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+def formatar(centavos):
+    &quot;&quot;&quot;TODO A18: implemente formatar conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+    raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+class Produto:
+
+    def __init__(self, codigo, nome, preco_centavos):
+        &quot;&quot;&quot;TODO A18: implemente __init__ conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+class Item:
+
+    def __init__(self, produto, texto_quantidade):
+        &quot;&quot;&quot;TODO A18: implemente __init__ conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def subtotal(self):
+        &quot;&quot;&quot;TODO A18: implemente subtotal conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+class Pedido:
+
+    def __init__(self):
+        &quot;&quot;&quot;TODO A18: implemente __init__ conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def exigir_aberto(self):
+        &quot;&quot;&quot;TODO A18: implemente exigir_aberto conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def adicionar(self, produto, texto_quantidade):
+        &quot;&quot;&quot;TODO A18: implemente adicionar conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def total_centavos(self):
+        &quot;&quot;&quot;TODO A18: implemente total_centavos conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def linhas(self):
+        &quot;&quot;&quot;TODO A18: implemente linhas conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def atualizar(self, codigo, texto_quantidade):
+        &quot;&quot;&quot;TODO A18: implemente atualizar conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def remover(self, codigo):
+        &quot;&quot;&quot;TODO A18: implemente remover conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def finalizar(self, forma, confirmado):
+        &quot;&quot;&quot;TODO A18: implemente finalizar conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def novo(self):
+        &quot;&quot;&quot;TODO A18: implemente novo conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+</code></pre><div class="atelier" data-source="work-a18-modelos" data-filename="modelos.py" data-execution="Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior."></div><p>Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior.</p></div><div class="workbench"><h3>Pagamento decimal</h3><p>Conserve sua implementação anterior de pagamento.py; este módulo não é uma reconstrução obrigatória nesta aula. Ajuste somente o contrato afetado e repita os casos já conhecidos. O inicial é apoio para localizar assinaturas caso precise.</p><p>Concluído quando: Você executa os casos pertinentes e explica entradas, resultado e tratamento de erro da sua implementação.</p><details><summary>Dica para realizar a atividade</summary><p>Comece pelo caso conhecido; compare o estado antes/depois de um erro e só depois integre a interface.</p></details><pre><code id="work-a18-pagamento"># A18: assinaturas de apoio; traga sua implementação anterior.
+from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
+import re
+FATORES = {&#x27;Dinheiro&#x27;: &#x27;0.87&#x27;, &#x27;PIX&#x27;: &#x27;0.87&#x27;, &#x27;Débito&#x27;: &#x27;0.92&#x27;, &#x27;Crédito 1x&#x27;: &#x27;1.00&#x27;}
+
+def valor_monetario(texto, permitir_zero=True):
+    &quot;&quot;&quot;TODO A18: implemente valor_monetario conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+    raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+def calcular_pagamento(subtotal_texto, forma):
+    &quot;&quot;&quot;TODO A18: implemente calcular_pagamento conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+    raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+def preco_para_centavos(texto):
+    &quot;&quot;&quot;TODO A18: implemente preco_para_centavos conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+    raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+</code></pre><div class="atelier" data-source="work-a18-pagamento" data-filename="pagamento.py" data-execution="Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior."></div><p>Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior.</p></div><div class="workbench"><h3>Leitura e escrita JSON</h3><p>Conserve sua implementação anterior de arquivos.py; este módulo não é uma reconstrução obrigatória nesta aula. Ajuste somente o contrato afetado e repita os casos já conhecidos. O inicial é apoio para localizar assinaturas caso precise.</p><p>Concluído quando: Você executa os casos pertinentes e explica entradas, resultado e tratamento de erro da sua implementação.</p><details><summary>Dica para realizar a atividade</summary><p>Comece pelo caso conhecido; compare o estado antes/depois de um erro e só depois integre a interface.</p></details><pre><code id="work-a18-arquivos"># A18: assinaturas de apoio; traga sua implementação anterior.
+from pathlib import Path
+import json
+import os
+import tempfile
+
+def validar_catalogo(dados):
+    &quot;&quot;&quot;TODO A18: implemente validar_catalogo conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+    raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+def ler_catalogo(caminho):
+    &quot;&quot;&quot;TODO A18: implemente ler_catalogo conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+    raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+def salvar_catalogo(caminho, dados):
+    &quot;&quot;&quot;TODO A18: implemente salvar_catalogo conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+    raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+</code></pre><div class="atelier" data-source="work-a18-arquivos" data-filename="arquivos.py" data-execution="Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior."></div><p>Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior.</p></div><div class="workbench"><h3>Exportação CSV</h3><p>Conserve sua implementação anterior de relatorios.py; este módulo não é uma reconstrução obrigatória nesta aula. Ajuste somente o contrato afetado e repita os casos já conhecidos. O inicial é apoio para localizar assinaturas caso precise.</p><p>Concluído quando: Você executa os casos pertinentes e explica entradas, resultado e tratamento de erro da sua implementação.</p><details><summary>Dica para realizar a atividade</summary><p>Comece pelo caso conhecido; compare o estado antes/depois de um erro e só depois integre a interface.</p></details><pre><code id="work-a18-relatorios"># A18: assinaturas de apoio; traga sua implementação anterior.
+from pathlib import Path
+import csv
+import os
+import tempfile
+
+def exportar_csv(caminho, comprovante):
+    &quot;&quot;&quot;TODO A18: implemente exportar_csv conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+    raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+</code></pre><div class="atelier" data-source="work-a18-relatorios" data-filename="relatorios.py" data-execution="Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior."></div><p>Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior.</p></div><div class="workbench"><h3>Simulação de perfil</h3><p>Conserve sua implementação anterior de perfis.py; este módulo não é uma reconstrução obrigatória nesta aula. Ajuste somente o contrato afetado e repita os casos já conhecidos. O inicial é apoio para localizar assinaturas caso precise.</p><p>Concluído quando: Você executa os casos pertinentes e explica entradas, resultado e tratamento de erro da sua implementação.</p><details><summary>Dica para realizar a atividade</summary><p>Comece pelo caso conhecido; compare o estado antes/depois de um erro e só depois integre a interface.</p></details><pre><code id="work-a18-perfis"># A18: assinaturas de apoio; traga sua implementação anterior.
+class SessaoDemo:
+    &quot;&quot;&quot;Simulação local de identificação/perfil; não autentica usuários reais.&quot;&quot;&quot;
+
+    def __init__(self):
+        &quot;&quot;&quot;TODO A18: implemente __init__ conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def entrar(self, nome, perfil):
+        &quot;&quot;&quot;TODO A18: implemente entrar conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def pode_configurar(self):
+        &quot;&quot;&quot;TODO A18: implemente pode_configurar conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def sair(self):
+        &quot;&quot;&quot;TODO A18: implemente sair conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+</code></pre><div class="atelier" data-source="work-a18-perfis" data-filename="perfis.py" data-execution="Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior."></div><p>Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior.</p></div><div class="workbench"><h3>Persistência SQLite</h3><p>Conserve sua implementação anterior de repositorio.py; este módulo não é uma reconstrução obrigatória nesta aula. Ajuste somente o contrato afetado e repita os casos já conhecidos. O inicial é apoio para localizar assinaturas caso precise.</p><p>Concluído quando: Você executa os casos pertinentes e explica entradas, resultado e tratamento de erro da sua implementação.</p><details><summary>Dica para realizar a atividade</summary><p>Comece pelo caso conhecido; compare o estado antes/depois de um erro e só depois integre a interface.</p></details><pre><code id="work-a18-repositorio"># A18: assinaturas de apoio; traga sua implementação anterior.
+from contextlib import closing
+from pathlib import Path
+import sqlite3
+
+def validar_nome(nome):
+    &quot;&quot;&quot;TODO A18: implemente validar_nome conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+    raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+def validar_id(codigo):
+    &quot;&quot;&quot;TODO A18: implemente validar_id conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+    raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+def validar_preco(preco):
+    &quot;&quot;&quot;TODO A18: implemente validar_preco conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+    raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+class RepositorioSqlite:
+
+    def __init__(self, caminho):
+        &quot;&quot;&quot;TODO A18: implemente __init__ conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def conectar(self):
+        &quot;&quot;&quot;TODO A18: implemente conectar conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def iniciar(self):
+        &quot;&quot;&quot;TODO A18: implemente iniciar conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def adicionar_produto(self, nome, preco):
+        &quot;&quot;&quot;TODO A18: implemente adicionar_produto conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def listar_produtos(self):
+        &quot;&quot;&quot;TODO A18: implemente listar_produtos conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def adicionar_cliente(self, nome):
+        &quot;&quot;&quot;TODO A18: implemente adicionar_cliente conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def listar_clientes(self):
+        &quot;&quot;&quot;TODO A18: implemente listar_clientes conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def editar_produto(self, codigo, nome, preco):
+        &quot;&quot;&quot;TODO A18: implemente editar_produto conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def excluir_produto(self, codigo, confirmado=False):
+        &quot;&quot;&quot;TODO A18: implemente excluir_produto conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def editar_cliente(self, codigo, nome):
+        &quot;&quot;&quot;TODO A18: implemente editar_cliente conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def excluir_cliente(self, codigo, confirmado=False):
+        &quot;&quot;&quot;TODO A18: implemente excluir_cliente conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def iniciar_vendas(self):
+        &quot;&quot;&quot;TODO A18: implemente iniciar_vendas conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def registrar_venda(self, cliente_id, itens, forma):
+        &quot;&quot;&quot;TODO A18: implemente registrar_venda conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def listar_vendas(self):
+        &quot;&quot;&quot;TODO A18: implemente listar_vendas conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+</code></pre><div class="atelier" data-source="work-a18-repositorio" data-filename="repositorio.py" data-execution="Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior."></div><p>Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior.</p></div><div class="workbench"><h3>Controller de cadastro</h3><p>Conserve sua implementação anterior de controller.py; este módulo não é uma reconstrução obrigatória nesta aula. Ajuste somente o contrato afetado e repita os casos já conhecidos. O inicial é apoio para localizar assinaturas caso precise.</p><p>Concluído quando: Você executa os casos pertinentes e explica entradas, resultado e tratamento de erro da sua implementação.</p><details><summary>Dica para realizar a atividade</summary><p>Comece pelo caso conhecido; compare o estado antes/depois de um erro e só depois integre a interface.</p></details><pre><code id="work-a18-controller"># A18: assinaturas de apoio; traga sua implementação anterior.
+from pagamento import preco_para_centavos
+
+class CadastroController:
+
+    def __init__(self, repositorio):
+        &quot;&quot;&quot;TODO A18: implemente __init__ conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def listar(self, tipo):
+        &quot;&quot;&quot;TODO A18: implemente listar conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def salvar(self, tipo, nome, preco_texto=&#x27;&#x27;, codigo=None):
+        &quot;&quot;&quot;TODO A18: implemente salvar conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def excluir(self, tipo, codigo, confirmado):
+        &quot;&quot;&quot;TODO A18: implemente excluir conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+</code></pre><div class="atelier" data-source="work-a18-controller" data-filename="controller.py" data-execution="Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior."></div><p>Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior.</p></div><div class="workbench"><h3>Contrato em memória</h3><p>Conserve sua implementação anterior de memoria.py; este módulo não é uma reconstrução obrigatória nesta aula. Ajuste somente o contrato afetado e repita os casos já conhecidos. O inicial é apoio para localizar assinaturas caso precise.</p><p>Concluído quando: Você executa os casos pertinentes e explica entradas, resultado e tratamento de erro da sua implementação.</p><details><summary>Dica para realizar a atividade</summary><p>Comece pelo caso conhecido; compare o estado antes/depois de um erro e só depois integre a interface.</p></details><pre><code id="work-a18-memoria"># A18: assinaturas de apoio; traga sua implementação anterior.
+from copy import deepcopy
+from repositorio import validar_nome, validar_preco, validar_id
+
+class RepositorioMemoria:
+
+    def __init__(self):
+        &quot;&quot;&quot;TODO A18: implemente __init__ conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def adicionar_produto(self, nome, preco):
+        &quot;&quot;&quot;TODO A18: implemente adicionar_produto conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def listar_produtos(self):
+        &quot;&quot;&quot;TODO A18: implemente listar_produtos conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def editar_produto(self, codigo, nome, preco):
+        &quot;&quot;&quot;TODO A18: implemente editar_produto conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def excluir_produto(self, codigo, confirmado=False):
+        &quot;&quot;&quot;TODO A18: implemente excluir_produto conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def adicionar_cliente(self, nome):
+        &quot;&quot;&quot;TODO A18: implemente adicionar_cliente conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def listar_clientes(self):
+        &quot;&quot;&quot;TODO A18: implemente listar_clientes conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def editar_cliente(self, codigo, nome):
+        &quot;&quot;&quot;TODO A18: implemente editar_cliente conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+
+    def excluir_cliente(self, codigo, confirmado=False):
+        &quot;&quot;&quot;TODO A18: implemente excluir_cliente conforme o contrato e reutilize seu código anterior.&quot;&quot;&quot;
+        raise NotImplementedError(&#x27;Implemente e teste esta operação.&#x27;)
+</code></pre><div class="atelier" data-source="work-a18-memoria" data-filename="memoria.py" data-execution="Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior."></div><p>Salve todos os arquivos Python na mesma pasta A18. Módulo importado pelos outros arquivos; complete e execute python verificar.py antes da interface. A página não executa Python; reutilize sua versão anterior.</p></div><div class="workbench"><h3>Verificações sem GUI</h3><p>Acrescente verificações do requisito novo à sua matriz anterior. Use resultados previstos independentemente e dados temporários; execute sem -O, provoque uma previsão falsa para conferir a falha e depois restaure a correta.</p><p>Concluído quando: Você executa os casos pertinentes e explica entradas, resultado e tratamento de erro da sua implementação.</p><details><summary>Dica para realizar a atividade</summary><p>Comece pelo caso conhecido; compare o estado antes/depois de um erro e só depois integre a interface.</p></details><pre><code id="work-a18-verificar"># Complete os casos do registro; não marque sucesso sem verificá-los.
+def verificar():
+    # TODO: criar dados fictícios, executar e comparar com assert.
+    # TODO: testar erro após válido, limites e uma correção com nova execução.
+    return False
+
+
+if __name__ == &quot;__main__&quot;:
+    if verificar():
+        print(&quot;Casos executados: previsões e resultados conferem.&quot;)
+    else:
+        print(&quot;Verificações ainda incompletas.&quot;)
+</code></pre><div class="atelier" data-source="work-a18-verificar" data-filename="verificar.py" data-execution="Salve todos os arquivos Python na mesma pasta A18. Após completar, execute python verificar.py. A página não executa Python; reutilize sua versão anterior."></div><p>Salve todos os arquivos Python na mesma pasta A18. Após completar, execute python verificar.py. A página não executa Python; reutilize sua versão anterior.</p></div></section><section id="janela" data-stop="janela"><h2>Intervalo e integração <a class="section-source" href="leitura-0018-revisao-testes.html#janela" aria-label="Versão para leitura: Intervalo e integração">↗</a></h2><p>README precisa orientar alguém que não acompanhou sua implementação: requisitos reais, arquivos da pasta, comando de execução, caminho do banco, dados fictícios, como iniciar vazio e como executar verificações sem tocar no banco principal.</p><p>Peça a um colega para seguir o README sem explicação oral inicial. Registre o primeiro ponto em que ele precisou perguntar e corrija a instrução correspondente, preservando a diferença entre defeito do código e defeito da documentação.</p><p>Inspecione rótulos, mensagens, foco após erro, Tab/Shift+Tab e redimensionamento. Não dependa de cores como único sinal de erro; a pessoa deve entender o próximo passo por texto.</p><p>Compare as bases completo/v1_1 do acervo pelo comportamento de edição/exclusão e pela reprodução documentada. A existência de uma lista longa de funcionalidades no README não substitui módulos presentes, dependências verificadas e casos executados.</p></section><section id="pratica-formulario" data-stop="pratica-formulario"><h2>Prática 2: aplicar ao projeto <a class="section-source" href="leitura-0018-revisao-testes.html#pratica-formulario" aria-label="Versão para leitura: Prática 2: aplicar ao projeto">↗</a></h2><p>Entregue a candidata com README, matriz e uma correção acompanhada de reteste. O colega executa em outra pasta com dados fictícios; você observa e depois ajusta. Registre pendências de forma concreta para a demonstração da A19.</p><p>Conserve uma versão anterior e use uma pasta própria desta aula. Explique a decisão antes de abrir a referência com o professor; uma execução observada vale mais que marcar todos os casos sem testar.</p><div class="workbench"><h3>Interface e integração</h3><p>Conserve sua implementação anterior de main.py; este módulo não é uma reconstrução obrigatória nesta aula. Ajuste somente o contrato afetado e repita os casos já conhecidos. O inicial é apoio para localizar assinaturas caso precise.</p><p>Concluído quando: Você executa os casos pertinentes e explica entradas, resultado e tratamento de erro da sua implementação.</p><details><summary>Dica para realizar a atividade</summary><p>Comece pelo caso conhecido; compare o estado antes/depois de um erro e só depois integre a interface.</p></details><pre><code id="work-a18-main"># A18: integre sua versão anterior; preserve-a em outra pasta.
+import tkinter as tk
+from tkinter import ttk
+
+
+def criar_janela():
+    janela = tk.Tk()
+    janela.title(&quot;A18 — minha implementação&quot;)
+    janela.columnconfigure(0, weight=1)
+    base = ttk.Frame(janela, padding=12)
+    base.grid(row=0, column=0, sticky=&quot;nsew&quot;)
+    base.columnconfigure(0, weight=1)
+    ttk.Label(base, text=&quot;Traga seu layout e conecte as responsabilidades desta aula.&quot;, wraplength=430).grid(row=0, column=0)
+    aviso = ttk.Label(base, text=&quot;Implementação em andamento.&quot;, wraplength=430)
+    aviso.grid(row=2, column=0, pady=8)
+    def testar():
+        # TODO: conectar seu modelo/controller; tratar o erro sem perder dados.
+        aviso.configure(text=&quot;Complete o fluxo e execute os casos do registro.&quot;)
+    ttk.Button(base, text=&quot;Testar meu fluxo&quot;, command=testar).grid(row=1, column=0, pady=8)
+    # TODO: organização, rótulos, listagens, ações e foco indicados no roteiro.
+    return janela
+
+
+if __name__ == &quot;__main__&quot;:
+    criar_janela().mainloop()
+</code></pre><div class="atelier" data-source="work-a18-main" data-filename="main.py" data-execution="Salve todos os arquivos Python na mesma pasta A18. Após completar, execute python main.py. A página não executa Python; reutilize sua versão anterior."></div><p>Salve todos os arquivos Python na mesma pasta A18. Após completar, execute python main.py. A página não executa Python; reutilize sua versão anterior.</p></div></section><section id="auditoria" data-stop="auditoria"><h2>Investigue com uma execução <a class="section-source" href="leitura-0018-revisao-testes.html#auditoria" aria-label="Versão para leitura: Investigue com uma execução">↗</a></h2><p>Escolha uma alternativa e sustente a previsão com um caso executado. As opções podem aparecer em outra ordem.</p><fieldset data-question="q181"><legend>O teste obtém esperado chamando a mesma função que usa para obter observado. O que falta?</legend><div class="question-options"><label class="option"><input type="radio" name="q181" value="Uma previsão independente ligada ao requisito" autocomplete="off">Uma previsão independente ligada ao requisito</label><label class="option"><input type="radio" name="q181" value="Mais cópias do mesmo cálculo" autocomplete="off">Mais cópias do mesmo cálculo</label><label class="option"><input type="radio" name="q181" value="Abrir uma janela antes de cada assert" autocomplete="off">Abrir uma janela antes de cada assert</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Rastreie qual dado é fonte da operação e que efeito o requisito autoriza.</p></details></fieldset><div id="audit-list"><article class="audit-item" id="au181"><fieldset data-question="au181"><legend>O README diz apenas &quot;executar o projeto&quot; e o colega precisa perguntar qual arquivo abrir.</legend><div class="question-options"><label class="option"><input type="radio" name="au181" value="Acrescentar comando, pasta e requisitos reproduzíveis" autocomplete="off">Acrescentar comando, pasta e requisitos reproduzíveis</label><label class="option"><input type="radio" name="au181" value="Considerar o colega incapaz e explicar tudo apenas oralmente" autocomplete="off">Considerar o colega incapaz e explicar tudo apenas oralmente</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Compare o resultado com o estado anterior e com a intenção da pessoa.</p></details></fieldset><label><input class="discussion" type="checkbox" value="au181"> Marcar para discussão</label></article><article class="audit-item" id="au182"><fieldset data-question="au182"><legend>Um caso foi marcado como concluído, mas ainda não foi executado individualmente.</legend><div class="question-options"><label class="option"><input type="radio" name="au182" value="Identificar a pendência e executar antes de afirmar o resultado" autocomplete="off">Identificar a pendência e executar antes de afirmar o resultado</label><label class="option"><input type="radio" name="au182" value="Considerar concluído porque o código parece correto" autocomplete="off">Considerar concluído porque o código parece correto</label></div><p class="selected-text" aria-live="polite"></p><details class="reasoning-hint"><summary>Dica para raciocinar</summary><p>Diferencie uma previsão plausível de um comportamento efetivamente observado.</p></details></fieldset><label><input class="discussion" type="checkbox" value="au182"> Marcar para discussão</label></article></div><p id="count" aria-live="polite">0 itens marcados para discussão</p><button class="js-only" id="register">Registrar discussão</button><p id="registered" aria-live="polite"></p></section><section id="registro" data-stop="registro"><h2>Guarde a versão executada e suas evidências <a class="section-source" href="leitura-0018-revisao-testes.html#registro" aria-label="Versão para leitura: Guarde a versão executada e suas evidências">↗</a></h2><p>Confira todos os arquivos na pasta A18. Baixe seu registro e os módulos/documentos editados, execute no computador e use o fluxo de entrega abaixo. Os rascunhos da página não substituem os arquivos que você realmente executou.</p><p>Seu trabalho na página não é salvo automaticamente. Exporte e confira os downloads antes de sair; o envio à pasta de entrega é uma ação separada.</p><div class="workbench"><h3>README-A18.md</h3><p>Complete README-A18.md conforme os contratos desta aula. Reutilize sua implementação anterior quando houver; o inicial apresenta pontos de apoio, não executa a solução por você.</p><p>Concluído quando: Você executa os casos pertinentes e explica entradas, resultado e tratamento de erro da sua implementação.</p><details><summary>Dica para realizar a atividade</summary><p>Comece pelo caso conhecido; compare o estado antes/depois de um erro e só depois integre a interface.</p></details><pre><code id="work-a18-readme-a18"># Minha sorveteria — candidata A18
+
+## Objetivo e limites
+O que está implementado e o que ainda falta:
+
+## Ambiente
+Python e biblioteca gráfica usados:
+Dependências efetivamente necessárias:
+
+## Arquivos e execução
+Estrutura da minha pasta:
+Comando, a partir de qual pasta:
+Caminho do banco fictício:
+Como iniciar uma cópia de ensaio sem apagar a original:
+
+## Verificação
+Comandos e resultados reais:
+Uma falha, a correção e o reteste:
+Como conferir os relatórios:
+</code></pre><div class="atelier" data-source="work-a18-readme-a18" data-filename="README-A18.md" data-execution="Preencha com a sua implementação, baixe e confira os arquivos executados. Não marque casos não realizados como concluídos."></div><p>Preencha com a sua implementação, baixe e confira os arquivos executados. Não marque casos não realizados como concluídos.</p></div><div class="workbench"><h3>Meu registro e matriz de casos</h3><p>Complete registro-a18.md conforme os contratos desta aula. Reutilize sua implementação anterior quando houver; o inicial apresenta pontos de apoio, não executa a solução por você.</p><p>Concluído quando: Você executa os casos pertinentes e explica entradas, resultado e tratamento de erro da sua implementação.</p><details><summary>Dica para realizar a atividade</summary><p>Comece pelo caso conhecido; compare o estado antes/depois de um erro e só depois integre a interface.</p></details><pre><code id="work-a18-registro-a18"># Meu registro A18 — Regressão, correções e README reproduzível
+
+Nome/código individual, turma e data:
+
+## Retomada sem consulta
+Minha hipótese inicial para cada item:
+
+## Arquitetura antes do código
+Desenho dos módulos, dependências e duração dos dados:
+
+## Matriz de execução
+Para cada caso, registre previsão, observado, correção e nova execução.
+
+T01 — Valores conhecidos, erro após válido e cancelamento repetidos.
+Previsão:
+Observado:
+Correção/reteste ou pendência:
+
+T02 — ID estável após reorganizar listagem.
+Previsão:
+Observado:
+Correção/reteste ou pendência:
+
+T03 — Persistência reaberta no mesmo caminho.
+Previsão:
+Observado:
+Correção/reteste ou pendência:
+
+T04 — Falha transacional sem venda parcial.
+Previsão:
+Observado:
+Correção/reteste ou pendência:
+
+T05 — Exportação CSV coerente com o comprovante.
+Previsão:
+Observado:
+Correção/reteste ou pendência:
+
+T06 — Teste propositalmente errado falha; previsão restaurada passa.
+Previsão:
+Observado:
+Correção/reteste ou pendência:
+
+T07 — Execução pelo README em outra pasta.
+Previsão:
+Observado:
+Correção/reteste ou pendência:
+
+T08 — Teclado, foco e mensagens inspecionados.
+Previsão:
+Observado:
+Correção/reteste ou pendência:
+
+T09 — Pendências identificadas sem inventar aprovação.
+Previsão:
+Observado:
+Correção/reteste ou pendência:
+
+## Explicação individual
+Uma decisão que consigo justificar:
+Uma dificuldade, apoio e próxima tentativa:
+
+## Arquivos
+Versão executada e arquivos baixados:
+Caminho de dados fictícios usado (se houver):
+Entrega pelo fluxo combinado conferida por mim:
+</code></pre><div class="atelier" data-source="work-a18-registro-a18" data-filename="registro-a18.md" data-execution="Complete, baixe e anexe os arquivos executados; exportar rascunhos da página não recolhe automaticamente arquivos do computador."></div><p>Complete, baixe e anexe os arquivos executados; exportar rascunhos da página não recolhe automaticamente arquivos do computador.</p></div><div class="grid"><label>Nome do aluno<input id="student-name" autocomplete="off"></label><label>Turma<input id="student-class" autocomplete="off"></label><label>Data<input id="lesson-date" type="date"></label></div><label for="practice-notes">Registros da prática</label><textarea id="practice-notes" autocomplete="off"></textarea><label for="reflection">Reflexão e próximo passo</label><textarea id="reflection" autocomplete="off"></textarea><div class="actions js-only"><button id="export" data-export>Exportar registros da aula</button><button id="reset">Limpar sessão</button></div><p id="export-status" aria-live="polite"></p><aside class="submission" aria-label="Entrega dos arquivos"><h3>Salve sua entrega no OneDrive</h3><p>Baixe ou exporte seus registros e os arquivos da atividade. Abra a pasta no OneDrive, entre com a conta autorizada e envie os arquivos baixados. Confira se eles aparecem na pasta antes de encerrar.</p><a class="submission-link" href="https://senacrsedu-my.sharepoint.com/:f:/g/personal/01606371045_senacrs_edu_br/IgAw6ZzfVcGZS56vSyOV1YSaATvbA9sC2I-Iv76Rs_34IdU?e=gKMkOG" target="_blank" rel="noopener noreferrer">Abrir pasta de entrega no OneDrive<span class="sr-only"> (abre em nova aba)</span></a></aside></section><section id="fechamento" data-stop="fechamento"><h2>Explique a decisão e o próximo teste <a class="section-source" href="leitura-0018-revisao-testes.html#fechamento" aria-label="Versão para leitura: Explique a decisão e o próximo teste">↗</a></h2><p>Esse teste falharia se o defeito que você procura estivesse presente?</p><p>Registre uma dificuldade, a correção tentada e o próximo caso para conferir. Preserve sua cópia local e os resultados reais, inclusive quando uma parte ainda estiver pendente.</p></section><h2>Fontes e anexos</h2><ul><li><a href="https://docs.python.org/3.14/tutorial/classes.html">Classes e instâncias · consulta 23/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/tkinter.ttk.html">Tkinter/ttk e Treeview · consulta 23/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/decimal.html">Decimal e quantize · consulta 23/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/json.html">JSON · consulta 23/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/csv.html">CSV · consulta 23/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/sqlite3.html">SQLite no Python · consulta 23/10/2026</a></li><li><a href="https://sqlite.org/foreignkeys.html">Chaves estrangeiras SQLite · consulta 23/10/2026</a></li><li><a href="https://docs.python.org/3.14/library/unittest.html">unittest · consulta 23/10/2026</a></li><li><a href="https://learn.microsoft.com/en-us/windows/apps/design/accessibility/keyboard-accessibility">Navegação por teclado · consulta 23/10/2026</a></li><li><a download href="../anexos/A18/modelos.py">Inicial: modelos.py</a></li><li><a download href="../anexos/A18/main.py">Inicial: main.py</a></li><li><a download href="../anexos/A18/pagamento.py">Inicial: pagamento.py</a></li><li><a download href="../anexos/A18/arquivos.py">Inicial: arquivos.py</a></li><li><a download href="../anexos/A18/relatorios.py">Inicial: relatorios.py</a></li><li><a download href="../anexos/A18/perfis.py">Inicial: perfis.py</a></li><li><a download href="../anexos/A18/repositorio.py">Inicial: repositorio.py</a></li><li><a download href="../anexos/A18/controller.py">Inicial: controller.py</a></li><li><a download href="../anexos/A18/memoria.py">Inicial: memoria.py</a></li><li><a download href="../anexos/A18/verificar.py">Inicial: verificar.py</a></li><li><a download href="../anexos/A18/README-A18.md">Inicial: README-A18.md</a></li><li><a download href="../anexos/A18/registro-a18.md">Inicial: registro-a18.md</a></li></ul><a data-idoc="source" href="leitura-0018-revisao-testes.html">Versão para leitura ou impressão</a><nav class="lesson-navigation" aria-label="Navegação entre aulas"><a href="leitura-0017-integracao.html" rel="prev"><strong>← Aula anterior</strong><span>A17 · Integração e CustomTkinter</span></a><a href="leitura-0019-academia-demonstracoes.html" rel="next"><strong>Próxima aula →</strong><span>A19 · Academia e demonstrações individuais</span></a></nav></main><footer><p>UC8: Desenvolver e organizar interface gráfica para aplicações desktop · atualizado em <time data-idoc="asof">2026-10-23</time></p><p data-idoc="nonbinding">Registre sua tentativa e confira a correção com o professor.</p><a href="../index.html">Voltar ao índice</a></footer></div></div><noscript><p>Sem JavaScript, leia o material e registre a tentativa no seu editor ou caderno. Exportação e editores interativos exigem JavaScript.</p></noscript></body></html>

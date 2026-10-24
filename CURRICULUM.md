@@ -14,20 +14,20 @@ Retomada usa perguntas sem consulta. A01 diagnostica conhecimentos anteriores.
 | A04 | Sistema escolar básico | Disponível |
 | A05 | Sistema escolar ampliado | Disponível |
 | A06 | Sistema escolar modular — classes | Disponível |
-| A07 | Sorveteria inicial | Planejada |
-| A08 | Sorveteria e pagamentos | Planejada |
-| A09 | Catálogo e carrinho | Planejada |
-| A10 | Pizzaria inicial — transferência | Planejada |
-| A11 | Pizzaria — estados e pagamento | Planejada |
-| A12 | Mercado — navegação e JSON | Planejada |
-| A13 | Pizzaria — CSV e demonstração de login | Planejada |
-| A14 | SQLite — primeira persistência | Planejada |
-| A15 | CRUD — produtos e clientes | Planejada |
-| A16 | Controllers, componentes e contratos | Planejada |
-| A17 | Integração e CustomTkinter | Planejada |
-| A18 | Revisão, testes e README | Planejada |
-| A19 | Academia e demonstrações individuais | Planejada |
-| A20 | Relacionamentos, recuperação e encerramento | Planejada |
+| A07 | Sorveteria inicial | Disponível |
+| A08 | Sorveteria e pagamentos | Disponível |
+| A09 | Catálogo e carrinho | Disponível |
+| A10 | Pizzaria inicial — transferência | Disponível |
+| A11 | Pizzaria — estados e pagamento | Disponível |
+| A12 | Mercado — navegação e JSON | Disponível |
+| A13 | Pizzaria — CSV e demonstração de login | Disponível |
+| A14 | SQLite — primeira persistência | Disponível |
+| A15 | CRUD — produtos e clientes | Disponível |
+| A16 | Controllers, componentes e contratos | Disponível |
+| A17 | Integração e CustomTkinter | Disponível |
+| A18 | Revisão, testes e README | Disponível |
+| A19 | Academia e demonstrações individuais | Disponível |
+| A20 | Relacionamentos, recuperação e encerramento | Disponível |
 
 Projeto integrador: sorveteria com menu, navegação, CRUD de produtos e clientes, listagem, SQLite, carrinho, quantidades, totais, pagamento, validações, relatório CSV, README e testes.
 Login, dashboard, estoque detalhado, PDF e empacotamento entram como aprofundamentos após o núcleo.

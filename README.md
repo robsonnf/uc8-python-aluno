@@ -8,7 +8,7 @@ Extraia a pasta inteira, preservando assets e lessons. Abra index.html ou, com N
 
 P alterna a grade e Escape fecha. A correção será conduzida pelo professor; este pacote não contém gabaritos.
 
-O seletor Tema no topo permite escolher Claro ou Escuro. A preferência visual acompanha os links locais e pode ser guardada neste navegador. Rascunhos, respostas e anotações continuam sem salvamento automático. A impressão usa fundo claro.
+O botão de tema no topo alterna entre Claro e Escuro: lua para ativar o escuro, sol para ativar o claro. Use clique, Enter ou Espaço. A preferência visual acompanha os links locais e pode ser guardada neste navegador. Rascunhos, respostas e anotações continuam sem salvamento automático. A impressão usa fundo claro.
 
 O editor permite editar, copiar, baixar e reiniciar rascunhos. Não executa programas ou práticas da matéria. Siga a ferramenta e a forma de verificação indicadas na atividade. Baixar salva somente aquele arquivo. Exportar registros inclui respostas, anotações e rascunhos modificados; não recolhe arquivos externos nem envia ao professor.
 

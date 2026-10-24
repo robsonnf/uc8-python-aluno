@@ -23,9 +23,15 @@
     --blue: #ffbd75; --accent: #ffbd75; --accent-2: #ffbd75; --selection: #ffbd75; --pale: #30271e;
   }
 }
-.theme-control { display: none; align-items: center; gap: .5rem; font: 600 .8rem var(--sans, 'Segoe UI', sans-serif); color: var(--ink); }
-.appearance-ready .theme-control { display: flex; }
-.theme-control select { font: inherit; padding: .45rem .6rem; border: 1px solid var(--rule); border-radius: 6px; max-width: 100%; }
+/* O ícone indica a ação disponível. O botão nativo mantém Enter/Espaço e foco. */
+.theme-control { display: none; align-items: center; justify-content: center; width: 44px; height: 44px; flex: 0 0 44px; padding: 0; border: 1px solid var(--rule); border-radius: 50%; background: var(--paper-sunk); color: var(--blue); cursor: pointer; }
+.appearance-ready .theme-control { display: inline-flex; }
+.theme-control:hover { background: var(--pale); }
+.theme-control:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.theme-control svg { width: 23px; height: 23px; pointer-events: none; }
+.theme-icon-sun { display: none; }
+:root[data-theme="dark"] .theme-icon-sun { display: block; }
+:root[data-theme="dark"] .theme-icon-moon { display: none; }
 .theme-toolbar { display: flex; justify-content: flex-end; margin: 0 0 1.2rem; }
 .top { flex-wrap: wrap; }
 .course-list { background: var(--paper); }
