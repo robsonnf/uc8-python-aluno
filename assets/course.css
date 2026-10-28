@@ -414,6 +414,20 @@ h2 .section-source{display:inline-block;font:600 .6em var(--sans);text-decoratio
   margin-block: 1.5rem;
 }
 
+/* A explicação precede a tentativa; cada pista pode ser aberta separadamente. */
+.learning-path>h3{margin:1.5rem 0 .65rem;color:var(--blue);font:700 1rem var(--sans)}
+.learning-path>h3:first-child{margin-top:0}
+.example-result{margin-top:1rem;padding:.8rem;border-left:3px solid var(--blue);background:var(--paper-sunk)}
+.example-result pre{margin-bottom:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.guided-practice li,.work-steps li{margin-block:.7rem}
+.challenge-link{display:inline-block;margin-bottom:.75rem}
+.activity-hints details+details{margin-top:.5rem}
+.reference-notes{margin-block:1rem}
+/* Preserve a indentação e os limites das linhas; a rolagem fica dentro do código. */
+.public-example>pre{white-space:pre;overflow-x:auto;overflow-wrap:normal;max-width:100%}
+.public-example>pre code{white-space:inherit;overflow-wrap:normal}
+@media print{.public-example>pre{white-space:pre-wrap;overflow-wrap:anywhere}.public-example>pre code{overflow-wrap:inherit}}
+
 .lesson-navigation a {
   display: flex;
   flex-direction: column;
