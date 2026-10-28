@@ -1,7 +1,7 @@
 # UC8 — percurso do aluno
 
 Curso Técnico em Desenvolvimento de Sistemas · Informação e Comunicação · Tecnologia da Informação.
-20 encontros · 60 horas de carga horária total, incluindo intervalos.
+20 encontros · 60 horas de carga horária total.
 Python e Tkinter/ttk; projetos individuais com colaboração nas práticas.
 
 Retomada usa perguntas sem consulta. A01 diagnostica conhecimentos anteriores.

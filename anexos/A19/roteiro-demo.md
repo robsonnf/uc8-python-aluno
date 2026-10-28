@@ -1,6 +1,6 @@
 # Minha demonstração individual — A19
 
-## Quatro minutos
+## Demonstração do fluxo
 Problema e requisito escolhido:
 Arquivos/caminho e comando:
 Fluxo válido com dados fictícios:
@@ -8,7 +8,7 @@ Caso de erro ou cancelamento:
 Persistência e relatório:
 Limite e próximo teste:
 
-## Dois minutos de pergunta técnica
+## Pergunta técnica individual
 Decisão que consigo explicar com código/evidência:
 
 ## Comparação com academia

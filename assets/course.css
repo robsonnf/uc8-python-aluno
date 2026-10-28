@@ -417,6 +417,14 @@ h2 .section-source{display:inline-block;font:600 .6em var(--sans);text-decoratio
 /* A explicação precede a tentativa; cada pista pode ser aberta separadamente. */
 .learning-path>h3{margin:1.5rem 0 .65rem;color:var(--blue);font:700 1rem var(--sans)}
 .learning-path>h3:first-child{margin-top:0}
+/* O briefing permanece visível na leitura, na impressão e sem JavaScript. */
+.exercise-briefing{margin:1rem 0;padding:1rem 1.2rem;border:1px solid var(--rule);border-left:4px solid var(--blue);border-radius:.5rem;background:var(--paper-sunk);overflow-wrap:anywhere}
+.exercise-briefing h4{margin:0 0 .8rem;font:700 1rem var(--sans);color:var(--blue)}
+.exercise-briefing dl{margin:0}
+.exercise-briefing dl>div+div{margin-top:.7rem}
+.exercise-briefing dt{font-weight:700}
+.exercise-briefing dd{margin:.15rem 0 0}
+.exercise-briefing p:last-child{margin-bottom:0}
 .example-result{margin-top:1rem;padding:.8rem;border-left:3px solid var(--blue);background:var(--paper-sunk)}
 .example-result pre{margin-bottom:0;white-space:pre-wrap;overflow-wrap:anywhere}
 .guided-practice li,.work-steps li{margin-block:.7rem}

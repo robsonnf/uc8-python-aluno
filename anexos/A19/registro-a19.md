@@ -11,7 +11,7 @@ Desenho dos módulos, dependências e duração dos dados:
 ## Matriz de execução
 Para cada caso, registre previsão, observado, correção e nova execução.
 
-T01 — Todos os dez estudantes têm quatro minutos de demo +dois de pergunta.
+T01 — Minha demonstração apresenta uma execução e uma explicação próprias.
 Previsão:
 Observado:
 Correção/reteste ou pendência:
