@@ -49,3 +49,30 @@ Minha dificuldade, correção e próxima tentativa:
 
 Entregas: escolar_grupos.py, escolar_janelas.py e este registro.
 Não há imagem obrigatória no pacote; use apenas arquivo próprio autorizado se optar por esse teste.
+
+## Teoria e transferência
+Consigo identificar o pai e a grade de um campo.
+Minha explicação:
+Consigo explicar sticky e peso de coluna no redimensionamento.
+Minha explicação:
+Consigo distinguir edição, confirmado e retrato da consulta.
+Minha explicação:
+Ligação entre o ensaio e meus arquivos da atividade:
+Minha previsão antes da alteração guiada e o resultado observado:
+
+## Continuação em casa
+Arquivos/versão executados:
+Pasta e comando usados:
+Justificativa de 5–8 linhas ou nome do áudio de cerca de 60 segundos:
+Decisão do meu código sobre hierarquia de pais, expansão dos grupos, retratos e fechamento das Toplevel:
+Minha explicação / anexo:
+
+## Checklist da interface
+Controles e rótulos que conferi:
+Percurso por Tab/Shift+Tab e acionamento:
+Mensagem após erro e possibilidade de corrigir:
+Redimensionamento e comportamento que observei:
+
+## Pendências
+O que não executei e por quê, incluindo falta de ambiente:
+Caso para nova tentativa em sala:

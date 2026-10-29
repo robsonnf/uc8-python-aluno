@@ -64,3 +64,30 @@ Uma dificuldade, apoio e próxima tentativa:
 Versão executada e arquivos baixados:
 Caminho de dados fictícios usado (se houver):
 Entrega pelo fluxo combinado conferida por mim:
+
+## Teoria e transferência
+Consigo distinguir identidade de posição visual.
+Minha explicação:
+Consigo explicar a diferença entre adicionar, atualizar e remover.
+Minha explicação:
+Consigo prever a tela e o total ao remover o último item.
+Minha explicação:
+Ligação entre o ensaio e meus arquivos da atividade:
+Minha previsão antes da alteração guiada e o resultado observado:
+
+## Continuação em casa
+Arquivos/versão executados:
+Pasta e comando usados:
+Justificativa de 5–8 linhas ou nome do áudio de cerca de 60 segundos:
+Decisão do meu código sobre identidade por código, iid/seleção, atualização/remoção e total derivado do modelo:
+Minha explicação / anexo:
+
+## Checklist da interface
+Controles e rótulos que conferi:
+Percurso por Tab/Shift+Tab e acionamento:
+Mensagem após erro e possibilidade de corrigir:
+Redimensionamento e comportamento que observei:
+
+## Pendências
+O que não executei e por quê, incluindo falta de ambiente:
+Caso para nova tentativa em sala:

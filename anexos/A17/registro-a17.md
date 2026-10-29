@@ -69,3 +69,30 @@ Uma dificuldade, apoio e próxima tentativa:
 Versão executada e arquivos baixados:
 Caminho de dados fictícios usado (se houver):
 Entrega pelo fluxo combinado conferida por mim:
+
+## Teoria e transferência
+Consigo explicar por que venda e itens precisam da mesma transação.
+Minha explicação:
+Consigo prever banco e montagem após uma falha no item.
+Minha explicação:
+Consigo distinguir o núcleo integrado da comparação visual opcional.
+Minha explicação:
+Ligação entre o ensaio e meus arquivos da atividade:
+Minha previsão antes da alteração guiada e o resultado observado:
+
+## Continuação em casa
+Arquivos/versão executados:
+Pasta e comando usados:
+Justificativa de 5–8 linhas ou nome do áudio de cerca de 60 segundos:
+Decisão do meu código sobre transação venda/itens, rollback, IDs vinculados e coerência com o catálogo:
+Minha explicação / anexo:
+
+## Checklist da interface
+Controles e rótulos que conferi:
+Percurso por Tab/Shift+Tab e acionamento:
+Mensagem após erro e possibilidade de corrigir:
+Redimensionamento e comportamento que observei:
+
+## Pendências
+O que não executei e por quê, incluindo falta de ambiente:
+Caso para nova tentativa em sala:

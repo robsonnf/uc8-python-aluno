@@ -14,6 +14,10 @@ document.addEventListener('click',event=>{
 });
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
+// Revela a síntese ao imprimir e restaura a escolha de leitura depois.
+let theoryPrintState=[];
+window.addEventListener('beforeprint',()=>{theoryPrintState=$$('.preclass-theory').map(el=>[el,el.open]);theoryPrintState.forEach(([el])=>el.open=true);});
+window.addEventListener('afterprint',()=>{theoryPrintState.forEach(([el,open])=>el.open=open);theoryPrintState=[];});
 const teacherNotes=$('#teacher-notes');
 const teacherNotesStatus=$('#teacher-notes-status');
 const teacherToggle=$('#teacher-toggle');
@@ -113,6 +117,8 @@ $$('[data-export]').forEach(button=>button.addEventListener('click',()=>{
     '## Registros da prática','',$('#practice-notes').value.trim()||'Não preenchidos.','',
     '## Minha reflexão','',$('#reflection').value.trim()||'Não preenchida.'];
   const drafts=window.CourseKit?.getDrafts?.()||[];
+  const theory=$$('.theory-check');
+  if(theory.length)lines.push('','## Minha conferência da teoria','',...theory.map(input=>'- ['+(input.checked?'x':' ')+'] '+input.closest('label').querySelector('span').textContent.trim()));
   if(drafts.length)lines.push('','## Rascunhos editados no Atelier',...drafts.map(x=>'\n### '+x.filename+'\n\n'+x.code+(x.observed?'\n\nSaída observada informada pelo usuário:\n'+x.observed:'')));
   const url=URL.createObjectURL(new Blob([lines.join('\n')],{type:'text/markdown;charset=utf-8'}));
   const a=document.createElement('a');a.href=url;a.download=`registro-${lesson.toLowerCase()}-${date||'sem-data'}.md`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);

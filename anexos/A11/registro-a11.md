@@ -64,3 +64,30 @@ Uma dificuldade, apoio e próxima tentativa:
 Versão executada e arquivos baixados:
 Caminho de dados fictícios usado (se houver):
 Entrega pelo fluxo combinado conferida por mim:
+
+## Teoria e transferência
+Consigo explicar estado e versão com papéis diferentes.
+Minha explicação:
+Consigo distinguir confirmação explícita de cancelamento.
+Minha explicação:
+Consigo justificar por que o comprovante precisa de um retrato independente.
+Minha explicação:
+Ligação entre o ensaio e meus arquivos da atividade:
+Minha previsão antes da alteração guiada e o resultado observado:
+
+## Continuação em casa
+Arquivos/versão executados:
+Pasta e comando usados:
+Justificativa de 5–8 linhas ou nome do áudio de cerca de 60 segundos:
+Decisão do meu código sobre estados montagem/finalizado, versão da prévia e comprovante independente:
+Minha explicação / anexo:
+
+## Checklist da interface
+Controles e rótulos que conferi:
+Percurso por Tab/Shift+Tab e acionamento:
+Mensagem após erro e possibilidade de corrigir:
+Redimensionamento e comportamento que observei:
+
+## Pendências
+O que não executei e por quê, incluindo falta de ambiente:
+Caso para nova tentativa em sala:

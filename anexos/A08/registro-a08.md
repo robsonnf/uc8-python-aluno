@@ -59,3 +59,30 @@ Uma dificuldade, apoio e próxima tentativa:
 Versão executada e arquivos baixados:
 Caminho de dados fictícios usado (se houver):
 Entrega pelo fluxo combinado conferida por mim:
+
+## Teoria e transferência
+Consigo distinguir subtotal, desconto e total.
+Minha explicação:
+Consigo explicar por que Decimal recebe texto e onde ocorre o arredondamento.
+Minha explicação:
+Consigo prever o efeito de repetir uma conferência sem mudar os itens.
+Minha explicação:
+Ligação entre o ensaio e meus arquivos da atividade:
+Minha previsão antes da alteração guiada e o resultado observado:
+
+## Continuação em casa
+Arquivos/versão executados:
+Pasta e comando usados:
+Justificativa de 5–8 linhas ou nome do áudio de cerca de 60 segundos:
+Decisão do meu código sobre funções puras de pagamento, Decimal de texto, ROUND_HALF_UP e subtotal preservado:
+Minha explicação / anexo:
+
+## Checklist da interface
+Controles e rótulos que conferi:
+Percurso por Tab/Shift+Tab e acionamento:
+Mensagem após erro e possibilidade de corrigir:
+Redimensionamento e comportamento que observei:
+
+## Pendências
+O que não executei e por quê, incluindo falta de ambiente:
+Caso para nova tentativa em sala:

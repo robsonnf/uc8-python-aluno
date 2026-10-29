@@ -64,3 +64,30 @@ Uma dificuldade, apoio e próxima tentativa:
 Versão executada e arquivos baixados:
 Caminho de dados fictícios usado (se houver):
 Entrega pelo fluxo combinado conferida por mim:
+
+## Teoria e transferência
+Consigo explicar uma decisão apontando código e execução.
+Minha explicação:
+Consigo distinguir existência da cópia de recuperação conferida.
+Minha explicação:
+Consigo identificar origem, destino novo e consulta usada para verificar o backup.
+Minha explicação:
+Ligação entre o ensaio e meus arquivos da atividade:
+Minha previsão antes da alteração guiada e o resultado observado:
+
+## Continuação em casa
+Arquivos/versão executados:
+Pasta e comando usados:
+Justificativa de 5–8 linhas ou nome do áudio de cerca de 60 segundos:
+Decisão do meu código sobre demonstração sustentada por evidências, comparação de responsabilidades e backup conferido:
+Minha explicação / anexo:
+
+## Checklist da interface
+Controles e rótulos que conferi:
+Percurso por Tab/Shift+Tab e acionamento:
+Mensagem após erro e possibilidade de corrigir:
+Redimensionamento e comportamento que observei:
+
+## Pendências
+O que não executei e por quê, incluindo falta de ambiente:
+Caso para nova tentativa em sala:

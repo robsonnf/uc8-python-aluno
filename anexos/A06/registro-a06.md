@@ -95,3 +95,30 @@ Minha dificuldade e próximo teste:
 
 Entrega: aluno.py, verificar_modelo.py, main.py e este registro.
 Somente dados fictícios. A página não executa Python nem envia arquivos automaticamente.
+
+## Teoria e transferência
+Consigo apontar classe, instância, __init__ e self no exemplo.
+Minha explicação:
+Consigo provar que dois objetos mantêm dados independentes.
+Minha explicação:
+Consigo explicar a direção dos imports entre modelo, verificador e interface.
+Minha explicação:
+Ligação entre o ensaio e meus arquivos da atividade:
+Minha previsão antes da alteração guiada e o resultado observado:
+
+## Continuação em casa
+Arquivos/versão executados:
+Pasta e comando usados:
+Justificativa de 5–8 linhas ou nome do áudio de cerca de 60 segundos:
+Decisão do meu código sobre classe, instância, listas próprias, confirmação integral e separação aluno/verificador/GUI:
+Minha explicação / anexo:
+
+## Checklist da interface
+Controles e rótulos que conferi:
+Percurso por Tab/Shift+Tab e acionamento:
+Mensagem após erro e possibilidade de corrigir:
+Redimensionamento e comportamento que observei:
+
+## Pendências
+O que não executei e por quê, incluindo falta de ambiente:
+Caso para nova tentativa em sala:

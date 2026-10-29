@@ -37,3 +37,30 @@ Como uma tentativa inválida pode estragar um cadastro anterior se a ordem do c�
 Minha dificuldade, ajuste e próximo passo:
 
 Entregas externas: estado_cadastro.py e cadastro_completo.py, além deste registro.
+
+## Teoria e transferência
+Consigo identificar edição e confirmação no código.
+Minha explicação:
+Consigo explicar o efeito de Registrar, Exibir e Limpar.
+Minha explicação:
+Consigo prever o confirmado após edição, limpeza ou erro.
+Minha explicação:
+Ligação entre o ensaio e meus arquivos da atividade:
+Minha previsão antes da alteração guiada e o resultado observado:
+
+## Continuação em casa
+Arquivos/versão executados:
+Pasta e comando usados:
+Justificativa de 5–8 linhas ou nome do áudio de cerca de 60 segundos:
+Decisão do meu código sobre responsabilidades de registrar/exibir/limpar e separação dos dicionários:
+Minha explicação / anexo:
+
+## Checklist da interface
+Controles e rótulos que conferi:
+Percurso por Tab/Shift+Tab e acionamento:
+Mensagem após erro e possibilidade de corrigir:
+Redimensionamento e comportamento que observei:
+
+## Pendências
+O que não executei e por quê, incluindo falta de ambiente:
+Caso para nova tentativa em sala:

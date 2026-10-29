@@ -47,3 +47,30 @@ Formatar com duas casas muda o número guardado no registro?
 Minha dificuldade, correção e próximo passo:
 
 Entregas: calculos_moedas.py, conversor.py e este registro preenchido.
+
+## Teoria e transferência
+Consigo explicar por que a operação usa divisão.
+Minha explicação:
+Consigo distinguir normalização, conversão e formatação.
+Minha explicação:
+Consigo indicar quais dados devem ser confirmados juntos.
+Minha explicação:
+Ligação entre o ensaio e meus arquivos da atividade:
+Minha previsão antes da alteração guiada e o resultado observado:
+
+## Continuação em casa
+Arquivos/versão executados:
+Pasta e comando usados:
+Justificativa de 5–8 linhas ou nome do áudio de cerca de 60 segundos:
+Decisão do meu código sobre unidades, conversão decimal, aproximação de float e confirmação conjunta das cinco chaves:
+Minha explicação / anexo:
+
+## Checklist da interface
+Controles e rótulos que conferi:
+Percurso por Tab/Shift+Tab e acionamento:
+Mensagem após erro e possibilidade de corrigir:
+Redimensionamento e comportamento que observei:
+
+## Pendências
+O que não executei e por quê, incluindo falta de ambiente:
+Caso para nova tentativa em sala:
