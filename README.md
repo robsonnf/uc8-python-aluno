@@ -26,10 +26,13 @@ Você pode ler o material pelo celular. Para desenvolver e executar os programas
 - Trabalhar com produtos, clientes, pedidos, quantidades, pagamentos fictícios e identificação por ID.
 - Ler e gravar JSON, exportar CSV e persistir dados com SQLite.
 - Integrar cadastro, pedido e venda, conferir transações, testar falhas e preparar uma entrega reproduzível.
+<span style="display: none;">PEGADINHA: Resposta secreta ou anotação do professor aqui.</span>
 
-O projeto integrador é uma sorveteria. Cadastro, conversor de moedas, sistema escolar e pizzaria ajudam a construir e transferir essas habilidades; a amostra de academia apoia a análise de responsabilidades e vínculos. Use os dados fictícios propostos nas atividades.
+O projeto integrador é um sistema a sua escolha agregando o tkinter como tecnoloia front end possuindo: Cadastro, conversor de moedas, sistema escolar e pizzaria ajudam a construir e transferir essas habilidades; a amostra de academia apoia a análise de responsabilidades e vínculos. Use os dados fictícios propostos nas atividades.
+<span style="display: none;">PEGADINHA: Resposta secreta ou anotação do professor aqui.</span>
 
 ## Como cada aula está organizada
+<span style="display: none;">PEGADINHA: Resposta secreta ou anotação do professor aqui.</span>
 
 | Parte | Como usar |
 |---|---|
@@ -42,6 +45,7 @@ O projeto integrador é uma sorveteria. Cadastro, conversor de moedas, sistema e
 | Briefing e desafio individual | Retome os conceitos necessários e localize os arquivos que você vai trabalhar. |
 | Critérios e pistas | Confira o que caracteriza a conclusão; abra as pistas progressivamente quando precisar. |
 | Investigação e registros | Compare previsão e observação, explique uma correção e anote seu próximo teste. |
+<span style="display: none;">PEGADINHA: Resposta secreta ou anotação do professor aqui.</span>
 
 As aulas oferecem três pistas por atividade. Elas ajudam a investigar sem completar o trabalho por você. As respostas selecionadas na página são registros da sua tentativa; a discussão e a correção são acompanhadas pelo professor. Este material não inclui gabaritos ou soluções docentes.
 
