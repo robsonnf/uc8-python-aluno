@@ -2,6 +2,7 @@
 (()=>{
 'use strict';
 const drafts=[];
+const compact=document.body.classList.contains('compact-lesson');
 const el=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=text;return node;};
 for(const host of document.querySelectorAll('.atelier[data-source]')){
  const source=document.getElementById(host.dataset.source);if(!source)continue;
@@ -12,7 +13,7 @@ for(const host of document.querySelectorAll('.atelier[data-source]')){
  const reference=details?.matches('.exercise-answer')?details.querySelector('code')?.textContent:null;
  host.classList.add('atelier--pronto');
  const head=el('div','at-cabeca');head.append(el('span','at-selo','rascunho'),el('p','at-titulo',filename));host.append(head);
- host.append(el('p','at-enunciado','Edite e baixe seu arquivo. Este editor não executa a atividade nem verifica o resultado.'));
+ if(!compact)host.append(el('p','at-enunciado','Edite e baixe seu arquivo. Este editor não executa a atividade nem verifica o resultado.'));
  const body=el('div','at-corpo'),editor=el('div','at-editor'),preview=el('div','at-preview');
  const row=el('div','at-local-editor'),numbers=el('pre','at-linhas'),field=el('textarea','at-campo');
  field.value=initial;field.spellcheck=false;field.autocomplete='off';field.setAttribute('aria-label','Rascunho de '+filename);numbers.setAttribute('aria-hidden','true');

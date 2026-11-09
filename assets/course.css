@@ -431,6 +431,21 @@ h2 .section-source{display:inline-block;font:600 .6em var(--sans);text-decoratio
 .challenge-link{display:inline-block;margin-bottom:.75rem}
 .activity-hints details+details{margin-top:.5rem}
 .reference-notes{margin-block:1rem}
+.lesson-preview{margin:1.1rem 0 .3rem}
+.lesson-preview figcaption{font:700 1rem var(--sans);margin-bottom:.6rem}
+.lesson-preview img{display:block;max-width:min(100%,28rem);height:auto;border:1px solid var(--rule);border-radius:.45rem}
+.lesson-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem;padding:0;margin:1.2rem 0;list-style:none;counter-reset:flow}
+.lesson-flow li{position:relative;counter-increment:flow;padding:.65rem .55rem;background:var(--paper-sunk);border:1px solid var(--rule);border-radius:.35rem;font:600 .88rem/1.35 var(--sans);overflow-wrap:anywhere}
+.lesson-flow li::before{content:counter(flow) ". ";color:var(--blue)}
+.lesson-flow li:not(:last-child)::after{content:"→";position:absolute;right:-1rem;top:50%;transform:translateY(-50%);color:var(--blue)}
+.lesson-point{border-left:3px solid var(--blue);padding-left:.75rem}
+.study-time{font:600 .88rem var(--sans);color:var(--blue)}
+.completion-list{margin-top:1.2rem}
+.reuse-module{margin-block:1rem;padding:.75rem;border:1px solid var(--rule);border-radius:.35rem}
+.reuse-module>summary{font:600 .95rem var(--sans);cursor:pointer}
+.atelier--pronto+.compact-execution{display:none}
+@media(max-width:700px){.lesson-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}.lesson-flow li::after{display:none}}
+@media print{.lesson-flow,.lesson-preview,.completion-list{break-inside:avoid}}
 .preclass-theory{margin:1.5rem 0;padding:1rem;border:1px solid var(--rule);border-left:4px solid var(--blue);border-radius:.5rem;background:var(--paper-sunk);overflow-wrap:anywhere}
 .preclass-theory>summary{font:700 1.05rem var(--sans);color:var(--blue);cursor:pointer}
 .preclass-theory>summary:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
