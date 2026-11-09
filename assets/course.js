@@ -83,15 +83,18 @@ function shuffle(items){
 const audit=$('#audit-list');
 shuffle([...audit.children]).forEach(item=>audit.append(item));
 $$('.question-options').forEach(group=>shuffle([...group.children]).forEach(option=>group.append(option)));
-const steps=$$('.pipeline li');
-let index=0;
-const control=document.createElement('div');control.className='step-controls';
-control.innerHTML='<button type="button" id="previous">← Anterior</button><span id="step-count" aria-live="polite"></span><button type="button" id="next">Próxima →</button><button type="button" id="all-steps">Ver todas</button>';
-$('.pipeline').after(control);
-function showStep(){steps.forEach((x,i)=>x.hidden=i!==index);$('#step-count').textContent=`Etapa ${index+1} de ${steps.length}`;$('#previous').disabled=index===0;$('#next').disabled=index===steps.length-1;}
-$('#previous').onclick=()=>{index=Math.max(0,index-1);showStep();};
-$('#next').onclick=()=>{index=Math.min(steps.length-1,index+1);showStep();};
-$('#all-steps').onclick=()=>{steps.forEach(x=>x.hidden=false);$('#step-count').textContent='Todas as etapas';};showStep();
+const pipeline=$('.pipeline');
+if(pipeline){
+  const steps=[...pipeline.querySelectorAll('li')];
+  let index=0;
+  const control=document.createElement('div');control.className='step-controls';
+  control.innerHTML='<button type="button" id="previous">← Anterior</button><span id="step-count" aria-live="polite"></span><button type="button" id="next">Próxima →</button><button type="button" id="all-steps">Ver todas</button>';
+  pipeline.after(control);
+  function showStep(){steps.forEach((x,i)=>x.hidden=i!==index);$('#step-count').textContent=`Etapa ${index+1} de ${steps.length}`;$('#previous').disabled=index===0;$('#next').disabled=index===steps.length-1;}
+  $('#previous').onclick=()=>{index=Math.max(0,index-1);showStep();};
+  $('#next').onclick=()=>{index=Math.min(steps.length-1,index+1);showStep();};
+  $('#all-steps').onclick=()=>{steps.forEach(x=>x.hidden=false);$('#step-count').textContent='Todas as etapas';};showStep();
+}
 $$('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{
   const text=document.getElementById(b.dataset.copy).textContent;
   try{await navigator.clipboard.writeText(text);b.nextElementSibling.textContent='Código copiado.';}
@@ -119,6 +122,15 @@ $$('[data-export]').forEach(button=>button.addEventListener('click',()=>{
   const drafts=window.CourseKit?.getDrafts?.()||[];
   const theory=$$('.theory-check');
   if(theory.length)lines.push('','## Minha conferência da teoria','',...theory.map(input=>'- ['+(input.checked?'x':' ')+'] '+input.closest('label').querySelector('span').textContent.trim()));
+  const completion=$$('.completion-list');
+  if(completion.length)lines.push('','## Conferência dos desafios');
+  for(const list of completion){
+    lines.push('','### '+list.dataset.file,'');
+    for(const input of list.querySelectorAll('.completion-check')){
+      const mark=input.checked?'x':' ';
+      lines.push(`- [${mark}] ${input.closest('label').querySelector('span').textContent.trim()}`);
+    }
+  }
   if(drafts.length)lines.push('','## Rascunhos editados no Atelier',...drafts.map(x=>'\n### '+x.filename+'\n\n'+x.code+(x.observed?'\n\nSaída observada informada pelo usuário:\n'+x.observed:'')));
   const url=URL.createObjectURL(new Blob([lines.join('\n')],{type:'text/markdown;charset=utf-8'}));
   const a=document.createElement('a');a.href=url;a.download=`registro-${lesson.toLowerCase()}-${date||'sem-data'}.md`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);

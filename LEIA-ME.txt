@@ -27,20 +27,20 @@ Você pode ler o material pelo celular. Para desenvolver e executar os programas
 - Ler e gravar JSON, exportar CSV e persistir dados com SQLite.
 - Integrar cadastro, pedido e venda, conferir transações, testar falhas e preparar uma entrega reproduzível.
 
-O projeto integrador é uma sorveteria. Cadastro, conversor de moedas, sistema escolar e pizzaria ajudam a construir e transferir essas habilidades; a amostra de academia apoia a análise de responsabilidades e vínculos. Use os dados fictícios propostos nas atividades.
+O projeto integrador é um sistema à sua escolha, com interface em Tkinter. A sorveteria serve de referência ao longo do curso. As práticas de cadastro, conversor de moedas, sistema escolar e pizzaria ajudam a aplicar os mesmos conceitos em outros projetos. A amostra de academia ajuda a estudar responsabilidades e vínculos entre dados. Use dados fictícios e mantenha o código organizado e documentado.
 
 ## Como cada aula está organizada
 
 | Parte | Como usar |
 |---|---|
-| Objetivos e pré-requisitos | Identifique o que deverá conseguir fazer e quais arquivos ou conhecimentos retomar. |
-| Antes da aula — Teoria, quando disponível | Retome o conceito, execute o ensaio curto e confira o que consegue explicar antes dos exercícios. |
+| Visão do resultado | Veja a aplicação ou o ensaio que orienta o trabalho da aula. |
+| Antes da aula | Prepare a pasta, confira o ambiente e reserve cerca de dez minutos para os dois exemplos. |
 | Diagnóstico ou retomada | Registre sua hipótese sem consulta; depois compare seu raciocínio com a discussão da aula. |
 | Problema concreto e explicação | Entenda a necessidade da regra antes de escrever o código. |
 | Exemplo comentado e resultado esperado | Faça um ensaio pequeno separado do projeto e confira a saída real. |
 | Alteração guiada | Mude um ponto por vez, preveja o efeito e execute novamente. |
-| Briefing e desafio individual | Retome os conceitos necessários e localize os arquivos que você vai trabalhar. |
-| Critérios e pistas | Confira o que caracteriza a conclusão; abra as pistas progressivamente quando precisar. |
+| Passo a passo do desafio | Localize os arquivos novos e execute os casos propostos. Os módulos reaproveitados ficam recolhidos para consulta. |
+| Checklist e pistas | Marque os casos que conferiu e abra as pistas progressivamente quando precisar. |
 | Investigação e registros | Compare previsão e observação, explique uma correção e anote seu próximo teste. |
 
 As aulas oferecem três pistas por atividade. Elas ajudam a investigar sem completar o trabalho por você. As respostas selecionadas na página são registros da sua tentativa; a discussão e a correção são acompanhadas pelo professor. Este material não inclui gabaritos ou soluções docentes.
@@ -173,7 +173,7 @@ Antes de sair:
 3. Clique em **Exportar registros da aula** e confira o arquivo `.md` baixado.
 4. Guarde também os arquivos que você editou e executou no computador, junto dos recursos solicitados pela atividade.
 
-O registro exportado reúne identificação preenchida, escolhas nas questões, itens marcados para discussão, anotações, reflexão e rascunhos modificados na página, com suas observações. Nas aulas que oferecem o bloco de teoria, inclui também as marcações do checklist de autoexplicação. Ele não recolhe arquivos do computador nem substitui a entrega dos `.py` e demais arquivos solicitados. Arquivos `.md` podem ser abertos em um editor de texto ou no VS Code.
+O registro exportado reúne identificação preenchida, escolhas nas questões, itens marcados para discussão, anotações, reflexão, checklists dos desafios e rascunhos modificados na página, com suas observações. Guarde também os `.py` e os outros arquivos que executou no computador. Arquivos `.md` podem ser abertos em um editor de texto ou no VS Code.
 
 **Limpar sessão** apaga escolhas, anotações e rascunhos da página depois da confirmação. Exporte e confira o que precisa conservar antes de usar esse botão.
 
