@@ -34,7 +34,8 @@ O projeto integrador é um sistema à sua escolha, com interface em Tkinter. A s
 | Parte | Como usar |
 |---|---|
 | Visão do resultado | Veja a aplicação ou o ensaio que orienta o trabalho da aula. |
-| Antes da aula | Prepare a pasta, confira o ambiente e reserve cerca de dez minutos para os dois exemplos. |
+| Preparação | Prepare a pasta e confira o ambiente. |
+| Antes da aula — Teoria | Faça a leitura obrigatória antes dos desafios. Reserve cerca de dez minutos para testar o exemplo comentado e conferir o que consegue explicar. |
 | Diagnóstico ou retomada | Registre sua hipótese sem consulta; depois compare seu raciocínio com a discussão da aula. |
 | Problema concreto e explicação | Entenda a necessidade da regra antes de escrever o código. |
 | Exemplo comentado e resultado esperado | Faça um ensaio pequeno separado do projeto e confira a saída real. |
