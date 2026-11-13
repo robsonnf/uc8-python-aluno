@@ -43,6 +43,4 @@ if('IntersectionObserver' in window){
  },{rootMargin:'-10% 0px -65% 0px'});
  links.forEach(a=>{const node=document.querySelector(a.getAttribute('href'));if(node)observer.observe(node);});
 }
-const current=window.AULAS?.find(x=>x.arquivo===decodeURIComponent(location.pathname.split('/').pop()));
-if(current)document.body.dataset.courseLesson=String(current.n);
 })();

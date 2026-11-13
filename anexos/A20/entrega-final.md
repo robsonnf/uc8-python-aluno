@@ -27,3 +27,10 @@ Diferença observada entre validação JSON e restrição SQLite:
 Downloads/arquivos executados conferidos:
 Recebimento no canal combinado conferido por mim:
 Autoavaliação e próximo estudo:
+
+## Conferência em pasta limpa
+Comando executado pelo README:
+Dados fictícios e caminho realmente usados:
+Resultado do fluxo válido e da recusa:
+Correção demonstrada e evidência da nova tentativa:
+Limite que outro usuário precisa conhecer:

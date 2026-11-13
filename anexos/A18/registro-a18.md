@@ -91,3 +91,9 @@ Redimensionamento e comportamento que observei:
 ## Pendências
 O que não executei e por quê, incluindo falta de ambiente:
 Caso para nova tentativa em sala:
+
+## Para a A19
+Pasta ou revisão da candidata:
+Instrução que o colega conseguiu executar:
+Caso que vou demonstrar e evidência disponível:
+Limite ou próximo teste:
