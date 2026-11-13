@@ -29,6 +29,10 @@ Você pode ler o material pelo celular. Para desenvolver e executar os programas
 
 O projeto integrador é um sistema à sua escolha, com interface em Tkinter. A sorveteria serve de referência ao longo do curso. As práticas de cadastro, conversor de moedas, sistema escolar e pizzaria ajudam a aplicar os mesmos conceitos em outros projetos. A amostra de academia ajuda a estudar responsabilidades e vínculos entre dados. Use dados fictícios e mantenha o código organizado e documentado.
 
+## Encerramento da UC8
+
+Encerramento da UC8. Na A18 você valida a versão candidata. Na A19 demonstra essa versão e verifica uma cópia dos dados. Na A20 revalida uma pendência e entrega a versão final.
+
 ## Como cada aula está organizada
 
 | Parte | Como usar |
@@ -182,11 +186,7 @@ O registro exportado reúne identificação preenchida, escolhas nas questões, 
 
 Baixar e exportar são ações locais. O envio ao professor é feito por você, no canal combinado. Confira quais arquivos a aula pede, use dados fictícios nos testes e mantenha uma cópia do que entregou.
 
-## Salve sua entrega no OneDrive
-
-Baixe ou exporte seus registros e os arquivos da atividade. Abra a pasta no OneDrive, entre com a conta autorizada e envie os arquivos baixados. Confira se eles aparecem na pasta antes de encerrar.
-
-[Abrir pasta de entrega no OneDrive](https://senacrsedu-my.sharepoint.com/:f:/g/personal/01606371045_senacrs_edu_br/IgAw6ZzfVcGZS56vSyOV1YSaATvbA9sC2I-Iv76Rs_34IdU?e=gKMkOG).
+Use o canal de entrega informado pelo professor e confira o recebimento.
 
 Se o destino pedir autenticação ou informar falta de acesso, entre com a conta autorizada e consulte o professor. A página do curso não entra na sua conta, não envia arquivos automaticamente e não confirma o recebimento da atividade.
 

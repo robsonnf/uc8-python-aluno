@@ -49,8 +49,7 @@ function clearState(){
   $$('input').forEach(x => x.checked=false);
   $('#student-name').value='';
   $('#student-class').value='';
-  const today=new Date();
-  $('#lesson-date').value=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+  $('#lesson-date').value='';
   $$('#practice-notes,#reflection').forEach(x => x.value='');
   document.dispatchEvent(new Event('coursekit:clear'));
   $$('.selected-text').forEach(x => x.textContent='');
@@ -114,7 +113,7 @@ $$('[data-export]').forEach(button=>button.addEventListener('click',()=>{
     'Aluno: '+($('#student-name').value.trim()||'Não informado'),
     'Turma: '+($('#student-class').value.trim()||'Não informada'),
     'Data da aula: '+(date||'Não informada'),
-    'Exportado em: '+new Date().toLocaleString('pt-BR'),'',
+    '',
     `## Respostas (${answered} de ${questions.length} registradas)`,'',...respostas,'',
     '## Situações marcadas para discussão','',...(discussoes.length?discussoes.map(x=>'- '+x):['Nenhuma situação marcada.']),'',
     '## Registros da prática','',$('#practice-notes').value.trim()||'Não preenchidos.','',

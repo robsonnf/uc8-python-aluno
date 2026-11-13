@@ -91,3 +91,9 @@ Redimensionamento e comportamento que observei:
 ## Pendências
 O que não executei e por quê, incluindo falta de ambiente:
 Caso para nova tentativa em sala:
+
+## Para a A20
+Versão que demonstrei:
+Evidência observada e feedback recebido:
+Pendência escolhida para revalidar:
+Entrada, ação e resultado que espero no reteste:

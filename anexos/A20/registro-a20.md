@@ -96,3 +96,9 @@ Redimensionamento e comportamento que observei:
 ## Pendências
 O que não executei e por quê, incluindo falta de ambiente:
 Caso para nova tentativa em sala:
+
+## Da demonstração à entrega
+Versão demonstrada na A19 e versão entregue:
+O que foi alterado:
+Evidência nova da recuperação:
+Limite que precisa constar no README:
