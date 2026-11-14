@@ -186,7 +186,7 @@ O registro exportado reúne identificação preenchida, escolhas nas questões, 
 
 Baixar e exportar são ações locais. O envio ao professor é feito por você, no canal combinado. Confira quais arquivos a aula pede, use dados fictícios nos testes e mantenha uma cópia do que entregou.
 
-Use o canal de entrega informado pelo professor e confira o recebimento.
+[Abrir pasta de entrega no SharePoint](https://senacrsedu-my.sharepoint.com/:f:/g/personal/01606371045_senacrs_edu_br/IgCaydodXCSfQKNAOAIgRjuhAc757DMjRBnyASPFAXY0DXk?e=NEZdZp). Confira se os arquivos aparecem na pasta.
 
 Se o destino pedir autenticação ou informar falta de acesso, entre com a conta autorizada e consulte o professor. A página do curso não entra na sua conta, não envia arquivos automaticamente e não confirma o recebimento da atividade.
 
